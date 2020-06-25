@@ -6,6 +6,42 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  String username = '';
+  String password = '';
+
   @override
-  Widget build(BuildContext context) {}
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Login"),
+      ),
+      body: Center(
+          child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              child: Column(
+                children: <Widget>[
+                  TextFormField(
+                      obscureText: false,
+                      decoration: InputDecoration(
+                          labelText: "Email",
+                          labelStyle:
+                          TextStyle(color: Theme.of(context).primaryColor)),
+                      onChanged: (val) {
+                        //setState(() => email = val);
+                      }),
+                  TextFormField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                          labelText: "Password",
+                          labelStyle:
+                          TextStyle(color: Theme.of(context).primaryColor)),
+                      onChanged: (val) {
+                        setState(() => password = val);
+                      })
+                ],
+              )
+          )
+      )
+    );
+  }
 }
