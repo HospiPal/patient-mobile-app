@@ -6,16 +6,16 @@ class CentralScreen extends StatefulWidget {
 }
 
 class _CentralScreenState extends State<CentralScreen> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
     Text(
-      'MyHealth',
+      'Team',
       style: optionStyle,
     ),
     Text(
-      'MyTeam',
+      'Health',
       style: optionStyle,
     ),
     Text(
@@ -23,11 +23,11 @@ class _CentralScreenState extends State<CentralScreen> {
       style: optionStyle,
     ),
     Text(
-      'MyDocs',
+      'Docs',
       style: optionStyle,
     ),
     Text(
-      'MyResults',
+      'Results',
       style: optionStyle,
     ),
   ];
@@ -50,11 +50,11 @@ class _CentralScreenState extends State<CentralScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            title: Text('Care Team'),
+            icon: Icon(Icons.group),
+            title: Text('Team'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
+            icon: Icon(Icons.healing),
             title: Text('Health'),
           ),
           BottomNavigationBarItem(
@@ -62,16 +62,18 @@ class _CentralScreenState extends State<CentralScreen> {
             title: Text('Home'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
+            icon: Icon(Icons.folder_open),
             title: Text('Docs'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
+            icon: Icon(Icons.local_pharmacy),
             title: Text('Results'),
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Theme
+            .of(context)
+            .primaryColor,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
       ),
