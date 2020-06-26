@@ -11,13 +11,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    //TODO: see appbrewery 'How to use container widgets' video
+
     return Scaffold(
-      appBar: AppBar(
-          //title: Text("Login"),
-          ),
-
-      //TODO: see appbrewery 'How to use container widgets' video
-
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
