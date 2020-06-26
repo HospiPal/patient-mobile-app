@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'auth/login/ui/login_screen.dart';
-import 'central_screen/ui/central_screen.dart';
+import 'auth/login/ui/login.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,12 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-          //primarySwatch: Colors.blue,
-
-          ),
+      title: 'HospiPal',
       home: LoginScreen(),
     );
   }
