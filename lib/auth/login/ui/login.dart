@@ -15,25 +15,28 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return Scaffold(
       body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            'Sign In',
-            style:
-                TextStyle(fontSize: 20, color: Theme.of(context).primaryColor),
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-                labelText: 'Email',
-                labelStyle: TextStyle(color: Theme.of(context).primaryColor)),
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-                labelText: 'Password',
-                labelStyle: TextStyle(color: Theme.of(context).primaryColor)),
-          ),
-        ],
+          child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Sign In',
+              style: TextStyle(
+                  fontSize: 20, color: Theme.of(context).primaryColor),
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                  labelText: 'Email',
+                  labelStyle: TextStyle(color: Theme.of(context).primaryColor)),
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                  labelText: 'Password',
+                  labelStyle: TextStyle(color: Theme.of(context).primaryColor)),
+            ),
+          ],
+        ),
       )),
 
 //      body: Center(

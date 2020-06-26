@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/central_screen/ui/central_screen.dart';
+import 'package:patientapp/auth/login/ui/login.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'HospiPal',
-      home: CentralScreen(),
+      home: LoginScreen(),
     );
   }
 }
