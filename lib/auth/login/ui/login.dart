@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:patientapp/auth/ui/auth.dart';
 
 import '../../../navigation.dart';
 
@@ -45,33 +46,11 @@ class _LoginState extends State<Login> {
                         children: <Widget>[
                           Padding(
                             padding: EdgeInsets.only(top: 30),
-                            child: MaterialButton(
-                              height: 40,
-                              minWidth: 150,
-                              color: Theme.of(context).primaryColor,
-                              splashColor: Colors.black,
-                              textColor: Colors.white,
-                              onPressed: () {
-                                Navigator.pushNamed(
-                                    context, Routes.centralScreen);
-                              },
-                              child: Text('Login'),
-                            ),
+                            child: authButton(route: Routes.centralScreen, title: 'Login')
                           ),
                           Padding(
                             padding: EdgeInsets.only(top: 30),
-                            child: MaterialButton(
-                              height: 40,
-                              minWidth: 150,
-                              color: Theme.of(context).primaryColor,
-                              splashColor: Colors.black,
-                              textColor: Colors.white,
-                              //when the button is pressed, print instance of user
-                              onPressed: () {
-                                Navigator.pushNamed(context, Routes.auth);
-                              },
-                              child: Text('Register with Email'),
-                            ),
+                            child: authButton(route: Routes.auth, title: 'Register with Email')
                           )
                         ],
                       ),

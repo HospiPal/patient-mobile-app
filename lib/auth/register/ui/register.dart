@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:patientapp/auth/ui/auth.dart';
 
 import '../../../navigation.dart';
 
@@ -32,31 +33,24 @@ class _RegisterState extends State<Register> {
                         decoration: InputDecoration(
                             labelText: 'Email',
                             labelStyle: TextStyle(
-                                color: Theme.of(context).primaryColor)),
+                                color: Theme
+                                    .of(context)
+                                    .primaryColor)),
                       ),
                       TextFormField(
                         decoration: InputDecoration(
                             labelText: 'Password',
                             labelStyle: TextStyle(
-                                color: Theme.of(context).primaryColor)),
+                                color: Theme
+                                    .of(context)
+                                    .primaryColor)),
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Padding(
                             padding: EdgeInsets.only(top: 30),
-                            child: MaterialButton(
-                              height: 40,
-                              minWidth: 150,
-                              color: Theme.of(context).primaryColor,
-                              splashColor: Colors.black,
-                              textColor: Colors.white,
-                              onPressed: () async {
-                                Navigator.pushReplacementNamed(
-                                    context, Routes.centralScreen);
-                              },
-                              child: Text('Sign Up'),
-                            ),
+                            child: authButton(route: Routes.centralScreen, title: 'Sign Up')
                           ),
                           Padding(
                             padding: EdgeInsets.only(top: 30),
