@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../navigation.dart';
+import '../../../navigation.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -15,7 +15,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     //TODO: see appbrewery 'How to use container widgets' video
 
-
     return Scaffold(
         body: Center(
             child: Padding(
@@ -26,17 +25,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Text(
                         'Register',
                         style: TextStyle(
-                            fontSize: 20, color: Theme.of(context).primaryColor),
+                            fontSize: 20,
+                            color: Theme.of(context).primaryColor),
                       ),
                       TextFormField(
                         decoration: InputDecoration(
                             labelText: 'Email',
-                            labelStyle: TextStyle(color: Theme.of(context).primaryColor)),
+                            labelStyle: TextStyle(
+                                color: Theme
+                                    .of(context)
+                                    .primaryColor)),
                       ),
                       TextFormField(
                         decoration: InputDecoration(
                             labelText: 'Password',
-                            labelStyle: TextStyle(color: Theme.of(context).primaryColor)),
+                            labelStyle: TextStyle(
+                                color: Theme
+                                    .of(context)
+                                    .primaryColor)),
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -52,7 +58,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               splashColor: Colors.black,
                               textColor: Colors.white,
                               onPressed: () async {
-                                Keys.navKey.currentState.pushReplacementNamed(Routes.homeScreen);
+                                Keys.navKey.currentState
+                                    .pushReplacementNamed(Routes.centralScreen);
                               },
                               child: Text('Sign Up'),
                             ),
@@ -75,10 +82,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                         ],
                       ),
-                    ]
-                )
-            )
-        )
-    );
+                    ]))));
   }
 }

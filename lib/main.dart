@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/auth/login/ui/login.dart';
+import 'package:patientapp/central_screen/ui/central_screen.dart';
 
-import 'auth/navigation.dart';
+import 'auth/login/ui/login.dart';
 import 'auth/register/ui/register.dart';
 import 'central_screen/ui/central_screen.dart';
+import 'navigation.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,10 +17,10 @@ class MyApp extends StatelessWidget {
       navigatorKey: Keys.navKey,
       home: LoginScreen(),
       routes: {
-        Routes.homeScreen: (context) {
+        Routes.centralScreen: (context) {
           return CentralScreen();
         },
-        Routes.register: (context) {
+        Routes.auth: (context) {
           return RegisterScreen();
         },
       },
