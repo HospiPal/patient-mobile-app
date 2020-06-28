@@ -48,9 +48,7 @@ class _RegisterState extends State<Register> {
                             child: MaterialButton(
                               height: 40,
                               minWidth: 150,
-                              color: Theme
-                                  .of(context)
-                                  .primaryColor,
+                              color: Theme.of(context).primaryColor,
                               splashColor: Colors.black,
                               textColor: Colors.white,
                               onPressed: () async {
