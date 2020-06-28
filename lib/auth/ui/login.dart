@@ -1,21 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/auth/ui/auth.dart';
+import 'package:patientapp/navigation.dart';
 
-import '../../../navigation.dart';
+import 'auth.dart';
 
-class Login extends StatefulWidget {
-  @override
-  _LoginState createState() => _LoginState();
-}
-
-class _LoginState extends State<Login> {
-  String username = '';
-  String password = '';
-
+class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //TODO: see appbrewery 'How to use container widgets' video
-
     return Scaffold(
         body: Center(
             child: Padding(
@@ -24,7 +14,7 @@ class _LoginState extends State<Login> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        'Sign In',
+                        'Login',
                         style: TextStyle(
                             fontSize: 20,
                             color: Theme.of(context).primaryColor),
@@ -41,19 +31,15 @@ class _LoginState extends State<Login> {
                             labelStyle: TextStyle(
                                 color: Theme.of(context).primaryColor)),
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(top: 30),
-                            child: authButton(route: Routes.centralScreen, title: 'Login')
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 30),
-                            child: authButton(route: Routes.auth, title: 'Register with Email')
-                          )
-                        ],
-                      ),
+                      Padding(
+                          padding: EdgeInsets.only(top: 30),
+                          child: AuthButton(
+                            title: 'Login',
+                            onPressed: () {
+                              Navigator.pushReplacementNamed(
+                                  context, Routes.centralScreen);
+                            },
+                          )),
                     ]))));
   }
 }

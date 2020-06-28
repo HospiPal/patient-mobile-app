@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:patientapp/auth/ui/auth.dart';
+import 'package:patientapp/navigation.dart';
 
-import '../../../navigation.dart';
-
-class Register extends StatefulWidget {
+class SignUp extends StatefulWidget {
   @override
-  _RegisterState createState() => _RegisterState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _RegisterState extends State<Register> {
+class _SignUpState extends State<SignUp> {
   String username = '';
   String password = '';
 
@@ -24,7 +23,7 @@ class _RegisterState extends State<Register> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        'Register',
+                        'Sign Up',
                         style: TextStyle(
                             fontSize: 20,
                             color: Theme.of(context).primaryColor),
@@ -45,31 +44,14 @@ class _RegisterState extends State<Register> {
                                     .of(context)
                                     .primaryColor)),
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(top: 30),
-                            child: authButton(route: Routes.centralScreen, title: 'Sign Up')
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 30),
-                            child: MaterialButton(
-                              height: 40,
-                              minWidth: 150,
-                              color: Theme
-                                  .of(context)
-                                  .primaryColor,
-                              splashColor: Colors.black,
-                              textColor: Colors.white,
-                              onPressed: () async {
-                                Navigator.pop(context);
-                              },
-                              child: Text('Back to Login'),
-                            ),
-                          ),
-                        ],
-                      ),
+                      Padding(
+                          padding: EdgeInsets.only(top: 30),
+                          child: AuthButton(
+                              title: 'Sign Up',
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(
+                                    context, Routes.centralScreen);
+                              })),
                     ]))));
   }
 }

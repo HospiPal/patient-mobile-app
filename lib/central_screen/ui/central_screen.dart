@@ -41,9 +41,6 @@ class _CentralScreenState extends State<CentralScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          //title: const Text('HospiPal'),
-          ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -71,9 +68,7 @@ class _CentralScreenState extends State<CentralScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Theme
-            .of(context)
-            .primaryColor,
+        selectedItemColor: Theme.of(context).primaryColor,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
       ),
