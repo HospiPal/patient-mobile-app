@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../../navigation.dart';
 
-class LoginScreen extends StatefulWidget {
+class Login extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _LoginState createState() => _LoginState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginState extends State<Login> {
   String username = '';
   String password = '';
 
@@ -51,9 +51,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               color: Theme.of(context).primaryColor,
                               splashColor: Colors.black,
                               textColor: Colors.white,
-                              onPressed: () async {
-                                Keys.navKey.currentState
-                                    .pushReplacementNamed(Routes.centralScreen);
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                    context, Routes.centralScreen);
                               },
                               child: Text('Login'),
                             ),
@@ -63,13 +63,14 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: MaterialButton(
                               height: 40,
                               minWidth: 150,
-                              color: Theme.of(context).primaryColor,
+                              color: Theme
+                                  .of(context)
+                                  .primaryColor,
                               splashColor: Colors.black,
                               textColor: Colors.white,
                               //when the button is pressed, print instance of user
-                              onPressed: () async {
-                                Keys.navKey.currentState
-                                    .pushReplacementNamed(Routes.auth);
+                              onPressed: () {
+                                Navigator.pushNamed(context, Routes.auth);
                               },
                               child: Text('Register with Email'),
                             ),

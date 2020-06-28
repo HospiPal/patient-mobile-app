@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../../navigation.dart';
 
-class RegisterScreen extends StatefulWidget {
+class Register extends StatefulWidget {
   @override
-  _RegisterScreenState createState() => _RegisterScreenState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _RegisterState extends State<Register> {
   String username = '';
   String password = '';
 
@@ -32,9 +32,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         decoration: InputDecoration(
                             labelText: 'Email',
                             labelStyle: TextStyle(
-                                color: Theme
-                                    .of(context)
-                                    .primaryColor)),
+                                color: Theme.of(context).primaryColor)),
                       ),
                       TextFormField(
                         decoration: InputDecoration(
@@ -58,8 +56,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               splashColor: Colors.black,
                               textColor: Colors.white,
                               onPressed: () async {
-                                Keys.navKey.currentState
-                                    .pushReplacementNamed(Routes.centralScreen);
+                                Navigator.pushNamed(
+                                    context, Routes.centralScreen);
                               },
                               child: Text('Sign Up'),
                             ),
