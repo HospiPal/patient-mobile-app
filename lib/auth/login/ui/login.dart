@@ -63,9 +63,7 @@ class _LoginState extends State<Login> {
                             child: MaterialButton(
                               height: 40,
                               minWidth: 150,
-                              color: Theme
-                                  .of(context)
-                                  .primaryColor,
+                              color: Theme.of(context).primaryColor,
                               splashColor: Colors.black,
                               textColor: Colors.white,
                               //when the button is pressed, print instance of user

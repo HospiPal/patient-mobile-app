@@ -38,9 +38,7 @@ class _RegisterState extends State<Register> {
                         decoration: InputDecoration(
                             labelText: 'Password',
                             labelStyle: TextStyle(
-                                color: Theme
-                                    .of(context)
-                                    .primaryColor)),
+                                color: Theme.of(context).primaryColor)),
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -56,7 +54,7 @@ class _RegisterState extends State<Register> {
                               splashColor: Colors.black,
                               textColor: Colors.white,
                               onPressed: () async {
-                                Navigator.pushNamed(
+                                Navigator.pushReplacementNamed(
                                     context, Routes.centralScreen);
                               },
                               child: Text('Sign Up'),
