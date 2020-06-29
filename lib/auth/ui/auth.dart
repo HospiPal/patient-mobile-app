@@ -44,7 +44,7 @@ class AuthButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
+    return RaisedButton(
       // todo: scale the button without hardcoded values
       color: Theme.of(context).primaryColor,
       textColor: Colors.white,
