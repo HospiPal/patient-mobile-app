@@ -31,7 +31,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
 }
 
 class UndefinedRoute extends StatelessWidget {
-  String undefinedRoute;
+  final String undefinedRoute;
 
   UndefinedRoute(this.undefinedRoute);
 

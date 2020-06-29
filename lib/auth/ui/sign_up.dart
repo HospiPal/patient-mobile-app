@@ -17,30 +17,28 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-            child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 32.0),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      Center(
-                        child: Text(
-                          'Sign Up',
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Theme.of(context).primaryColor),
-                        ),
-                      ),
-                      AuthField('Username', usernameController, false),
-                      AuthField('Password', passwordController, true),
-                      Padding(
-                          padding: EdgeInsets.only(top: 30),
-                          child: AuthButton(
-                              title: 'Sign Up',
-                              onPressed: () {
-                                Navigator.pushReplacementNamed(
-                                    context, Routes.centralScreen);
-                              })),
-                    ]))));
+            padding: const EdgeInsets.symmetric(horizontal: 32.0),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Center(
+                    child: Text(
+                      'Sign Up',
+                      style: TextStyle(
+                          fontSize: 20, color: Theme.of(context).primaryColor),
+                    ),
+                  ),
+                  AuthField('Username', usernameController, false),
+                  AuthField('Password', passwordController, true),
+                  Padding(
+                      padding: EdgeInsets.only(top: 30),
+                      child: AuthButton(
+                          title: 'Sign Up',
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(
+                                context, Routes.centralScreen);
+                          })),
+                ])));
   }
 }
