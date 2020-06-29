@@ -6,9 +6,9 @@ class Auth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: Column(
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(15.0),
@@ -29,7 +29,7 @@ class Auth extends StatelessWidget {
             ),
           ),
         ],
-      )),
+      ),
     );
   }
 }
@@ -46,8 +46,6 @@ class AuthButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       // todo: scale the button without hardcoded values
-//      height: 48,
-//      minWidth: 180,
       color: Theme.of(context).primaryColor,
       textColor: Colors.white,
       onPressed: onPressed,

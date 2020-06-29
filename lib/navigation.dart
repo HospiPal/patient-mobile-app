@@ -29,8 +29,6 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   }
 }
 
-class UndefinedRouteError extends Error {}
-
 class UndefinedRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
