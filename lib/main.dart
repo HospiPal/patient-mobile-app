@@ -10,6 +10,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'HospiPal',
+      theme: ThemeData(
+        primaryColor: Color(0xacdee1),
+        accentColor: Color(0xe15050),
+      ),
       initialRoute: Routes.auth,
       onGenerateRoute: generateRoute,
     );

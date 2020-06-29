@@ -63,7 +63,7 @@ class _CentralScreenState extends State<CentralScreen> {
             title: Text('Docs'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.local_pharmacy),
+            icon: Icon(Icons.assignment),
             title: Text('Results'),
           ),
         ],
