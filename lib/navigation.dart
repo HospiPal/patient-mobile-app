@@ -25,16 +25,22 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case Routes.login:
       return MaterialPageRoute(builder: (context) => Login());
     default:
-      return MaterialPageRoute(builder: (context) => UndefinedRoute());
+      return MaterialPageRoute(
+          builder: (context) => UndefinedRoute(settings.name));
   }
 }
 
 class UndefinedRoute extends StatelessWidget {
+  String undefinedRoute;
+
+  UndefinedRoute(this.undefinedRoute);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Text('Undefined Route \nThis is a dart:core/errors Error.')),
+          child: Text(
+              'Undefined route: ($undefinedRoute). \nThis is a dart:core/errors Error.')),
       backgroundColor: Colors.red,
     );
   }
