@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:patientapp/central_screen/care_team/ui/care_team.dart';
+import 'package:patientapp/central_screen/health/ui/health.dart';
+import 'package:patientapp/central_screen/home/ui/home.dart';
 
 class CentralScreen extends StatefulWidget {
   @override
@@ -10,18 +13,9 @@ class _CentralScreenState extends State<CentralScreen> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Team',
-      style: optionStyle,
-    ),
-    Text(
-      'Health',
-      style: optionStyle,
-    ),
-    Text(
-      'Home',
-      style: optionStyle,
-    ),
+    CareTeam(),
+    Health(),
+    Home(),
     Text(
       'Docs',
       style: optionStyle,
@@ -68,7 +62,7 @@ class _CentralScreenState extends State<CentralScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Theme.of(context).primaryColor,
+        //selectedItemColor: Theme.of(context).accentColor,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
       ),
