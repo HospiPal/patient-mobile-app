@@ -53,3 +53,37 @@ class AuthButton extends StatelessWidget {
     );
   }
 }
+
+class AuthField extends StatefulWidget {
+  @override
+  _AuthFieldState createState() => _AuthFieldState();
+
+  final String title;
+  final TextEditingController textController;
+  final bool obscure;
+
+  AuthField(this.title, this.textController, this.obscure);
+}
+
+class _AuthFieldState extends State<AuthField> {
+  @override
+  Widget build(BuildContext context) {
+    if (widget.obscure) {
+      return TextFormField(
+        controller: widget.textController,
+        obscureText: true,
+        decoration: InputDecoration(
+            labelText: widget.title,
+            labelStyle: TextStyle(color: Theme.of(context).primaryColor)),
+      );
+    } else {
+      return TextFormField(
+        controller: widget.textController,
+        obscureText: false,
+        decoration: InputDecoration(
+            labelText: widget.title,
+            labelStyle: TextStyle(color: Theme.of(context).primaryColor)),
+      );
+    }
+  }
+}
