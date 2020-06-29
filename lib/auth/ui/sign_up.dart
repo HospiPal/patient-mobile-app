@@ -32,9 +32,7 @@ class _SignUpState extends State<SignUp> {
                         decoration: InputDecoration(
                             labelText: 'Email',
                             labelStyle: TextStyle(
-                                color: Theme
-                                    .of(context)
-                                    .primaryColor)),
+                                color: Theme.of(context).primaryColor)),
                       ),
                       TextFormField(
                         decoration: InputDecoration(

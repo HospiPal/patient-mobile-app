@@ -48,9 +48,7 @@ class AuthButton extends StatelessWidget {
       // todo: scale the button without hardcoded values
 //      height: 48,
 //      minWidth: 180,
-      color: Theme
-          .of(context)
-          .primaryColor,
+      color: Theme.of(context).primaryColor,
       textColor: Colors.white,
       onPressed: onPressed,
       child: Text(title),
