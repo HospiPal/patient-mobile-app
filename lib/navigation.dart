@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 import 'auth/ui/auth.dart';
 import 'auth/ui/login.dart';
 import 'auth/ui/sign_up.dart';
+import 'central_screen/health/log_entry_add.dart';
 import 'central_screen/ui/central_screen.dart';
 
 // todo: possible change this to a freezed union type
 class Routes {
-  static const centralScreen = '/central_screen';
-  static const auth = '/auth';
-  static const signUp = '/auth/sign_up';
-  static const login = '/auth/login';
+  static const centralScreen = 'central_screen';
+  static const auth = 'auth';
+  static const signUp = 'auth/sign_up';
+  static const login = 'auth/login';
+  static const logEntryAdd = 'central_screen/health/log_entry_add';
 }
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -24,6 +26,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => SignUp());
     case Routes.login:
       return MaterialPageRoute(builder: (context) => Login());
+    case Routes.logEntryAdd:
+      return MaterialPageRoute(builder: (context) => LogEntryAdd());
     default:
       return MaterialPageRoute(
           builder: (context) => UndefinedRoute(settings.name));

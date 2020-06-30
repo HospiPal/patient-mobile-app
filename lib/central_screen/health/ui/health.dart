@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/central_screen/health/log_entry.dart';
+import 'package:patientapp/central_screen/health/log_entry_add.dart';
+
+import '../../../navigation.dart';
 
 class Health extends StatefulWidget {
   @override
@@ -8,11 +10,11 @@ class Health extends StatefulWidget {
 
 class _HealthState extends State<Health> {
   //TODO: this List needs to be relocated
-  final List<LogEntry> entries = <LogEntry>[];
+  final List<LogEntryAdd> entries = <LogEntryAdd>[];
 
   void _newLogEntry() {
     setState(() {
-      entries.add(LogEntry());
+      entries.add(LogEntryAdd());
     });
   }
 
@@ -21,11 +23,11 @@ class _HealthState extends State<Health> {
     return Scaffold(
       appBar: AppBar(
           leading: DropdownButton<String>(
-        isExpanded: true,
+            isExpanded: true,
         //value: dropdownValue,
-        icon: Icon(Icons.arrow_downward),
+        icon: Icon(Icons.dehaze),
         iconSize: 24,
-        elevation: 16,
+        //elevation: 16,
         onChanged: (String newValue) {
           setState(() {
             //dropdownValue = newValue;
@@ -56,17 +58,18 @@ class _HealthState extends State<Health> {
           padding: const EdgeInsets.all(8),
           itemCount: entries.length,
           itemBuilder: (BuildContext context, int index) {
-            return LogEntry();
+            return LogEntryAdd();
           },
           separatorBuilder: (BuildContext context, int index) =>
               const Divider(),
         ),
+
       ),
+
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          print('Clicked');
-          _newLogEntry();
+          Navigator.pushNamed(context, Routes.logEntryAdd);
         },
       ),
     );
