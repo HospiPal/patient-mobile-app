@@ -19,7 +19,38 @@ class _HealthState extends State<Health> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+          leading: DropdownButton<String>(
+        isExpanded: true,
+        //value: dropdownValue,
+        icon: Icon(Icons.arrow_downward),
+        iconSize: 24,
+        elevation: 16,
+        onChanged: (String newValue) {
+          setState(() {
+            //dropdownValue = newValue;
+          });
+        },
+        items: <String>[
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+          'September',
+          'October',
+          'November',
+          'December'
+        ].map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+      )),
       body: Center(
         child: ListView.separated(
           padding: const EdgeInsets.all(8),
