@@ -13,6 +13,7 @@ class _HomeState extends State<Home> {
         FlatButton(
           textColor: Colors.white,
           child: Text('Logout'),
+          onPressed: () {},
         )
       ]),
       body: SafeArea(

@@ -13,6 +13,7 @@ class _CareTeamState extends State<CareTeam> {
         FlatButton(
           textColor: Colors.white,
           child: Text('Logout'),
+          onPressed: () {},
         )
       ]),
       body: SafeArea(
