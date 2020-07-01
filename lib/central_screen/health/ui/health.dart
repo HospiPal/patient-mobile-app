@@ -34,6 +34,7 @@ class _HealthState extends State<Health> {
           });
         },
         items: <String>[
+          'All entries',
           'January',
           'February',
           'March',

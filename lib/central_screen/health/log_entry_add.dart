@@ -6,12 +6,15 @@ class LogEntryAdd extends StatefulWidget {
 }
 
 class _LogEntryAddState extends State<LogEntryAdd> {
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
       padding: const EdgeInsets.all(16.0),
       child: Form(
+        key: _formKey,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -23,13 +26,13 @@ class _LogEntryAddState extends State<LogEntryAdd> {
             ),
             TextFormField(
               decoration: InputDecoration(hintText: 'Weight'),
+                ),
+                TextFormField(
+                  decoration: InputDecoration(hintText: 'Height'),
+                )
+              ],
             ),
-            TextFormField(
-              decoration: InputDecoration(hintText: 'Height'),
-            )
-          ],
-        ),
-      ),
-    ));
+          ),
+        ));
   }
 }
