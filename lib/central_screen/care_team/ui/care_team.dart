@@ -15,7 +15,9 @@ class _CareTeamState extends State<CareTeam> {
           child: Text('Logout'),
         )
       ]),
-      body: Center(),
+      body: SafeArea(
+        child: Center(),
+      ),
     );
   }
 }

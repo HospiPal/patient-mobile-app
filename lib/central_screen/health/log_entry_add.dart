@@ -11,28 +11,30 @@ class _LogEntryAddState extends State<LogEntryAdd> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Form(
-        key: _formKey,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            TextFormField(
-              decoration: InputDecoration(hintText: 'First Name'),
-            ),
-            TextFormField(
-              decoration: InputDecoration(hintText: 'Last Name'),
-            ),
-            TextFormField(
-              decoration: InputDecoration(hintText: 'Weight'),
-                ),
-                TextFormField(
-                  decoration: InputDecoration(hintText: 'Height'),
-                )
-              ],
-            ),
+        body: SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              TextFormField(
+                decoration: InputDecoration(hintText: 'First Name'),
+              ),
+              TextFormField(
+                decoration: InputDecoration(hintText: 'Last Name'),
+              ),
+              TextFormField(
+                decoration: InputDecoration(hintText: 'Weight'),
+              ),
+              TextFormField(
+                decoration: InputDecoration(hintText: 'Height'),
+              )
+            ],
           ),
-        ));
+        ),
+      ),
+    ));
   }
 }

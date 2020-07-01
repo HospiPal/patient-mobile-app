@@ -54,19 +54,19 @@ class _HealthState extends State<Health> {
           );
         }).toList(),
       )),
-      body: Center(
-        child: ListView.separated(
-          padding: const EdgeInsets.all(8),
-          itemCount: entries.length,
-          itemBuilder: (BuildContext context, int index) {
-            return LogEntryAdd();
-          },
-          separatorBuilder: (BuildContext context, int index) =>
-              const Divider(),
+      body: SafeArea(
+        child: Center(
+          child: ListView.separated(
+            padding: const EdgeInsets.all(8),
+            itemCount: entries.length,
+            itemBuilder: (BuildContext context, int index) {
+              return LogEntryAdd();
+            },
+            separatorBuilder: (BuildContext context, int index) =>
+                const Divider(),
+          ),
         ),
-
       ),
-
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {

@@ -15,7 +15,9 @@ class _HomeState extends State<Home> {
           child: Text('Logout'),
         )
       ]),
-      body: Center(),
+      body: SafeArea(
+        child: Center(),
+      ),
     );
   }
 }
