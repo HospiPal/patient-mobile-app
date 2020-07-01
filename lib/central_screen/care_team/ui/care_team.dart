@@ -16,7 +16,76 @@ class _CareTeamState extends State<CareTeam> {
         )
       ]),
       body: SafeArea(
-        child: Center(),
+        child: Center(
+            child: GridView.count(
+          primary: false,
+          padding: const EdgeInsets.all(20),
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          crossAxisCount: 2,
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: CircleAvatar(
+                child: Text('AH'),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: CircleAvatar(
+                child: Text('AH'),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: CircleAvatar(
+                child: Text('AH'),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: CircleAvatar(
+                child: Text('AH'),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: CircleAvatar(
+                child: Text('AH'),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: CircleAvatar(
+                child: Text('AH'),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: CircleAvatar(
+                child: Text('AH'),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: CircleAvatar(
+                child: Text('AH'),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: CircleAvatar(
+                child: Text('AH'),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: CircleAvatar(
+                child: Text('AH'),
+              ),
+            ),
+          ],
+        )),
       ),
     );
   }
