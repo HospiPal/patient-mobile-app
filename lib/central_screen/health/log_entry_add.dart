@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:patientapp/central_screen/health/journal_tile.dart';
+import 'package:patientapp/central_screen/health/log_entry.dart';
+import 'package:patientapp/central_screen/health/ui/health.dart';
 
 class LogEntryAdd extends StatefulWidget {
   @override
@@ -7,6 +10,9 @@ class LogEntryAdd extends StatefulWidget {
 
 class _LogEntryAddState extends State<LogEntryAdd> {
   final _formKey = GlobalKey<FormState>();
+
+  TextEditingController ailmentController = new TextEditingController();
+  TextEditingController dateController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +31,51 @@ class _LogEntryAddState extends State<LogEntryAdd> {
               TextFormField(
                 decoration: InputDecoration(hintText: 'Last Name'),
               ),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Weight'),
+              LogEntryField('Date', dateController),
+              LogEntryField('Condition', ailmentController),
+              Padding(
+                padding: EdgeInsets.only(top: 30),
+                child: RaisedButton(
+                  // todo: scale the button without hardcoded values
+                  color: Theme
+                      .of(context)
+                      .primaryColor,
+                  textColor: Colors.white,
+                  onPressed: () {
+                    LogEntry entry = new LogEntry(
+                        ailment: ailmentController.text,
+                        date: dateController.text);
+                    JournalTile tile = new JournalTile(entry);
+                    EntryList().newTile(tile);
+                  },
+                  child: Text('Submit'),
+                ),
               ),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Height'),
-              )
             ],
+              ),
+            ),
           ),
-        ),
-      ),
-    ));
+        ));
+  }
+}
+
+class LogEntryField extends StatefulWidget {
+  @override
+  LogEntryFieldState createState() => LogEntryFieldState();
+
+  final String title;
+  final TextEditingController textController;
+
+  LogEntryField(this.title, this.textController);
+}
+
+class LogEntryFieldState extends State<LogEntryField> {
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: widget.textController,
+      decoration: InputDecoration(
+        labelText: widget.title,),
+    );
   }
 }

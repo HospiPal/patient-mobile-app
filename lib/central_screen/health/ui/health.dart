@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/central_screen/health/log_entry_add.dart';
 
 import '../../../navigation.dart';
+import '../journal_tile.dart';
+
+class EntryList {
+  final List<JournalTile> entries = <JournalTile>[];
+
+  newTile(JournalTile tile) {
+    entries.add(tile);
+    print(entries[0].entry.ailment);
+  }
+}
 
 class Health extends StatefulWidget {
   @override
@@ -10,13 +19,6 @@ class Health extends StatefulWidget {
 
 class _HealthState extends State<Health> {
   //TODO: this List needs to be relocated
-  final List<LogEntryAdd> entries = <LogEntryAdd>[];
-
-  void _newLogEntry() {
-    setState(() {
-      entries.add(LogEntryAdd());
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,9 +60,16 @@ class _HealthState extends State<Health> {
         child: Center(
           child: ListView.separated(
             padding: const EdgeInsets.all(8),
-            itemCount: entries.length,
+            itemCount: EntryList().entries.length,
             itemBuilder: (BuildContext context, int index) {
-              return LogEntryAdd();
+              //return LogEntryAdd();
+              return Padding(
+                padding: const EdgeInsets.symmetric(
+                    vertical: 1.0, horizontal: 4.0),
+                child: Card(
+                    child: EntryList().entries[index]
+                ),
+              );
             },
             separatorBuilder: (BuildContext context, int index) =>
                 const Divider(),
@@ -71,6 +80,13 @@ class _HealthState extends State<Health> {
         child: Icon(Icons.add),
         onPressed: () {
           Navigator.pushNamed(context, Routes.logEntryAdd);
+          setState(() {
+            /*EntryList().newTile(
+                JournalTile(new LogEntry(
+                  ailment: 'free slushy-itus', date: '7/11'
+                ))
+            );*/
+          });
         },
       ),
     );
