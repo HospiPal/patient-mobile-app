@@ -46,7 +46,7 @@ class AuthButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       // todo: scale the button without hardcoded values
-      color: Theme.of(context).primaryColor,
+      color: Theme.of(context).accentColor,
       textColor: Colors.white,
       onPressed: onPressed,
       child: Text(title),
@@ -74,7 +74,9 @@ class _AuthFieldState extends State<AuthField> {
         obscureText: true,
         decoration: InputDecoration(
             labelText: widget.title,
-            labelStyle: TextStyle(color: Theme.of(context).primaryColor)),
+            labelStyle: TextStyle(color: Theme
+                .of(context)
+                .accentColor)),
       );
     } else {
       return TextFormField(
@@ -82,7 +84,9 @@ class _AuthFieldState extends State<AuthField> {
         obscureText: false,
         decoration: InputDecoration(
             labelText: widget.title,
-            labelStyle: TextStyle(color: Theme.of(context).primaryColor)),
+            labelStyle: TextStyle(color: Theme
+                .of(context)
+                .accentColor)),
       );
     }
   }

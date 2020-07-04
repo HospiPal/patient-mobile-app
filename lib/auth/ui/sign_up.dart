@@ -26,7 +26,7 @@ class _SignUpState extends State<SignUp> {
                     child: Text(
                       'Sign Up',
                       style: TextStyle(
-                          fontSize: 20, color: Theme.of(context).primaryColor),
+                          fontSize: 20, color: Theme.of(context).accentColor),
                     ),
                   ),
                   AuthField('Username', usernameController, false),
