@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../navigation.dart';
+
 class CareTeam extends StatefulWidget {
   @override
   _CareTeamState createState() => _CareTeamState();
@@ -33,12 +35,20 @@ class _CareTeamState extends State<CareTeam> {
                       children: <Widget>[
                         IconButton(
                           icon: Icon(Icons.face),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, Routes.profile);
+                          },
                         ),
-                        IconButton(icon: Icon(Icons.message), onPressed: () {}),
+                        IconButton(
+                            icon: Icon(Icons.message),
+                            onPressed: () {
+                              Navigator.pushNamed(context, Routes.message);
+                            }),
                         IconButton(
                           icon: Icon(Icons.phone),
-                          onPressed: () {},
+                          onPressed: () {
+                            //Navigator.pushNamed(context, Routes.logEntryAdd);
+                          },
                         )
                       ],
                     )
@@ -48,20 +58,6 @@ class _CareTeamState extends State<CareTeam> {
             },
           ),
         ),
-
-//            child: GridView.count(
-//                padding: const EdgeInsets.all(20),
-//                crossAxisSpacing: 10,
-//                mainAxisSpacing: 10,
-//                crossAxisCount: 2,
-//                children: List.generate(20, (index) {
-//                  return Container(
-//                    padding: const EdgeInsets.all(8),
-//                    child: CircleAvatar(
-//                      child: Text('$index'),
-//                    ),
-//                  );
-//                })),
       ),
     );
   }

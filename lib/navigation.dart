@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:patientapp/central_screen/care_team/message.dart';
+import 'package:patientapp/central_screen/care_team/profile.dart';
 
 import 'auth/ui/auth.dart';
 import 'auth/ui/login.dart';
@@ -13,6 +15,8 @@ class Routes {
   static const signUp = 'auth/sign_up';
   static const login = 'auth/login';
   static const logEntryAdd = 'central_screen/health/log_entry_add';
+  static const message = 'care_team/message';
+  static const profile = 'care_team/profile';
 }
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -28,6 +32,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => Login());
     case Routes.logEntryAdd:
       return MaterialPageRoute(builder: (context) => LogEntryAdd());
+    case Routes.message:
+      return MaterialPageRoute(builder: (context) => Message());
+    case Routes.profile:
+      return MaterialPageRoute(builder: (context) => Profile());
     default:
       return MaterialPageRoute(
           builder: (context) => UndefinedRoute(settings.name));
