@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:patientapp/central_screen/care_team/message.dart';
 
 class MessageText {

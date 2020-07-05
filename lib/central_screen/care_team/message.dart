@@ -7,8 +7,8 @@ class Message extends StatefulWidget {
   _MessageState createState() => _MessageState();
 }
 
-// TODO: build a message tile
 // TODO: watch this video - https://www.youtube.com/watch?v=X00Xv7blBo0
+// TODO: watch this video - https://www.youtube.com/watch?v=h-igXZCCrrc
 // TODO: use list tiles for popups
 
 enum MessageType {
@@ -71,6 +71,7 @@ class _MessageState extends State<Message> {
                         ),
                         Expanded(
                           child: TextField(
+                            textCapitalization: TextCapitalization.sentences,
                             decoration: InputDecoration(
                               hintText: 'Message',
                               border: InputBorder.none,
