@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:patientapp/central_screen/health/log_entry_add.dart';
 
 import '../../../navigation.dart';
 import '../journal_tile.dart';
@@ -21,6 +22,28 @@ class _HealthState extends State<Health> {
         entries.add(result);
       });
     }
+  }
+
+  void _showModalBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) => Container(
+        height: MediaQuery.of(context).size.height,
+        decoration: new BoxDecoration(
+          color: Colors.white,
+          borderRadius: new BorderRadius.only(
+            topLeft: const Radius.circular(25.0),
+            topRight: const Radius.circular(25.0),
+          ),
+        ),
+        child: Center(
+          child: LogEntryAdd(),
+          //child: Text("hi"),
+        ),
+      ),
+    );
   }
 
   @override
@@ -80,9 +103,11 @@ class _HealthState extends State<Health> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          setState(() {
-            addToEntryList();
-          });
+          _showModalBottomSheet();
+
+//          setState(() {
+//            addToEntryList();
+//          });
         },
       ),
     );
