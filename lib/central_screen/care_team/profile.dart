@@ -25,7 +25,7 @@ class _ProfileState extends State<Profile> {
             Text(
               'Dr. Anish Rana',
               style: TextStyle(
-                fontFamily: 'Pacifico',
+                //fontFamily: 'Pacifico',
                 fontSize: 30.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -38,11 +38,10 @@ class _ProfileState extends State<Profile> {
                     color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
+                    'Work Phone',
+                  ),
+                  subtitle: Text(
                     '+847 830 9221',
-                    style: TextStyle(
-                      fontFamily: 'Source Sans Pro',
-                      fontSize: 20.0,
-                    ),
                   ),
                 )),
             Card(
@@ -50,56 +49,34 @@ class _ProfileState extends State<Profile> {
                 child: ListTile(
                   leading: Icon(
                     Icons.email,
-                    color: Theme.of(context).primaryColor,
+                    color: Theme
+                        .of(context)
+                        .primaryColor,
                   ),
                   title: Text(
+                    'Email',
+                  ),
+                  subtitle: Text(
                     'arana@urmc.rochester.edu',
-                    style: TextStyle(
-                        fontSize: 15.0, fontFamily: 'Source Sans Pro'),
                   ),
                 )),
             Card(
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
                 child: ListTile(
-//                  leading: Icon(
-//                    Icons.email,
-//                    color: Theme.of(context).primaryColor,
-//                  ),
-//                  title: Text(
-//                    'arana@urmc.rochester.edu',
-//                    style: TextStyle(
-//                        fontSize: 15.0,
-//                        fontFamily: 'Source Sans Pro'),
-//                  ),
-                    )),
-            Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                child: ListTile(
-//                  leading: Icon(
-//                    Icons.email,
-//                    color: Theme.of(context).primaryColor,
-//                  ),
-//                  title: Text(
-//                    'arana@urmc.rochester.edu',
-//                    style: TextStyle(
-//                        fontSize: 15.0,
-//                        fontFamily: 'Source Sans Pro'),
-//                  ),
-                    )),
-            Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                child: ListTile(
-//                  leading: Icon(
-//                    Icons.email,
-//                    color: Theme.of(context).primaryColor,
-//                  ),
-//                  title: Text(
-//                    'arana@urmc.rochester.edu',
-//                    style: TextStyle(
-//                        fontSize: 15.0,
-//                        fontFamily: 'Source Sans Pro'),
-//                  ),
-                    ))
+                  leading: Icon(
+                    Icons.domain,
+                    color: Theme
+                        .of(context)
+                        .primaryColor,
+                  ),
+                  title: Text(
+                    'Address',
+                  ),
+                  subtitle: Text(
+                    '500 Fraternity Rd, Rochester, NY',
+                  ),
+
+                ))
           ],
         ),
       ),

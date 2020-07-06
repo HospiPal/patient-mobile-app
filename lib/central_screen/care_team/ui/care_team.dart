@@ -33,19 +33,27 @@ class _CareTeamState extends State<CareTeam> {
                     ButtonBar(
                       alignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
+                        Text(
+                          'Dr. Anish Rana',
+                        ),
                         IconButton(
-                          icon: Icon(Icons.face),
+                          icon: Icon(Icons.account_box),
+                          color: Theme.of(context).accentColor,
                           onPressed: () {
                             Navigator.pushNamed(context, Routes.profile);
                           },
                         ),
                         IconButton(
                             icon: Icon(Icons.message),
+                            color: Theme.of(context).accentColor,
                             onPressed: () {
                               Navigator.pushNamed(context, Routes.message);
                             }),
                         IconButton(
                           icon: Icon(Icons.phone),
+                          color: Theme
+                              .of(context)
+                              .accentColor,
                           onPressed: () {
                             //Navigator.pushNamed(context, Routes.logEntryAdd);
                           },
