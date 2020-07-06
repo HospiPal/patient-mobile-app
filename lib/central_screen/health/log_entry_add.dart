@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:patientapp/central_screen/health/journal_tile.dart';
 import 'package:patientapp/central_screen/health/log_entry.dart';
-import 'package:patientapp/central_screen/health/ui/health.dart';
 
 class LogEntryAdd extends StatefulWidget {
   @override
@@ -45,8 +44,12 @@ class _LogEntryAddState extends State<LogEntryAdd> {
                     LogEntry entry = new LogEntry(
                         ailment: ailmentController.text,
                         date: dateController.text);
-                    JournalTile tile = new JournalTile(entry);
-                    EntryList().newTile(tile);
+                    JournalTile tile = JournalTile(entry);
+                    if (tile.entry.ailment != '') {
+                      Navigator.pop(context, tile);
+                    } else {
+                      Navigator.pop(context, null);
+                    }
                   },
                   child: Text('Submit'),
                 ),
