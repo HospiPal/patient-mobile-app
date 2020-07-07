@@ -13,15 +13,11 @@ class _CentralScreenState extends State<CentralScreen> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
+    Home(),
     CareTeam(),
     Health(),
-    Home(),
     Text(
-      'Docs',
-      style: optionStyle,
-    ),
-    Text(
-      'Results',
+      'Records',
       style: optionStyle,
     ),
   ];
@@ -41,24 +37,20 @@ class _CentralScreenState extends State<CentralScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Home'),
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.group),
-            title: Text('Team'),
+            title: Text('Care Team'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.healing),
             title: Text('Health'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.folder_open),
-            title: Text('Docs'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.assignment),
-            title: Text('Results'),
+            title: Text('Records'),
           ),
         ],
         currentIndex: _selectedIndex,
