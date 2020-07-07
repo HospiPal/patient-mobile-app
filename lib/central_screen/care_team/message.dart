@@ -29,6 +29,7 @@ class _MessageState extends State<Message> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(actions: <Widget>[]),
       body: SafeArea(
         child: Container(
           child: Stack(
@@ -41,57 +42,38 @@ class _MessageState extends State<Message> {
                   );
                 },
               ),
-
-              // TODO: look into the align widget
-
               Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Container(
-                    padding: EdgeInsets.only(left: 16, bottom: 10),
-                    height: 80,
-                    width: double.infinity,
-                    color: Colors.white,
-                    child: Row(
-                      children: <Widget>[
-                        Container(
-                          height: 40,
-                          width: 40,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).primaryColor,
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Icon(
-                            Icons.add,
-                            color: Colors.white,
-                            size: 21,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 16,
-                        ),
-                        Expanded(
-                          child: TextField(
-                            textCapitalization: TextCapitalization.sentences,
-                            decoration: InputDecoration(
-                              hintText: 'Message',
-                              border: InputBorder.none,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )),
-              Align(
-                alignment: Alignment.bottomRight,
+                alignment: Alignment.bottomCenter,
                 child: Container(
-                  padding: EdgeInsets.only(right: 30, bottom: 15),
-                  child: FloatingActionButton(
-                    backgroundColor: Theme.of(context).primaryColor,
-                    onPressed: () {
-                      messages.add(MessageText(
-                          message: 'hi', messageType: MessageType.Sender));
-                    },
-                    child: Icon(Icons.send),
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  height: 70.0,
+                  child: Row(
+                    children: <Widget>[
+                      IconButton(
+                        icon: Icon(Icons.add),
+                        color: Theme
+                            .of(context)
+                            .primaryColor,
+                        onPressed: () {},
+                      ),
+                      Expanded(
+                        child: TextField(
+                          textCapitalization: TextCapitalization.sentences,
+                          decoration: InputDecoration.collapsed(
+                            hintText: "Message",
+                          ),
+                          onChanged: (value) {},
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.send),
+                        iconSize: 25.0,
+                        color: Theme
+                            .of(context)
+                            .primaryColor,
+                        onPressed: () {},
+                      )
+                    ],
                   ),
                 ),
               )
@@ -102,4 +84,3 @@ class _MessageState extends State<Message> {
     );
   }
 }
-
