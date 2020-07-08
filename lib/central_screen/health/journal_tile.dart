@@ -16,9 +16,11 @@ class _JournalTileState extends State<JournalTile> {
   void buttonPress(BuildContext context) async {
     final result = await Navigator.pushNamed(context, Routes.logEntryEdit,
         arguments: EntryArg(widget.entry));
-    setState(() {
-      widget.entry = result;
-    });
+    if (result != null) {
+      setState(() {
+        widget.entry = result;
+      });
+    }
   }
 
   @override

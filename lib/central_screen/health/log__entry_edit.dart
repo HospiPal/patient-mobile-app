@@ -50,11 +50,8 @@ class _LogEntryEditState extends State<LogEntryEdit> {
                     LogEntry entry = new LogEntry(
                         ailment: ailmentController.text,
                         date: dateController.text);
-                    if (entry.ailment != '') {
-                      Navigator.pop(context, entry);
-                    } else {
-                      Navigator.pop(context, null);
-                    }
+
+                    Navigator.pop(context, entry);
                   },
                   child: Text('Submit'),
                 ),
