@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:patientapp/central_screen/care_team/message.dart';
 import 'package:patientapp/central_screen/care_team/profile.dart';
+import 'package:patientapp/central_screen/health/journal_tile.dart';
 
 import 'auth/ui/auth.dart';
 import 'auth/ui/login.dart';
 import 'auth/ui/sign_up.dart';
+import 'central_screen/health/log__entry_edit.dart';
 import 'central_screen/health/log_entry_add.dart';
 import 'central_screen/ui/central_screen.dart';
 
@@ -15,12 +17,22 @@ class Routes {
   static const signUp = 'auth/sign_up';
   static const login = 'auth/login';
   static const logEntryAdd = 'central_screen/health/log_entry_add';
+  static const logEntryEdit = 'central_screen/health/log_entry_edit';
   static const message = 'care_team/message';
   static const profile = 'care_team/profile';
 }
 
 Route<dynamic> generateRoute(RouteSettings settings) {
-  assert(settings.arguments == null);
+  if (settings.name == Routes.logEntryEdit) {
+    final EntryArg args = settings.arguments;
+
+    return MaterialPageRoute(
+      builder: (context) {
+        return LogEntryEdit(entry: args.entry);
+      },
+    );
+  }
+
   switch (settings.name) {
     case Routes.centralScreen:
       return MaterialPageRoute(builder: (context) => CentralScreen());
@@ -32,7 +44,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => Login());
     case Routes.logEntryAdd:
       return MaterialPageRoute(builder: (context) => LogEntryAdd());
-    case Routes.message:
+    case Routes.logEntryEdit:
       return MaterialPageRoute(builder: (context) => Message());
     case Routes.profile:
       return MaterialPageRoute(builder: (context) => Profile());

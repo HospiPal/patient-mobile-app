@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/central_screen/health/log_entry_add.dart';
 
 import '../../../navigation.dart';
 import '../journal_tile.dart';
@@ -17,6 +16,7 @@ class _HealthState extends State<Health> {
 
   void addToEntryList() async {
     final result = await Navigator.pushNamed(context, Routes.logEntryAdd);
+
     if (result != null) {
       setState(() {
         entries.add(result);
@@ -24,7 +24,7 @@ class _HealthState extends State<Health> {
     }
   }
 
-  void _showModalBottomSheet() {
+  /*void _showModalBottomSheet() {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -44,7 +44,7 @@ class _HealthState extends State<Health> {
         ),
       ),
     );
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -103,15 +103,13 @@ class _HealthState extends State<Health> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          _showModalBottomSheet();
+          //_showModalBottomSheet();
 
-//          setState(() {
-//            addToEntryList();
-//          });
+          setState(() {
+            addToEntryList();
+          });
         },
       ),
     );
   }
-
-
 }
