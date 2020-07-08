@@ -49,9 +49,7 @@ class _ProfileState extends State<Profile> {
                 child: ListTile(
                   leading: Icon(
                     Icons.email,
-                    color: Theme
-                        .of(context)
-                        .primaryColor,
+                    color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
                     'Email',
@@ -75,8 +73,20 @@ class _ProfileState extends State<Profile> {
                   subtitle: Text(
                     '500 Fraternity Rd, Rochester, NY',
                   ),
-
-                ))
+                )),
+            Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.schedule,
+                    color: Theme
+                        .of(context)
+                        .primaryColor,
+                  ),
+                  title: Text(
+                    'Schedule an Appointment',
+                  ),
+                )),
           ],
         ),
       ),

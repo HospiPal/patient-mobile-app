@@ -45,8 +45,8 @@ class _CentralScreenState extends State<CentralScreen> {
             title: Text('Care Team'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.healing),
-            title: Text('Health'),
+            icon: Icon(Icons.book),
+            title: Text('Journal'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.folder_open),

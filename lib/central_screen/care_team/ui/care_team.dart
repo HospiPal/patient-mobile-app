@@ -6,7 +6,7 @@ class CareTeam extends StatefulWidget {
   @override
   _CareTeamState createState() => _CareTeamState();
 }
-
+// TODO: add schedluing appointments
 class _CareTeamState extends State<CareTeam> {
   @override
   Widget build(BuildContext context) {
