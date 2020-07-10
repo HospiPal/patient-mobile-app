@@ -48,6 +48,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => Message());
     case Routes.profile:
       return MaterialPageRoute(builder: (context) => Profile());
+    case Routes.message:
+      return MaterialPageRoute(builder: (context) => Message());
     default:
       return MaterialPageRoute(
           builder: (context) => UndefinedRoute(settings.name));
