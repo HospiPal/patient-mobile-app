@@ -5,6 +5,7 @@ class LogEntry {
   String date;
   int height;
   int weight;
+  var dateStamp;
 
   LogEntry(
       {this.firstName,
@@ -12,5 +13,6 @@ class LogEntry {
       this.weight,
       this.height,
       this.ailment,
-      this.date});
+      this.date,
+      this.dateStamp});
 }
