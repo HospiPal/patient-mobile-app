@@ -9,7 +9,7 @@ class CentralScreen extends StatefulWidget {
 }
 
 class _CentralScreenState extends State<CentralScreen> {
-  int _selectedIndex = 2;
+  int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[

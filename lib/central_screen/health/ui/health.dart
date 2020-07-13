@@ -83,7 +83,6 @@ class _HealthState extends State<Health> {
           setState(() {
             currentMonthDisplayed = dropDownMonths.indexOf(newValue);
             monthsDisplayed = getTileList(currentMonthDisplayed);
-            print(monthsDisplayed);
           });
         },
             items: dropDownMonths.map<DropdownMenuItem<String>>((String value) {
