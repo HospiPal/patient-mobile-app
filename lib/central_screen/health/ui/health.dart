@@ -16,7 +16,7 @@ class _HealthState extends State<Health> {
   List<JournalTile> monthsDisplayed = <JournalTile>[];
   DateOrganizer date = new DateOrganizer();
   List<String> dropDownMonths = <String>[
-    'All entries',
+    'All Entries',
     'January',
     'February',
     'March',
@@ -31,6 +31,7 @@ class _HealthState extends State<Health> {
     'December'
   ];
   int currentMonthDisplayed = 0;
+  String dropDownValue = 'All Entries';
 
   void addToEntryList() async {
     final result = await Navigator.pushNamed(context, Routes.logEntryAdd);
@@ -74,17 +75,17 @@ class _HealthState extends State<Health> {
     return Scaffold(
       appBar: AppBar(
           leading: DropdownButton<String>(
-        isExpanded: true,
-        //value: dropdownValue,
-        icon: Icon(Icons.dehaze),
-        iconSize: 24,
-        //elevation: 16,
-        onChanged: (String newValue) {
-          setState(() {
-            currentMonthDisplayed = dropDownMonths.indexOf(newValue);
-            monthsDisplayed = getTileList(currentMonthDisplayed);
-          });
-        },
+            isExpanded: true,
+            value: dropDownValue,
+            //iconSize: 24,
+            //elevation: 16,
+            onChanged: (String newValue) {
+              setState(() {
+                currentMonthDisplayed = dropDownMonths.indexOf(newValue);
+                monthsDisplayed = getTileList(currentMonthDisplayed);
+                dropDownValue = newValue;
+              });
+            },
             items: dropDownMonths.map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,
