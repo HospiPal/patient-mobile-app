@@ -34,7 +34,7 @@ class _CareTeamState extends State<CareTeam> {
                       alignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Text(
-                          'Dr. Anish Rana',
+                          'Dr. Marc Mulligan',
                         ),
                         IconButton(
                           icon: Icon(Icons.account_box),

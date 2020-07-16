@@ -23,7 +23,7 @@ class _ProfileState extends State<Profile> {
               radius: 50.0,
             ),
             Text(
-              'Dr. Anish Rana',
+              'Dr. Marc Mulligan',
               style: TextStyle(
                 //fontFamily: 'Pacifico',
                 fontSize: 30.0,

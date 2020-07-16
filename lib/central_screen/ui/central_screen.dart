@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:patientapp/central_screen/care_team/ui/care_team.dart';
 import 'package:patientapp/central_screen/health/ui/health.dart';
 import 'package:patientapp/central_screen/home/ui/home.dart';
+import 'package:patientapp/central_screen/records/ui/records.dart';
 
 class CentralScreen extends StatefulWidget {
   @override
@@ -16,10 +17,7 @@ class _CentralScreenState extends State<CentralScreen> {
     Home(),
     CareTeam(),
     Health(),
-    Text(
-      'Records',
-      style: optionStyle,
-    ),
+    Records()
   ];
 
   void _onItemTapped(int index) {
