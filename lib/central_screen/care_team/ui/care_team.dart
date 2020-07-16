@@ -6,7 +6,8 @@ class CareTeam extends StatefulWidget {
   @override
   _CareTeamState createState() => _CareTeamState();
 }
-// TODO: add schedluing appointments
+
+// TODO: add scheduling appointments
 class _CareTeamState extends State<CareTeam> {
   @override
   Widget build(BuildContext context) {
@@ -51,9 +52,7 @@ class _CareTeamState extends State<CareTeam> {
                             }),
                         IconButton(
                           icon: Icon(Icons.phone),
-                          color: Theme
-                              .of(context)
-                              .accentColor,
+                          color: Theme.of(context).accentColor,
                           onPressed: () {
                             //Navigator.pushNamed(context, Routes.logEntryAdd);
                           },
@@ -70,5 +69,3 @@ class _CareTeamState extends State<CareTeam> {
     );
   }
 }
-
-

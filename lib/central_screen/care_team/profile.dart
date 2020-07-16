@@ -63,9 +63,7 @@ class _ProfileState extends State<Profile> {
                 child: ListTile(
                   leading: Icon(
                     Icons.domain,
-                    color: Theme
-                        .of(context)
-                        .primaryColor,
+                    color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
                     'Address',
