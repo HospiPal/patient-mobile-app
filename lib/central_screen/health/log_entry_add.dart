@@ -11,7 +11,7 @@ class _LogEntryAddState extends State<LogEntryAdd> {
   final _formKey = GlobalKey<FormState>();
 
   TextEditingController ailmentController = new TextEditingController();
-  TextEditingController dateController = new TextEditingController();
+  TextEditingController physicianController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +24,7 @@ class _LogEntryAddState extends State<LogEntryAdd> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              TextFormField(
-                decoration: InputDecoration(hintText: 'First Name'),
-              ),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Last Name'),
-              ),
-              LogEntryField('Date', dateController),
+              LogEntryField('Physician', physicianController),
               LogEntryField('Condition', ailmentController),
               Padding(
                 padding: EdgeInsets.only(top: 30),
@@ -43,7 +37,7 @@ class _LogEntryAddState extends State<LogEntryAdd> {
                   onPressed: () {
                     LogEntry entry = new LogEntry(
                         ailment: ailmentController.text,
-                        date: dateController.text,
+                        physician: physicianController.text,
                         dateStamp: DateTime.now());
                     JournalTile tile = JournalTile(entry);
                     if (tile.entry.ailment != '') {

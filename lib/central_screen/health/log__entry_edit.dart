@@ -21,8 +21,8 @@ class _LogEntryEditState extends State<LogEntryEdit> {
   Widget build(BuildContext context) {
     TextEditingController ailmentController =
         new TextEditingController(text: widget.entry.ailment);
-    TextEditingController dateController =
-        new TextEditingController(text: widget.entry.date);
+    TextEditingController physicianController =
+        new TextEditingController(text: widget.entry.physician);
     return Scaffold(
         body: SafeArea(
       child: Padding(
@@ -32,13 +32,7 @@ class _LogEntryEditState extends State<LogEntryEdit> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              TextFormField(
-                decoration: InputDecoration(hintText: 'First Name'),
-              ),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Last Name'),
-              ),
-              LogEntryField('Date', dateController),
+              LogEntryField('Physician', physicianController),
               LogEntryField('Condition', ailmentController),
               Padding(
                 padding: EdgeInsets.only(top: 30),
@@ -49,7 +43,7 @@ class _LogEntryEditState extends State<LogEntryEdit> {
                   onPressed: () {
                     LogEntry entry = new LogEntry(
                         ailment: ailmentController.text,
-                        date: dateController.text,
+                        physician: physicianController.text,
                         dateStamp: widget.entry.dateStamp);
 
                     Navigator.pop(context, entry);

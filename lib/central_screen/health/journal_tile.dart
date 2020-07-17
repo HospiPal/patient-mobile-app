@@ -29,7 +29,7 @@ class _JournalTileState extends State<JournalTile> {
       onTap: () {
         buttonPress(context);
       },
-      title: Text(widget.entry.date),
+      title: Text(widget.entry.physician),
       subtitle: Text(widget.entry.ailment),
       leading: const Icon(Icons.local_hospital),
     );

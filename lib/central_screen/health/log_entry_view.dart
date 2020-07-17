@@ -23,26 +23,20 @@ class _LogEntryViewState extends State<LogEntryView> {
   @override
   Widget build(BuildContext context) {
     TextEditingController ailmentController =
-        new TextEditingController(text: widget.entry.ailment);
+        new TextEditingController(text: 'Ailment ' + widget.entry.ailment);
     TextEditingController dateController =
-        new TextEditingController(text: widget.entry.date);
+        new TextEditingController(text: 'Physician: ' + widget.entry.physician);
     return Scaffold(
-        body: SafeArea(
+        body: Center(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              TextFormField(
-                decoration: InputDecoration(hintText: 'First Name'),
-              ),
-              TextFormField(
-                decoration: InputDecoration(hintText: 'Last Name'),
-              ),
-              Text(widget.entry.date),
-              Text(widget.entry.ailment),
+            children: [
+              Text('Physician:  ' + widget.entry.physician),
+              Text('Ailment: ' + widget.entry.ailment),
               Padding(
                 padding: EdgeInsets.only(top: 30),
                 child: RaisedButton(

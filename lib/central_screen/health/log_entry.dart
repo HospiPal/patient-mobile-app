@@ -2,7 +2,7 @@ class LogEntry {
   String firstName;
   String lastName;
   String ailment;
-  String date;
+  String physician;
   int height;
   int weight;
   var dateStamp;
@@ -13,6 +13,6 @@ class LogEntry {
       this.weight,
       this.height,
       this.ailment,
-      this.date,
+      this.physician,
       this.dateStamp});
 }
