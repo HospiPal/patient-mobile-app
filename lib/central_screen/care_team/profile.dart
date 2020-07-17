@@ -23,7 +23,7 @@ class _ProfileState extends State<Profile> {
               radius: 50.0,
             ),
             Text(
-              'Dr. Anish Rana',
+              'Dr. Marc Mulligan',
               style: TextStyle(
                 //fontFamily: 'Pacifico',
                 fontSize: 30.0,
@@ -63,9 +63,7 @@ class _ProfileState extends State<Profile> {
                 child: ListTile(
                   leading: Icon(
                     Icons.domain,
-                    color: Theme
-                        .of(context)
-                        .primaryColor,
+                    color: Theme.of(context).primaryColor,
                   ),
                   title: Text(
                     'Address',

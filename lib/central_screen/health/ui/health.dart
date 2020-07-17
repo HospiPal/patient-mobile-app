@@ -75,23 +75,23 @@ class _HealthState extends State<Health> {
     return Scaffold(
       appBar: AppBar(
           leading: DropdownButton<String>(
-            isExpanded: true,
-            value: dropDownValue,
-            //iconSize: 24,
-            //elevation: 16,
-            onChanged: (String newValue) {
-              setState(() {
-                currentMonthDisplayed = dropDownMonths.indexOf(newValue);
-                monthsDisplayed = getTileList(currentMonthDisplayed);
-                dropDownValue = newValue;
-              });
-            },
-            items: dropDownMonths.map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            }).toList(),
+        isExpanded: true,
+        value: dropDownValue,
+        //iconSize: 24,
+        //elevation: 16,
+        onChanged: (String newValue) {
+          setState(() {
+            currentMonthDisplayed = dropDownMonths.indexOf(newValue);
+            monthsDisplayed = getTileList(currentMonthDisplayed);
+            dropDownValue = newValue;
+          });
+        },
+        items: dropDownMonths.map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
       )),
       body: SafeArea(
         child: Center(
@@ -108,8 +108,8 @@ class _HealthState extends State<Health> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(date.getDateStamp(monthsDisplayed[index].entry
-                          .dateStamp)),
+                      Text(date.getDateStamp(
+                          monthsDisplayed[index].entry.dateStamp)),
                       monthsDisplayed[index]
                     ],
                   ),
