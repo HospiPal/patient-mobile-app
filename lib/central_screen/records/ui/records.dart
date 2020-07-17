@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../navigation.dart';
+
 class Records extends StatefulWidget {
   @override
   _RecordsState createState() => _RecordsState();
@@ -83,7 +85,9 @@ class _RecordsState extends State<Records> {
                     ],
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.labResults);
+                },
               ),
             ),
             Card(

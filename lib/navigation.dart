@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:patientapp/central_screen/care_team/message.dart';
 import 'package:patientapp/central_screen/care_team/profile.dart';
 import 'package:patientapp/central_screen/health/journal_tile.dart';
+import 'package:patientapp/central_screen/records/ui/lab_results/lab_results.dart';
 
 import 'auth/ui/auth.dart';
 import 'auth/ui/login.dart';
@@ -22,6 +23,7 @@ class Routes {
   static const logEntryView = 'central_screen/health/log_entry_view';
   static const message = 'care_team/message';
   static const profile = 'care_team/profile';
+  static const labResults = 'central_screen/records/lab_results';
 }
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -62,6 +64,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => Profile());
     case Routes.message:
       return MaterialPageRoute(builder: (context) => Message());
+    case Routes.labResults:
+      return MaterialPageRoute(builder: (context) => LabResults());
     default:
       return MaterialPageRoute(
           builder: (context) => UndefinedRoute(settings.name));
