@@ -5,6 +5,38 @@ class LabResults extends StatefulWidget {
   @override
   _LabResultsState createState() => _LabResultsState();
 }
+/*
+
+
+
+IF U WANT TO MAKE ETHAN REALLY HAPPEN INSTEAD OF A NEW SCREEN WHEN YOU
+CLICK THE TILE A MODAL BOTTOM SHEET POPS UP. SEE THE Health.dart FILE
+AND THE CODE BELOW:
+
+
+*/
+
+/*void _showModalBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) => Container(
+        height: MediaQuery.of(context).size.height,
+        decoration: new BoxDecoration(
+          color: Colors.white,
+          borderRadius: new BorderRadius.only(
+            topLeft: const Radius.circular(25.0),
+            topRight: const Radius.circular(25.0),
+          ),
+        ),
+        child: Center(
+          child: LogEntryAdd(),
+          //child: Text("hi"),
+        ),
+      ),
+    );
+  }*/
 
 class _LabResultsState extends State<LabResults> {
   @override
