@@ -26,6 +26,8 @@ class _RecordsState extends State<Records> {
                       Icon(
                         Icons.bug_report,
                         color: Theme.of(context).accentColor,
+                        //MdiIcons.sword,
+                        //color: Theme.of(context).accentColor,
                       ),
                       Text('Allergies')
                     ],
