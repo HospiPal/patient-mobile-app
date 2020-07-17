@@ -134,13 +134,13 @@ class _HealthState extends State<Health> {
     );
   }
 
-  List<JournalTile> getTileList(int month) {
-    if (month == 0) {
+  List<JournalTile> getTileList(int selectedMonth) {
+    if (selectedMonth == 0) {
       return entries;
     } else {
       List<JournalTile> tileList = <JournalTile>[];
       for (var i = 0; i < entries.length; i++) {
-        if (entries[i].entry.dateStamp.month == month) {
+        if (entries[i].entry.dateStamp.month == selectedMonth) {
           tileList.add(entries[i]);
         }
       }

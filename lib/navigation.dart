@@ -8,6 +8,7 @@ import 'auth/ui/login.dart';
 import 'auth/ui/sign_up.dart';
 import 'central_screen/health/log__entry_edit.dart';
 import 'central_screen/health/log_entry_add.dart';
+import 'central_screen/health/log_entry_view.dart';
 import 'central_screen/ui/central_screen.dart';
 
 // todo: possible change this to a freezed union type
@@ -18,6 +19,7 @@ class Routes {
   static const login = 'auth/login';
   static const logEntryAdd = 'central_screen/health/log_entry_add';
   static const logEntryEdit = 'central_screen/health/log_entry_edit';
+  static const logEntryView = 'central_screen/health/log_entry_view';
   static const message = 'care_team/message';
   static const profile = 'care_team/profile';
 }
@@ -29,6 +31,14 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     return MaterialPageRoute(
       builder: (context) {
         return LogEntryEdit(entry: args.entry);
+      },
+    );
+  } else if (settings.name == Routes.logEntryView) {
+    final EntryArg args = settings.arguments;
+
+    return MaterialPageRoute(
+      builder: (context) {
+        return LogEntryView(entry: args.entry);
       },
     );
   }
@@ -45,7 +55,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case Routes.logEntryAdd:
       return MaterialPageRoute(builder: (context) => LogEntryAdd());
     case Routes.logEntryEdit:
-      return MaterialPageRoute(builder: (context) => Message());
+      return MaterialPageRoute(builder: (context) => LogEntryEdit());
+    case Routes.logEntryView:
+      return MaterialPageRoute(builder: (context) => LogEntryView());
     case Routes.profile:
       return MaterialPageRoute(builder: (context) => Profile());
     case Routes.message:

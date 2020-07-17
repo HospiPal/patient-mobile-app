@@ -14,7 +14,7 @@ class JournalTile extends StatefulWidget {
 
 class _JournalTileState extends State<JournalTile> {
   void buttonPress(BuildContext context) async {
-    final result = await Navigator.pushNamed(context, Routes.logEntryEdit,
+    final result = await Navigator.pushNamed(context, Routes.logEntryView,
         arguments: EntryArg(widget.entry));
     if (result != null) {
       setState(() {

@@ -45,7 +45,6 @@ class _LogEntryAddState extends State<LogEntryAdd> {
                         ailment: ailmentController.text,
                         date: dateController.text,
                         dateStamp: DateTime.now());
-                    print(DateTime.now().toIso8601String());
                     JournalTile tile = JournalTile(entry);
                     if (tile.entry.ailment != '') {
                       Navigator.pop(context, tile);

@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:patientapp/central_screen/health/log_entry.dart';
 
-class LogEntryEdit extends StatefulWidget {
+import '../../navigation.dart';
+import 'journal_tile.dart';
+
+class LogEntryView extends StatefulWidget {
   LogEntry entry;
 
   @override
-  _LogEntryEditState createState() => _LogEntryEditState();
+  _LogEntryViewState createState() => _LogEntryViewState();
 
-  LogEntryEdit({
+  LogEntryView({
     Key key,
     @required this.entry,
   }) : super(key: key);
 }
 
-class _LogEntryEditState extends State<LogEntryEdit> {
+class _LogEntryViewState extends State<LogEntryView> {
   @override
   final _formKey = GlobalKey<FormState>();
 
@@ -38,8 +41,8 @@ class _LogEntryEditState extends State<LogEntryEdit> {
               TextFormField(
                 decoration: InputDecoration(hintText: 'Last Name'),
               ),
-              LogEntryField('Date', dateController),
-              LogEntryField('Condition', ailmentController),
+              Text(widget.entry.date),
+              Text(widget.entry.ailment),
               Padding(
                 padding: EdgeInsets.only(top: 30),
                 child: RaisedButton(
@@ -47,14 +50,9 @@ class _LogEntryEditState extends State<LogEntryEdit> {
                   color: Theme.of(context).primaryColor,
                   textColor: Colors.white,
                   onPressed: () {
-                    LogEntry entry = new LogEntry(
-                        ailment: ailmentController.text,
-                        date: dateController.text,
-                        dateStamp: widget.entry.dateStamp);
-
-                    Navigator.pop(context, entry);
+                    buttonPress(context);
                   },
-                  child: Text('Submit'),
+                  child: Text('Edit'),
                 ),
               ),
             ],
@@ -62,6 +60,17 @@ class _LogEntryEditState extends State<LogEntryEdit> {
         ),
       ),
     ));
+  }
+
+  void buttonPress(BuildContext context) async {
+    final result = await Navigator.pushNamed(context, Routes.logEntryEdit,
+        arguments: EntryArg(widget.entry));
+    if (result != null) {
+      setState(() {
+        widget.entry = result;
+        Navigator.pop(context, widget.entry);
+      });
+    }
   }
 }
 
