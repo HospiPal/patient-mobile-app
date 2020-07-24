@@ -33,7 +33,9 @@ class _RecordsState extends State<Records> {
                     ],
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.allergies);
+                },
               ),
             ),
             Card(
@@ -45,13 +47,17 @@ class _RecordsState extends State<Records> {
                     children: <Widget>[
                       Icon(
                         Icons.hdr_strong,
-                        color: Theme.of(context).accentColor,
+                        color: Theme
+                            .of(context)
+                            .accentColor,
                       ),
                       Text('Conditions')
                     ],
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.conditions);
+                },
               ),
             ),
             Card(
@@ -63,13 +69,17 @@ class _RecordsState extends State<Records> {
                     children: <Widget>[
                       Icon(
                         Icons.local_hospital,
-                        color: Theme.of(context).accentColor,
+                        color: Theme
+                            .of(context)
+                            .accentColor,
                       ),
                       Text('Immunizations')
                     ],
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.immunizations);
+                },
               ),
             ),
             Card(
@@ -101,13 +111,17 @@ class _RecordsState extends State<Records> {
                     children: <Widget>[
                       Icon(
                         Icons.bubble_chart,
-                        color: Theme.of(context).accentColor,
+                        color: Theme
+                            .of(context)
+                            .accentColor,
                       ),
                       Text('Medications')
                     ],
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.medications);
+                },
               ),
             ),
             Card(
@@ -119,13 +133,17 @@ class _RecordsState extends State<Records> {
                     children: <Widget>[
                       Icon(
                         Icons.healing,
-                        color: Theme.of(context).accentColor,
+                        color: Theme
+                            .of(context)
+                            .accentColor,
                       ),
                       Text('Procedures')
                     ],
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.procedures);
+                },
               ),
             ),
           ],

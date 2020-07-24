@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:patientapp/central_screen/care_team/message.dart';
 import 'package:patientapp/central_screen/care_team/profile.dart';
 import 'package:patientapp/central_screen/health/journal_tile.dart';
+import 'package:patientapp/central_screen/records/ui/allergies/allergies.dart';
+import 'package:patientapp/central_screen/records/ui/immunizations/immunizations.dart';
 import 'package:patientapp/central_screen/records/ui/lab_results/lab_results.dart';
+import 'package:patientapp/central_screen/records/ui/procedures/procedures.dart';
 
 import 'auth/ui/auth.dart';
 import 'auth/ui/login.dart';
@@ -10,6 +13,8 @@ import 'auth/ui/sign_up.dart';
 import 'central_screen/health/log__entry_edit.dart';
 import 'central_screen/health/log_entry_add.dart';
 import 'central_screen/health/log_entry_view.dart';
+import 'central_screen/records/ui/conditions/conditions.dart';
+import 'central_screen/records/ui/medications/medications.dart';
 import 'central_screen/ui/central_screen.dart';
 
 // todo: possible change this to a freezed union type
@@ -24,6 +29,11 @@ class Routes {
   static const message = 'care_team/message';
   static const profile = 'care_team/profile';
   static const labResults = 'central_screen/records/lab_results';
+  static const conditions = 'central_screen/records/conditions';
+  static const allergies = 'central_screen/records/allergies';
+  static const immunizations = 'central_screen/records/immunizations';
+  static const medications = 'central_screen/records/medications';
+  static const procedures = 'central_screen/records/procedures';
 }
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -66,6 +76,16 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => Message());
     case Routes.labResults:
       return MaterialPageRoute(builder: (context) => LabResults());
+    case Routes.conditions:
+      return MaterialPageRoute(builder: (context) => Conditions());
+    case Routes.allergies:
+      return MaterialPageRoute(builder: (context) => Allergies());
+    case Routes.immunizations:
+      return MaterialPageRoute(builder: (context) => Immunizations());
+    case Routes.medications:
+      return MaterialPageRoute(builder: (context) => Medications());
+    case Routes.procedures:
+      return MaterialPageRoute(builder: (context) => Procedures());
     default:
       return MaterialPageRoute(
           builder: (context) => UndefinedRoute(settings.name));

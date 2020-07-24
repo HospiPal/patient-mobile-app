@@ -59,15 +59,6 @@ class _LabResultsState extends State<LabResults> {
                     ),
                   ),
                 ),
-
-                /*ListTile(
-                  onTap: () {
-                    _showModalBottomSheet(context);
-                    },
-                  title: Text('Covid Antibody Test'),
-                  subtitle: Text('7/14'),
-                  leading: const Icon(Icons.assignment_turned_in),
-                ),*/
               );
             },
             separatorBuilder: (BuildContext context, int index) =>
