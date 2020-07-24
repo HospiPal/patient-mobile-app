@@ -1,4 +1,7 @@
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:patientapp/central_screen/health/log_entry.dart';
 
 import '../../../navigation.dart';
 import '../date_organizer.dart';
@@ -12,8 +15,14 @@ class Health extends StatefulWidget {
 class _HealthState extends State<Health> {
   //TODO: this List needs to be relocated
 
-  final List<JournalTile> entries = <JournalTile>[];
-  List<JournalTile> monthsDisplayed = <JournalTile>[];
+  final List<JournalTile> entries = <JournalTile>[
+    JournalTile(LogEntry(
+        ailment: 'Headache', physician: 'Dr. Rana', dateStamp: DateTime.now()))
+  ];
+  List<JournalTile> monthsDisplayed = <JournalTile>[
+    JournalTile(LogEntry(
+        ailment: 'Headache', physician: 'Dr. Rana', dateStamp: DateTime.now()))
+  ];
   DateOrganizer date = new DateOrganizer();
   List<String> dropDownMonths = <String>[
     'All Entries',
@@ -75,24 +84,24 @@ class _HealthState extends State<Health> {
     return Scaffold(
       appBar: AppBar(
           leading: DropdownButton<String>(
-        isExpanded: true,
-        value: dropDownValue,
-        //iconSize: 24,
-        //elevation: 16,
-        onChanged: (String newValue) {
-          setState(() {
-            currentMonthDisplayed = dropDownMonths.indexOf(newValue);
-            monthsDisplayed = getTileList(currentMonthDisplayed);
-            dropDownValue = newValue;
-          });
-        },
-        items: dropDownMonths.map<DropdownMenuItem<String>>((String value) {
-          return DropdownMenuItem<String>(
-            value: value,
-            child: Text(value),
-          );
-        }).toList(),
-      )),
+            isExpanded: true,
+            value: dropDownValue,
+            //iconSize: 24,
+            //elevation: 16,
+            onChanged: (String newValue) {
+              setState(() {
+                currentMonthDisplayed = dropDownMonths.indexOf(newValue);
+                monthsDisplayed = getTileList(currentMonthDisplayed);
+                dropDownValue = newValue;
+              });
+            },
+            items: dropDownMonths.map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+          )),
       body: SafeArea(
         child: Center(
           child: ListView.separated(
@@ -103,21 +112,36 @@ class _HealthState extends State<Health> {
               return Padding(
                 padding:
                 const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
-                child: Card(
-                  //child: entries[index]
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(date.getDateStamp(
-                          monthsDisplayed[index].entry.dateStamp)),
-                      monthsDisplayed[index]
-                    ],
+                child: Container(
+                  child: Card(
+                    //child: entries[index]
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(date.getDateStamp(
+                            monthsDisplayed[index].entry.dateStamp)),
+                        monthsDisplayed[index]
+                      ],
+                    ),
+                    //color: Colors.amberAccent
+                  ),
+                  padding: EdgeInsets.all(2),
+                  decoration: new BoxDecoration(
+                    color: Theme
+                        .of(context)
+                        .primaryColor,
+                    borderRadius: new BorderRadius.only(
+                      topLeft: const Radius.circular(4.0),
+                      topRight: const Radius.circular(4.0),
+                      bottomLeft: const Radius.circular(4.0),
+                      bottomRight: const Radius.circular(4.0),
+                    ),
                   ),
                 ),
               );
             },
             separatorBuilder: (BuildContext context, int index) =>
-                const Divider(),
+            const Divider(),
           ),
         ),
       ),
