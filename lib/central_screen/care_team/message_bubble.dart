@@ -3,7 +3,7 @@ import 'package:patientapp/central_screen/care_team/message.dart';
 import 'package:patientapp/central_screen/care_team/message_text.dart';
 
 class MessageBubble extends StatefulWidget {
-  MessageText messageText;
+  final MessageText messageText;
 
   MessageBubble({@required this.messageText});
 
