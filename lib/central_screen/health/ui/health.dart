@@ -41,6 +41,16 @@ class _HealthState extends State<Health> {
   ];
   int currentMonthDisplayed = 0;
   String dropDownValue = 'All Entries';
+  List<int> dropDownYears = <int>[
+    DateTime.now().year,
+    DateTime.now().subtract(Duration(days: 365)).year,
+    DateTime.now().subtract(Duration(days: 365 * 2)).year,
+    DateTime.now().subtract(Duration(days: 365 * 3)).year,
+    DateTime.now().subtract(Duration(days: 365 * 4)).year,
+    DateTime.now().subtract(Duration(days: 365 * 5)).year,
+  ];
+  int currentYearDisplayed = DateTime.now().year;
+  int dropDownYearValue = DateTime.now().year;
 
   void addToEntryList() async {
     final result = await Navigator.pushNamed(context, Routes.logEntryAdd);
@@ -89,19 +99,19 @@ class _HealthState extends State<Health> {
         children: [
           DropdownButtonHideUnderline(
             child: DropdownButton<String>(
-              //isExpanded: true,
               value: dropDownValue,
               //iconSize: 24,
               //elevation: 16,
               onChanged: (String newValue) {
                 setState(() {
                   currentMonthDisplayed = dropDownMonths.indexOf(newValue);
-                  monthsDisplayed = getTileList(currentMonthDisplayed);
+                  monthsDisplayed =
+                      getTileList(currentMonthDisplayed, currentYearDisplayed);
                   dropDownValue = newValue;
                 });
               },
               items:
-                  dropDownMonths.map<DropdownMenuItem<String>>((String value) {
+              dropDownMonths.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),
@@ -109,6 +119,30 @@ class _HealthState extends State<Health> {
               }).toList(),
             ),
           ),
+          if (currentMonthDisplayed != 0)
+            DropdownButtonHideUnderline(
+              child: DropdownButton<int>(
+                value: dropDownYearValue,
+                //iconSize: 24,
+                //elevation: 16,
+                onChanged: (int newValue) {
+                  setState(() {
+                    currentYearDisplayed = newValue;
+                    monthsDisplayed = getTileList(
+                        currentMonthDisplayed, currentYearDisplayed);
+                    dropDownYearValue = newValue;
+                  });
+                },
+                items:
+                dropDownYears.map<DropdownMenuItem<int>>((int value) {
+                  return DropdownMenuItem<int>(
+                    value: value,
+                    child: Text(value.toString()),
+                  );
+                }).toList(),
+              ),
+            ),
+          //DropDownYear(),
         ],
       )),
       body: SafeArea(
@@ -167,13 +201,14 @@ class _HealthState extends State<Health> {
     );
   }
 
-  List<JournalTile> getTileList(int selectedMonth) {
+  List<JournalTile> getTileList(int selectedMonth, int selectedYear) {
     if (selectedMonth == 0) {
       return entries;
     } else {
       List<JournalTile> tileList = <JournalTile>[];
       for (var i = 0; i < entries.length; i++) {
-        if (entries[i].entry.dateStamp.month == selectedMonth) {
+        if (entries[i].entry.dateStamp.month == selectedMonth &&
+            entries[i].entry.dateStamp.year == selectedYear) {
           tileList.add(entries[i]);
         }
       }
