@@ -83,25 +83,34 @@ class _HealthState extends State<Health> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          leading: DropdownButton<String>(
-            isExpanded: true,
-            value: dropDownValue,
-            //iconSize: 24,
-            //elevation: 16,
-            onChanged: (String newValue) {
-              setState(() {
-                currentMonthDisplayed = dropDownMonths.indexOf(newValue);
-                monthsDisplayed = getTileList(currentMonthDisplayed);
-                dropDownValue = newValue;
-              });
-            },
-            items: dropDownMonths.map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            }).toList(),
-          )),
+          //padding: EdgeInsets.all(10),
+          title: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          DropdownButtonHideUnderline(
+            child: DropdownButton<String>(
+              //isExpanded: true,
+              value: dropDownValue,
+              //iconSize: 24,
+              //elevation: 16,
+              onChanged: (String newValue) {
+                setState(() {
+                  currentMonthDisplayed = dropDownMonths.indexOf(newValue);
+                  monthsDisplayed = getTileList(currentMonthDisplayed);
+                  dropDownValue = newValue;
+                });
+              },
+              items:
+                  dropDownMonths.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+          ),
+        ],
+      )),
       body: SafeArea(
         child: Center(
           child: ListView.separated(
@@ -111,7 +120,7 @@ class _HealthState extends State<Health> {
               //return LogEntryAdd();
               return Padding(
                 padding:
-                const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
+                    const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
                 child: Container(
                   child: Card(
                     //child: entries[index]
