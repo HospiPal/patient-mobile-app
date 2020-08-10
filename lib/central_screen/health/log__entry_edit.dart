@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:patientapp/central_screen/health/log_entry.dart';
 
 class LogEntryEdit extends StatefulWidget {
-  LogEntry entry;
+  final LogEntry entry;
 
   @override
   _LogEntryEditState createState() => _LogEntryEditState();
