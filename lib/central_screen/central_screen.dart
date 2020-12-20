@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:patientapp/central_screen/care_team/ui/care_team.dart';
 import 'package:patientapp/central_screen/health/ui/health.dart';
-import 'package:patientapp/central_screen/home/ui/home.dart';
-import 'package:patientapp/central_screen/records/ui/records.dart';
+import 'package:patientapp/central_screen/home/home.dart';
+import 'package:patientapp/central_screen/records/records.dart';
 
 class CentralScreen extends StatefulWidget {
   @override
@@ -37,19 +37,19 @@ class _CentralScreenState extends State<CentralScreen> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text('Home'),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.group),
-            title: Text('Care Team'),
+            label: 'Care Team',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.book),
-            title: Text('Journal'),
+            label: 'Journal',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.folder_open),
-            title: Text('Records'),
+            label: 'Records',
           ),
         ],
         currentIndex: _selectedIndex,

@@ -2,20 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:patientapp/central_screen/care_team/message.dart';
 import 'package:patientapp/central_screen/care_team/profile.dart';
 import 'package:patientapp/central_screen/health/journal_tile.dart';
-import 'package:patientapp/central_screen/records/ui/allergies/allergies.dart';
-import 'package:patientapp/central_screen/records/ui/immunizations/immunizations.dart';
-import 'package:patientapp/central_screen/records/ui/lab_results/lab_results.dart';
-import 'package:patientapp/central_screen/records/ui/procedures/procedures.dart';
+import 'package:patientapp/central_screen/records/allergies/allergies.dart';
+import 'package:patientapp/central_screen/records/immunizations/immunizations.dart';
+import 'package:patientapp/central_screen/records/lab_results/lab_results.dart';
+import 'package:patientapp/central_screen/records/procedures/procedures.dart';
 
-import 'auth/ui/auth.dart';
-import 'auth/ui/login.dart';
-import 'auth/ui/sign_up.dart';
+import 'auth/auth.dart';
+import 'auth/login.dart';
+import 'auth/sign_up.dart';
 import 'central_screen/health/log__entry_edit.dart';
 import 'central_screen/health/log_entry_add.dart';
 import 'central_screen/health/log_entry_view.dart';
-import 'central_screen/records/ui/conditions/conditions.dart';
-import 'central_screen/records/ui/medications/medications.dart';
-import 'central_screen/ui/central_screen.dart';
+import 'central_screen/records/allergies/allergies.dart';
+import 'central_screen/records/conditions/conditions.dart';
+import 'central_screen/records/immunizations/immunizations.dart';
+import 'central_screen/records/lab_results/lab_results.dart';
+import 'central_screen/records/medications/medications.dart';
+import 'central_screen/central_screen.dart';
+import 'central_screen/records/procedures/procedures.dart';
 
 // todo: test change
 // todo: possible change this to a freezed union type
@@ -68,9 +72,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case Routes.logEntryAdd:
       return MaterialPageRoute(builder: (context) => LogEntryAdd());
     case Routes.logEntryEdit:
-      return MaterialPageRoute(builder: (context) => LogEntryEdit());
+      return MaterialPageRoute(builder: (context) => LogEntryEdit(entry: null,));
     case Routes.logEntryView:
-      return MaterialPageRoute(builder: (context) => LogEntryView());
+      return MaterialPageRoute(builder: (context) => LogEntryView(entry: null,));
     case Routes.profile:
       return MaterialPageRoute(builder: (context) => Profile());
     case Routes.message:

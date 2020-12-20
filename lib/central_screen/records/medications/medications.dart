@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:patientapp/central_screen/records/ui/medications/medication_tile.dart';
+import 'package:patientapp/central_screen/records/medications/medication_tile.dart';
 
 class Medications extends StatefulWidget {
   @override

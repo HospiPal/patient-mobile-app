@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/auth/ui/auth.dart';
+import 'package:patientapp/auth/auth.dart';
 import 'package:patientapp/navigation.dart';
 
 class SignUp extends StatefulWidget {
