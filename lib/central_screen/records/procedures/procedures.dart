@@ -1,35 +1,35 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:patientapp/central_screen/records/ui/allergies/allergy_tile.dart';
+import 'package:patientapp/central_screen/records/procedures/procedure_tile.dart';
 
-class Allergies extends StatefulWidget {
+class Procedures extends StatefulWidget {
   @override
-  _AllergiesState createState() => _AllergiesState();
+  _ProceduresState createState() => _ProceduresState();
 }
 
-class _AllergiesState extends State<Allergies> {
-  final List<AllergyTile> conditions = <AllergyTile>[
-    AllergyTile(),
-    AllergyTile(),
+class _ProceduresState extends State<Procedures> {
+  final List<ProcedureTile> procedures = <ProcedureTile>[
+    ProcedureTile(),
+    ProcedureTile(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Allergies'),
+        title: Text('Procedures'),
       ),
       body: SafeArea(
         child: Center(
           child: ListView.separated(
             padding: const EdgeInsets.all(8),
-            itemCount: conditions.length,
+            itemCount: procedures.length,
             itemBuilder: (BuildContext context, int index) {
               return Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
                 child: Container(
-                  child: conditions[index],
+                  child: procedures[index],
                   padding: EdgeInsets.all(2),
                   decoration: new BoxDecoration(
                     color: Theme.of(context).primaryColor,

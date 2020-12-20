@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:patientapp/central_screen/records/ui/lab_results/lab_results_tile.dart';
+import 'package:patientapp/central_screen/records/lab_results/lab_results_tile.dart';
 
 class LabResults extends StatefulWidget {
   @override
