@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/central_screen/care_team/message_bubble.dart';
-import 'package:patientapp/central_screen/care_team/message_text.dart';
 
-class Message extends StatefulWidget {
+import 'message_bubble.dart';
+import 'message_text.dart';
+
+class MessageWithPatient extends StatefulWidget {
   @override
-  _MessageState createState() => _MessageState();
+  _MessageWithPatientState createState() => _MessageWithPatientState();
 }
 
 // TODO: watch this video - https://www.youtube.com/watch?v=X00Xv7blBo0
@@ -16,11 +17,15 @@ enum MessageType {
   Receiver,
 }
 
-class _MessageState extends State<Message> {
+class _MessageWithPatientState extends State<MessageWithPatient> {
   List<MessageText> messages = [
-    MessageText(message: 'Hey Dr. Mulligan', messageType: MessageType.Sender),
+    MessageText(message: 'Hey [Patient]', messageType: MessageType.Sender),
     MessageText(
-        message: 'Hi Ethan! How ya doing?', messageType: MessageType.Receiver),
+        message: 'Hi Dr. Mulligan! How ya doing?',
+        messageType: MessageType.Receiver),
+    MessageText(
+        message: 'Im great. Hows it going with you',
+        messageType: MessageType.Sender)
   ];
 
   @override
@@ -48,9 +53,7 @@ class _MessageState extends State<Message> {
                     children: <Widget>[
                       IconButton(
                         icon: Icon(Icons.add),
-                        color: Theme
-                            .of(context)
-                            .primaryColor,
+                        color: Theme.of(context).primaryColor,
                         onPressed: () {},
                       ),
                       Expanded(
@@ -66,13 +69,7 @@ class _MessageState extends State<Message> {
                         icon: Icon(Icons.send),
                         iconSize: 25.0,
                         color: Theme.of(context).primaryColor,
-                        onPressed: () {
-                          setState(() {
-                            messages.add(MessageText(
-                                message: 'I\'m not feeling too great today',
-                                messageType: MessageType.Sender));
-                          });
-                        },
+                        onPressed: () {},
                       )
                     ],
                   ),

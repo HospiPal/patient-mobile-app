@@ -1,6 +1,7 @@
 //import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:patientapp/central_screen/health/log_entries/selection_screen/selections.dart';
 import 'package:patientapp/central_screen/health/log_entry.dart';
 
 import '../../../navigation.dart';
@@ -16,12 +17,19 @@ class _HealthState extends State<Health> {
   //TODO: this List needs to be relocated
 
   final List<JournalTile> entries = <JournalTile>[
-    JournalTile(LogEntry(
-        ailment: 'Headache', physician: 'Dr. Rana', dateStamp: DateTime.now()))
+    JournalTile(LogEntry(symptoms: [
+      SelectionInList('Dr. Rana'),
+      SelectionInList('Dr. Mulligan')
+    ], physicians: [
+      SelectionInList('Heartburn'),
+      SelectionInList('Headache')
+    ], dateStamp: DateTime.now()))
   ];
   List<JournalTile> monthsDisplayed = <JournalTile>[
     JournalTile(LogEntry(
-        ailment: 'Headache', physician: 'Dr. Rana', dateStamp: DateTime.now()))
+        symptoms: [SelectionInList('Heartburn'), SelectionInList('Headache')],
+        physicians: [SelectionInList('Heartburn'), SelectionInList('Headache')],
+        dateStamp: DateTime.now()))
   ];
   DateOrganizer date = new DateOrganizer();
   List<String> dropDownMonths = <String>[
@@ -133,8 +141,7 @@ class _HealthState extends State<Health> {
                     dropDownYearValue = newValue;
                   });
                 },
-                items:
-                dropDownYears.map<DropdownMenuItem<int>>((int value) {
+                items: dropDownYears.map<DropdownMenuItem<int>>((int value) {
                   return DropdownMenuItem<int>(
                     value: value,
                     child: Text(value.toString()),
@@ -142,7 +149,6 @@ class _HealthState extends State<Health> {
                 }).toList(),
               ),
             ),
-          //DropDownYear(),
         ],
       )),
       body: SafeArea(
@@ -152,36 +158,7 @@ class _HealthState extends State<Health> {
             itemCount: monthsDisplayed.length,
             itemBuilder: (BuildContext context, int index) {
               //return LogEntryAdd();
-              return Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
-                child: Container(
-                  child: Card(
-                    //child: entries[index]
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(date.getDateStamp(
-                            monthsDisplayed[index].entry.dateStamp)),
-                        monthsDisplayed[index]
-                      ],
-                    ),
-                    //color: Colors.amberAccent
-                  ),
-                  padding: EdgeInsets.all(2),
-                  decoration: new BoxDecoration(
-                    color: Theme
-                        .of(context)
-                        .primaryColor,
-                    borderRadius: new BorderRadius.only(
-                      topLeft: const Radius.circular(4.0),
-                      topRight: const Radius.circular(4.0),
-                      bottomLeft: const Radius.circular(4.0),
-                      bottomRight: const Radius.circular(4.0),
-                    ),
-                  ),
-                ),
-              );
+              return monthsDisplayed[index];
             },
             separatorBuilder: (BuildContext context, int index) =>
             const Divider(),

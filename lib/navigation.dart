@@ -1,44 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/central_screen/care_team/message.dart';
 import 'package:patientapp/central_screen/care_team/profile.dart';
-import 'package:patientapp/central_screen/health/journal_tile.dart';
-import 'package:patientapp/central_screen/records/allergies/allergies.dart';
-import 'package:patientapp/central_screen/records/immunizations/immunizations.dart';
-import 'package:patientapp/central_screen/records/lab_results/lab_results.dart';
-import 'package:patientapp/central_screen/records/procedures/procedures.dart';
+import 'package:patientapp/central_screen/health/log_entries/log__entry_edit.dart';
+import 'package:patientapp/central_screen/home/patient_messaging/message.dart';
 
 import 'auth/auth.dart';
 import 'auth/login.dart';
 import 'auth/sign_up.dart';
-import 'central_screen/health/log__entry_edit.dart';
-import 'central_screen/health/log_entry_add.dart';
-import 'central_screen/health/log_entry_view.dart';
+import 'central_screen/central_screen.dart';
+import 'central_screen/health/journal_tile.dart';
+import 'central_screen/health/log_entries/log_entry_add.dart';
+import 'central_screen/health/log_entries/log_entry_view.dart';
+import 'central_screen/health/log_entries/selection_screen/selection_screen.dart';
 import 'central_screen/records/allergies/allergies.dart';
 import 'central_screen/records/conditions/conditions.dart';
 import 'central_screen/records/immunizations/immunizations.dart';
 import 'central_screen/records/lab_results/lab_results.dart';
 import 'central_screen/records/medications/medications.dart';
-import 'central_screen/central_screen.dart';
 import 'central_screen/records/procedures/procedures.dart';
 
-// todo: test change
-// todo: possible change this to a freezed union type
 class Routes {
+  static const patients = 'patients';
   static const centralScreen = 'central_screen';
   static const auth = 'auth';
   static const signUp = 'auth/sign_up';
   static const login = 'auth/login';
   static const logEntryAdd = 'central_screen/health/log_entry_add';
-  static const logEntryEdit = 'central_screen/health/log_entry_edit';
+  static const logEntryEdit = 'central_screen/health/log_entry_note';
   static const logEntryView = 'central_screen/health/log_entry_view';
-  static const message = 'care_team/message';
-  static const profile = 'care_team/profile';
   static const labResults = 'central_screen/records/lab_results';
   static const conditions = 'central_screen/records/conditions';
   static const allergies = 'central_screen/records/allergies';
   static const immunizations = 'central_screen/records/immunizations';
   static const medications = 'central_screen/records/medications';
   static const procedures = 'central_screen/records/procedures';
+  static const messageWithDoctors = 'care_team/message';
+  static const profile = 'care_team/profile';
+  static const messageWithPatient = 'home/message';
+  static const journalSelections = 'central_screen/health/selection_screen';
 }
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -58,8 +56,21 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         return LogEntryView(entry: args.entry);
       },
     );
+  } else if (settings.name == Routes.journalSelections) {
+    final SelectionArg args = settings.arguments;
+
+    return MaterialPageRoute(
+      builder: (context) {
+        return SelectionScreen(
+          selections: args.selection,
+          title: args.title,
+          selectedItems: args.previouslySelectedItems,
+        );
+      },
+    );
   }
 
+  assert(settings.arguments == null);
   switch (settings.name) {
     case Routes.centralScreen:
       return MaterialPageRoute(builder: (context) => CentralScreen());
@@ -71,26 +82,24 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => Login());
     case Routes.logEntryAdd:
       return MaterialPageRoute(builder: (context) => LogEntryAdd());
-    case Routes.logEntryEdit:
-      return MaterialPageRoute(builder: (context) => LogEntryEdit(entry: null,));
-    case Routes.logEntryView:
-      return MaterialPageRoute(builder: (context) => LogEntryView(entry: null,));
-    case Routes.profile:
-      return MaterialPageRoute(builder: (context) => Profile());
-    case Routes.message:
-      return MaterialPageRoute(builder: (context) => Message());
-    case Routes.labResults:
-      return MaterialPageRoute(builder: (context) => LabResults());
-    case Routes.conditions:
-      return MaterialPageRoute(builder: (context) => Conditions());
-    case Routes.allergies:
-      return MaterialPageRoute(builder: (context) => Allergies());
-    case Routes.immunizations:
-      return MaterialPageRoute(builder: (context) => Immunizations());
-    case Routes.medications:
-      return MaterialPageRoute(builder: (context) => Medications());
     case Routes.procedures:
       return MaterialPageRoute(builder: (context) => Procedures());
+    case Routes.medications:
+      return MaterialPageRoute(builder: (context) => Medications());
+    case Routes.immunizations:
+      return MaterialPageRoute(builder: (context) => Immunizations());
+    case Routes.allergies:
+      return MaterialPageRoute(builder: (context) => Allergies());
+    case Routes.conditions:
+      return MaterialPageRoute(builder: (context) => Conditions());
+    case Routes.labResults:
+      return MaterialPageRoute(builder: (context) => LabResults());
+    case Routes.profile:
+      return MaterialPageRoute(builder: (context) => Profile());
+    case Routes.messageWithPatient:
+      return MaterialPageRoute(builder: (context) => MessageWithPatient());
+    case Routes.journalSelections:
+      return MaterialPageRoute(builder: (context) => SelectionScreen());
     default:
       return MaterialPageRoute(
           builder: (context) => UndefinedRoute(settings.name));

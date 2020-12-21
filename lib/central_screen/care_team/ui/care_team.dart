@@ -9,6 +9,13 @@ class CareTeam extends StatefulWidget {
 
 // TODO: add scheduling appointments
 class _CareTeamState extends State<CareTeam> {
+  List<String> names = [
+    'Dr. Marc Mulligan',
+    'Dr. Spencer Gray',
+    'Dr. Deric Toro',
+    'Dr. Maddy Candella'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +42,7 @@ class _CareTeamState extends State<CareTeam> {
                       alignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Text(
-                          'Dr. Marc Mulligan',
+                          names[index],
                         ),
                         IconButton(
                           icon: Icon(Icons.account_box),
@@ -48,7 +55,8 @@ class _CareTeamState extends State<CareTeam> {
                             icon: Icon(Icons.message),
                             color: Theme.of(context).accentColor,
                             onPressed: () {
-                              Navigator.pushNamed(context, Routes.message);
+                              Navigator.pushNamed(
+                                  context, Routes.messageWithDoctors);
                             }),
                         IconButton(
                           icon: Icon(Icons.phone),

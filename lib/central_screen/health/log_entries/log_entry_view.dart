@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:patientapp/central_screen/health/date_organizer.dart';
 import 'package:patientapp/central_screen/health/log_entry.dart';
 
-import '../../navigation.dart';
-import 'journal_tile.dart';
+import '../../../navigation.dart';
+import '../journal_tile.dart';
 
 class LogEntryView extends StatefulWidget {
   LogEntry entry;
@@ -51,7 +51,7 @@ class _LogEntryViewState extends State<LogEntryView> {
                 children: [
                   EntryContainer('Physician:'),
                   Spacer(),
-                  EntryContainer(widget.entry.physician),
+                  //EntryContainer(widget.entry.physician),
                 ],
               ),
               SizedBox(height: 10),
@@ -68,7 +68,7 @@ class _LogEntryViewState extends State<LogEntryView> {
                 children: [
                   EntryContainer('Ailment:'),
                   Spacer(),
-                  EntryContainer(widget.entry.ailment),
+                  //EntryContainer(widget.entry.ailment),
                 ],
               ),
               Padding(

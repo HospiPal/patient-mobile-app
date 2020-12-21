@@ -1,18 +1,20 @@
+import 'package:patientapp/central_screen/health/log_entries/selection_screen/selections.dart';
+
 class LogEntry {
-  String firstName;
-  String lastName;
-  String ailment;
-  String physician;
+  String subject;
+  List<SelectionInList> symptoms;
+  List<SelectionInList> physicians;
+  List<SelectionInList> severity; //TODO: change so not a list
   int height;
   int weight;
   var dateStamp;
 
   LogEntry(
-      {this.firstName,
-      this.lastName,
+      {this.subject,
       this.weight,
       this.height,
-      this.ailment,
-      this.physician,
-      this.dateStamp});
+      this.severity,
+      this.physicians,
+      this.dateStamp,
+      this.symptoms});
 }

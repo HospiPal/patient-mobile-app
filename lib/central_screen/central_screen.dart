@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:patientapp/central_screen/care_team/ui/care_team.dart';
 import 'package:patientapp/central_screen/health/ui/health.dart';
-import 'package:patientapp/central_screen/home.dart';
+import 'package:patientapp/central_screen/home/patient_home.dart';
 import 'package:patientapp/central_screen/records/records.dart';
 
 class CentralScreen extends StatefulWidget {
@@ -15,7 +15,7 @@ class _CentralScreenState extends State<CentralScreen> {
 //  static const TextStyle optionStyle =
 //      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
-    Home(),
+    PatientHome(),
     CareTeam(),
     Health(),
     Records()
