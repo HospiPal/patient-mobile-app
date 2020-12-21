@@ -34,8 +34,6 @@ class Auth extends StatelessWidget {
   }
 }
 
-// todo: extract code common to sign up and login into this file.
-
 class AuthButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
@@ -45,7 +43,6 @@ class AuthButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      // todo: scale the button without hardcoded values
       color: Theme.of(context).accentColor,
       textColor: Colors.white,
       onPressed: onPressed,
@@ -74,9 +71,7 @@ class _AuthFieldState extends State<AuthField> {
         obscureText: true,
         decoration: InputDecoration(
             labelText: widget.title,
-            labelStyle: TextStyle(color: Theme
-                .of(context)
-                .accentColor)),
+            labelStyle: TextStyle(color: Theme.of(context).accentColor)),
       );
     } else {
       return TextFormField(
@@ -84,9 +79,7 @@ class _AuthFieldState extends State<AuthField> {
         obscureText: false,
         decoration: InputDecoration(
             labelText: widget.title,
-            labelStyle: TextStyle(color: Theme
-                .of(context)
-                .accentColor)),
+            labelStyle: TextStyle(color: Theme.of(context).accentColor)),
       );
     }
   }

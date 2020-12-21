@@ -47,9 +47,7 @@ class _RecordsState extends State<Records> {
                     children: <Widget>[
                       Icon(
                         Icons.hdr_strong,
-                        color: Theme
-                            .of(context)
-                            .accentColor,
+                        color: Theme.of(context).accentColor,
                       ),
                       Text('Conditions')
                     ],
@@ -69,9 +67,7 @@ class _RecordsState extends State<Records> {
                     children: <Widget>[
                       Icon(
                         Icons.local_hospital,
-                        color: Theme
-                            .of(context)
-                            .accentColor,
+                        color: Theme.of(context).accentColor,
                       ),
                       Text('Immunizations')
                     ],
@@ -111,9 +107,7 @@ class _RecordsState extends State<Records> {
                     children: <Widget>[
                       Icon(
                         Icons.bubble_chart,
-                        color: Theme
-                            .of(context)
-                            .accentColor,
+                        color: Theme.of(context).accentColor,
                       ),
                       Text('Medications')
                     ],
@@ -133,9 +127,7 @@ class _RecordsState extends State<Records> {
                     children: <Widget>[
                       Icon(
                         Icons.healing,
-                        color: Theme
-                            .of(context)
-                            .accentColor,
+                        color: Theme.of(context).accentColor,
                       ),
                       Text('Procedures')
                     ],

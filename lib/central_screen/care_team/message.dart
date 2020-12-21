@@ -48,9 +48,7 @@ class _MessageState extends State<Message> {
                     children: <Widget>[
                       IconButton(
                         icon: Icon(Icons.add),
-                        color: Theme
-                            .of(context)
-                            .primaryColor,
+                        color: Theme.of(context).primaryColor,
                         onPressed: () {},
                       ),
                       Expanded(

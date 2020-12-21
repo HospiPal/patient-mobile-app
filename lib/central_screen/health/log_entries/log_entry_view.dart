@@ -19,7 +19,6 @@ class LogEntryView extends StatefulWidget {
 
 class _LogEntryViewState extends State<LogEntryView> {
   @override
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,7 +101,6 @@ class _LogEntryViewState extends State<LogEntryView> {
   }
 }
 
-
 class EntryContainer extends StatefulWidget {
   @override
   _EntryContainerState createState() => _EntryContainerState();
@@ -121,9 +119,7 @@ class _EntryContainerState extends State<EntryContainer> {
       //width: 150,
       padding: EdgeInsets.all(5),
       decoration: new BoxDecoration(
-        color: Theme
-            .of(context)
-            .primaryColor,
+        color: Theme.of(context).primaryColor,
         borderRadius: new BorderRadius.only(
           topLeft: const Radius.circular(10.0),
           topRight: const Radius.circular(10.0),

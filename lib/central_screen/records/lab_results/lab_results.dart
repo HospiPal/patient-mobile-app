@@ -43,14 +43,12 @@ class _LabResultsState extends State<LabResults> {
               //return LogEntryAdd();
               return Padding(
                 padding:
-                const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
+                    const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
                 child: Container(
                   child: results[index],
                   padding: EdgeInsets.all(2),
                   decoration: new BoxDecoration(
-                    color: Theme
-                        .of(context)
-                        .primaryColor,
+                    color: Theme.of(context).primaryColor,
                     borderRadius: new BorderRadius.only(
                       topLeft: const Radius.circular(4.0),
                       topRight: const Radius.circular(4.0),
@@ -62,7 +60,7 @@ class _LabResultsState extends State<LabResults> {
               );
             },
             separatorBuilder: (BuildContext context, int index) =>
-            const Divider(),
+                const Divider(),
           ),
         ),
       ),
@@ -76,18 +74,13 @@ class StackedList extends StatelessWidget {
   static const _maxHeight = 120.0;
 
   @override
-  Widget build(BuildContext context) =>
-      CustomScrollView(
+  Widget build(BuildContext context) => CustomScrollView(
         slivers: _colors
             .map(
-              (color) =>
-              StackedListChild(
+              (color) => StackedListChild(
                 minHeight: _minHeight,
                 maxHeight: _colors.indexOf(color) == _colors.length - 1
-                    ? MediaQuery
-                    .of(context)
-                    .size
-                    .height
+                    ? MediaQuery.of(context).size.height
                     : _maxHeight,
                 pinned: false,
                 child: Container(
@@ -103,7 +96,7 @@ class StackedList extends StatelessWidget {
                   ),
                 ),
               ),
-        )
+            )
             .toList(),
       );
 }
@@ -115,9 +108,8 @@ class StackedListChild extends StatelessWidget {
   final bool floating;
   final Widget child;
 
-  SliverPersistentHeaderDelegate get _delegate =>
-      _StackedListDelegate(
-          minHeight: minHeight, maxHeight: maxHeight, child: child);
+  SliverPersistentHeaderDelegate get _delegate => _StackedListDelegate(
+      minHeight: minHeight, maxHeight: maxHeight, child: child);
 
   const StackedListChild({
     Key key,
@@ -126,8 +118,7 @@ class StackedListChild extends StatelessWidget {
     @required this.child,
     this.pinned = false,
     this.floating = false,
-  })
-      : assert(child != null),
+  })  : assert(child != null),
         assert(minHeight != null),
         assert(maxHeight != null),
         assert(pinned != null),
@@ -135,9 +126,8 @@ class StackedListChild extends StatelessWidget {
         super(key: key);
 
   @override
-  Widget build(BuildContext context) =>
-      SliverPersistentHeader(
-          key: key, pinned: pinned, floating: floating, delegate: _delegate);
+  Widget build(BuildContext context) => SliverPersistentHeader(
+      key: key, pinned: pinned, floating: floating, delegate: _delegate);
 }
 
 class _StackedListDelegate extends SliverPersistentHeaderDelegate {
@@ -158,8 +148,8 @@ class _StackedListDelegate extends SliverPersistentHeaderDelegate {
   double get maxExtent => max(maxHeight, minHeight);
 
   @override
-  Widget build(BuildContext context, double shrinkOffset,
-      bool overlapsContent) {
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
     return new SizedBox.expand(child: child);
   }
 
@@ -170,7 +160,6 @@ class _StackedListDelegate extends SliverPersistentHeaderDelegate {
         child != oldDelegate.child;
   }
 }
-
 
 class CurryFormScreen extends StatefulWidget {
   @override
@@ -240,7 +229,6 @@ class _CurryFormScreenState extends State<CurryFormScreen> {
           //CurrySliverHeader(Colors.purple, "Header 1"),
           //CurrySliverHeader(Colors.deepPurple, "Header 2"),
           SliverFixedExtentList(
-
             itemExtent: 150,
             delegate: SliverChildListDelegate([
               _buildListWidget(Colors.purple, "Curry"),
@@ -277,8 +265,8 @@ class _CurryFormScreenState extends State<CurryFormScreen> {
           SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3, mainAxisSpacing: 8, crossAxisSpacing: 8),
-            delegate: SliverChildBuilderDelegate((BuildContext context,
-                int index) {
+            delegate:
+                SliverChildBuilderDelegate((BuildContext context, int index) {
               return Container(
                 padding: EdgeInsets.all(10),
                 color: Colors.deepPurple,
@@ -290,9 +278,7 @@ class _CurryFormScreenState extends State<CurryFormScreen> {
                   ),
                 ),
               );
-            },
-                childCount: _nameList.length
-            ),
+            }, childCount: _nameList.length),
           )
         ],
       ),

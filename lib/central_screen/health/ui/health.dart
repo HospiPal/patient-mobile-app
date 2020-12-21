@@ -119,7 +119,7 @@ class _HealthState extends State<Health> {
                 });
               },
               items:
-              dropDownMonths.map<DropdownMenuItem<String>>((String value) {
+                  dropDownMonths.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),
@@ -161,7 +161,7 @@ class _HealthState extends State<Health> {
               return monthsDisplayed[index];
             },
             separatorBuilder: (BuildContext context, int index) =>
-            const Divider(),
+                const Divider(),
           ),
         ),
       ),

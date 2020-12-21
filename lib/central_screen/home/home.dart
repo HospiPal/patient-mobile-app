@@ -1,10 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:patientapp/central_screen/home/medications_for_today/medications_for_today.dart';
 import 'package:patientapp/central_screen/home/patient_profile/patient_profile.dart';
 import 'package:patientapp/central_screen/home/recent_labs/recent_labs.dart';
 import 'package:patientapp/central_screen/home/upcoming_appointments/upcoming_appointments.dart';
-
 import 'package:patientapp/navigation.dart';
 
 class Home extends StatefulWidget {
