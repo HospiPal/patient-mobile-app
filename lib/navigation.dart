@@ -20,23 +20,30 @@ import 'central_screen/records/procedures/procedures.dart';
 
 class Routes {
   static const patients = 'patients';
-  static const centralScreen = 'central_screen';
+
   static const auth = 'auth';
   static const signUp = 'auth/sign_up';
   static const login = 'auth/login';
+
+  static const centralScreen = 'central_screen';
+
   static const logEntryAdd = 'central_screen/health/log_entry_add';
   static const logEntryEdit = 'central_screen/health/log_entry_note';
   static const logEntryView = 'central_screen/health/log_entry_view';
+
   static const labResults = 'central_screen/records/lab_results';
   static const conditions = 'central_screen/records/conditions';
   static const allergies = 'central_screen/records/allergies';
   static const immunizations = 'central_screen/records/immunizations';
   static const medications = 'central_screen/records/medications';
   static const procedures = 'central_screen/records/procedures';
+
+  static const journalSelections = 'central_screen/health/selection_screen';
+
   static const messageWithDoctors = 'care_team/message';
   static const profile = 'care_team/profile';
+
   static const messageWithPatient = 'home/message';
-  static const journalSelections = 'central_screen/health/selection_screen';
 }
 
 Route<dynamic> generateRoute(RouteSettings settings) {
