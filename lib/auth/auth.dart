@@ -6,29 +6,31 @@ class Auth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: AuthButton(
-              title: 'Sign Up',
-              onPressed: () {
-                Navigator.pushNamed(context, Routes.signUp);
-              },
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Center(
+              child: Text(
+                'Login',
+                style: TextStyle(
+                    fontSize: 20, color: Theme.of(context).accentColor),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: AuthButton(
-              title: 'Login',
-              onPressed: () {
-                Navigator.pushNamed(context, Routes.login);
-              },
+            AuthField('FHIR ID', TextEditingController(text: '1174683'), false),
+            Padding(
+              padding: const EdgeInsets.only(top: 30),
+              child: AuthButton(
+                title: 'Login',
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.centralScreen);
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -57,15 +59,15 @@ class AuthField extends StatefulWidget {
 
   final String title;
   final TextEditingController textController;
-  final bool obscure;
+  final bool obscureText;
 
-  AuthField(this.title, this.textController, this.obscure);
+  AuthField(this.title, this.textController, this.obscureText);
 }
 
 class _AuthFieldState extends State<AuthField> {
   @override
   Widget build(BuildContext context) {
-    if (widget.obscure) {
+    if (widget.obscureText) {
       return TextFormField(
         controller: widget.textController,
         obscureText: true,
