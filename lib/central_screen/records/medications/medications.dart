@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +14,6 @@ class _MedicationsState extends State<Medications> {
     MedicationTile(),
     MedicationTile(),
   ];
-  Color c = Colors.amber;
   final List<MedicationInfo> medications = <MedicationInfo>[
     MedicationInfo(
       name: 'Tylenol',
@@ -26,11 +24,11 @@ class _MedicationsState extends State<Medications> {
       daysToTake: <int>[0, 2, 3, 4, 5],
     ),
     MedicationInfo(
-      name: 'heroin',
+      name: 'Beta Blocker',
       daysToTake: <int>[1, 3, 5],
     ),
     MedicationInfo(
-      name: 'heroin',
+      name: 'Insulin',
       daysToTake: <int>[0, 6],
     ),
   ];
@@ -43,8 +41,26 @@ class _MedicationsState extends State<Medications> {
         title: Text('Medications'),
       ),
       body: SafeArea(
-        child: Center(
-          child: medTable(),
+        child: ListView(
+          padding: const EdgeInsets.all(8),
+          children: <Widget>[
+            Container(
+              height: 50,
+              //color: Colors.amber[500],
+              //child: const Center(child: Text('Entry B')),
+            ),
+            medTable(),
+            Container(
+              height: 100,
+              //color: Colors.amber[500],
+              //child: const Center(child: Text('Entry B')),
+            ),
+            Container(
+              height: 50,
+              color: Colors.amber[100],
+              child: const Center(child: Text('Entry C')),
+            ),
+          ],
         ),
       ),
     );
@@ -77,27 +93,15 @@ class _MedicationsState extends State<Medications> {
 
   List<Container> medicationBoxes(
       MedicationInfo medication, int columnBordered, bool isBottom) {
-    List colors = [
-      Colors.red,
-      Colors.green,
-      Colors.yellow,
-      Colors.blue,
-      Colors.purple,
-      Colors.amber,
-      Colors.tealAccent,
-      Colors.brown
-    ]; //possible colors the medicine can be
-    Random random =
-        new Random(); //Todo: If a box is a given color, no other row can be that color
-    Color col = colors[random.nextInt(colors.length)];
+    double boxHeight = 30;
+    Color col =
+        Theme.of(context).accentColor; //colors[random.nextInt(colors.length)];
     List<Container> rowOfBoxes = new List<Container>(7);
 
     for (int i = 0; i < rowOfBoxes.length; i++) {
       //blank if medication should not be taken that day
       rowOfBoxes[i] = new Container(
-        child: Text(
-            ''
-        ),
+        child: Text(''),
         width: 50,
         //height: 50,
       );
@@ -107,16 +111,23 @@ class _MedicationsState extends State<Medications> {
       //colored if medication should be taken
       if (medication.daysToTake[i] != 7) {
         rowOfBoxes[medication.daysToTake[i]] = new Container(
+          child: Text(''),
+          height: boxHeight,
+          decoration: BoxDecoration(
+            border: Border(
+                bottom: BorderSide(
+                  color: Colors.black,
+                )
+            ),
             color: col,
-            child: Text(
-              '',
-            ));
+          ),
+        );
       } else {
         rowOfBoxes[medication.daysToTake[0]] = new Container(
-            color: col,
-            child: Text(
-              '',
-            ));
+          color: col,
+          height: boxHeight,
+          child: Text(''),
+        );
       }
       if (columnBordered < 0) {
         //will be -1 by default so the default selected is the given day
@@ -138,6 +149,7 @@ class _MedicationsState extends State<Medications> {
           Container temp = rowOfBoxes[i];
           rowOfBoxes[i] = new Container(
             child: temp,
+            height: boxHeight,
             decoration: BoxDecoration(
               border: Border(
                 left: BorderSide(
@@ -165,6 +177,7 @@ class _MedicationsState extends State<Medications> {
           Container temp = rowOfBoxes[i];
           rowOfBoxes[i] = new Container(
             child: temp,
+            height: boxHeight,
             decoration: BoxDecoration(
               border: Border(
                 left: BorderSide(
@@ -266,5 +279,13 @@ class _MedicationsState extends State<Medications> {
       }
     }
     return rowOfBoxes;
+  }
+
+  Table medInfoTable() {
+    return Table(
+      children: [
+        TableRow()
+      ],
+    );
   }
 }

@@ -2,7 +2,7 @@ import 'dart:core';
 
 class MedicationInfo {
   String name;
-  String code;
+  String code; //code that represents the specific drug
   String form; //tablet, pill, powder
   double amount; //in terms of one of the form
   List<String> ingredients;
