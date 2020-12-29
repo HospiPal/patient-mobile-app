@@ -1,42 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/central_screen/care_team/profile.dart';
-import 'package:patientapp/central_screen/health/log_entries/log__entry_edit.dart';
-import 'package:patientapp/central_screen/home/patient_messaging/message.dart';
+import 'package:patientapp/views/central_screen/care_team/profile.dart';
+import 'package:patientapp/views/central_screen/health/log_entries/log__entry_edit.dart';
+import 'package:patientapp/views/central_screen/home/patient_messaging/message.dart';
 
-import 'auth/auth.dart';
-import 'auth/login.dart';
-import 'auth/sign_up.dart';
-import 'central_screen/central_screen.dart';
-import 'central_screen/health/journal_tile.dart';
-import 'central_screen/health/log_entries/log_entry_add.dart';
-import 'central_screen/health/log_entries/log_entry_view.dart';
-import 'central_screen/health/log_entries/selection_screen/selection_screen.dart';
-import 'central_screen/records/allergies/allergies.dart';
-import 'central_screen/records/conditions/conditions.dart';
-import 'central_screen/records/immunizations/immunizations.dart';
-import 'central_screen/records/lab_results/lab_results.dart';
-import 'central_screen/records/medications/medications.dart';
-import 'central_screen/records/procedures/procedures.dart';
+import 'views/auth/auth.dart';
+import 'views/auth/login.dart';
+import 'views/auth/sign_up.dart';
+import 'views/central_screen/central_screen.dart';
+import 'views/central_screen/health/journal_tile.dart';
+import 'views/central_screen/health/log_entries/log_entry_add.dart';
+import 'views/central_screen/health/log_entries/log_entry_view.dart';
+import 'views/central_screen/health/log_entries/selection_screen/selection_screen.dart';
+import 'views/central_screen/records/allergies/allergies.dart';
+import 'views/central_screen/records/conditions/conditions.dart';
+import 'views/central_screen/records/immunizations/immunizations.dart';
+import 'views/central_screen/records/lab_results/lab_results.dart';
+import 'views/central_screen/records/medications/medications.dart';
+import 'views/central_screen/records/procedures/procedures.dart';
 
 class Routes {
   static const patients = 'patients';
-  static const centralScreen = 'central_screen';
+
   static const auth = 'auth';
   static const signUp = 'auth/sign_up';
   static const login = 'auth/login';
+
+  static const centralScreen = 'central_screen';
+
   static const logEntryAdd = 'central_screen/health/log_entry_add';
   static const logEntryEdit = 'central_screen/health/log_entry_note';
   static const logEntryView = 'central_screen/health/log_entry_view';
+
   static const labResults = 'central_screen/records/lab_results';
   static const conditions = 'central_screen/records/conditions';
   static const allergies = 'central_screen/records/allergies';
   static const immunizations = 'central_screen/records/immunizations';
   static const medications = 'central_screen/records/medications';
   static const procedures = 'central_screen/records/procedures';
+
+  static const journalSelections = 'central_screen/health/selection_screen';
+
   static const messageWithDoctors = 'care_team/message';
   static const profile = 'care_team/profile';
+
   static const messageWithPatient = 'home/message';
-  static const journalSelections = 'central_screen/health/selection_screen';
 }
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -115,8 +122,10 @@ class UndefinedRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Text(
-              'Undefined route: ($undefinedRoute). \nThis is a dart:core/errors Error.')),
+        child: Text(
+          'Undefined route: ($undefinedRoute). \nThis is a dart:core/errors Error.',
+        ),
+      ),
       backgroundColor: Colors.red,
     );
   }
