@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/navigation.dart';
+// import 'package:patientapp/navigation.dart';
+import 'package:get/get.dart';
 import 'package:patientapp/views/auth/auth.dart';
+import 'package:patientapp/views/central_screen/central_screen.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -36,8 +38,9 @@ class _SignUpState extends State<SignUp> {
                       child: AuthButton(
                           title: 'Sign Up',
                           onPressed: () {
-                            Navigator.pushReplacementNamed(
-                                context, Routes.centralScreen);
+                            Get.off(CentralScreen());
+                            // Navigator.pushReplacementNamed(
+                            //     context, Routes.centralScreen);
                           })),
                 ])));
   }

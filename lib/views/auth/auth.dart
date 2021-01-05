@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/navigation.dart';
+import 'package:get/get.dart';
+import 'package:patientapp/views/central_screen/central_screen.dart';
+// import 'package:patientapp/navigation.dart';
 
 class Auth extends StatelessWidget {
   @override
@@ -24,7 +26,7 @@ class Auth extends StatelessWidget {
               child: AuthButton(
                 title: 'Login',
                 onPressed: () {
-                  Navigator.pushNamed(context, Routes.centralScreen);
+                  Get.off(CentralScreen());
                 },
               ),
             ),

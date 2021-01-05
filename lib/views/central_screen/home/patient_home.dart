@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/navigation.dart';
+import 'package:get/get.dart';
+// import 'package:patientapp/navigation.dart';
 import 'package:patientapp/views/central_screen/home/medications_for_today/medications_for_today.dart';
+import 'package:patientapp/views/central_screen/home/patient_messaging/message.dart';
 import 'package:patientapp/views/central_screen/home/patient_profile/patient_profile.dart';
 import 'package:patientapp/views/central_screen/home/recent_labs/recent_labs.dart';
 import 'package:patientapp/views/central_screen/home/upcoming_appointments/upcoming_appointments.dart';
@@ -76,15 +78,22 @@ class _PatientHomeState extends State<PatientHome> {
                       IconButton(
                         icon: Icon(Icons.message),
                         onPressed: () {
-                          Navigator.pushNamed(
-                              context, Routes.messageWithPatient);
+                          Get.to(MessageWithPatient());
+                          // Navigator.pushNamed(
+                          //     context, Routes.messageWithPatient);
                         },
                       ),
                       IconButton(
                         icon: Icon(Icons.phone),
+                        onPressed: () {
+                          // TODO: Implement onPressed
+                        },
                       ),
                       IconButton(
                         icon: Icon(Icons.videocam),
+                        onPressed: () {
+                          // TODO: Implement onPressed
+                        },
                       ),
                     ],
                   ),

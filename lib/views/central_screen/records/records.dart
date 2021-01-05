@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/navigation.dart';
+import 'package:get/get.dart';
+import 'package:patientapp/views/central_screen/records/lab_results/lab_results.dart';
+import 'package:patientapp/views/central_screen/records/procedures/procedures.dart';
+
+// import 'package:patientapp/navigation.dart';
+
+import 'allergies/allergies.dart';
+import 'conditions/conditions.dart';
+import 'immunizations/immunizations.dart';
+import 'medications/medications.dart';
 
 class Records extends StatefulWidget {
   @override
@@ -33,7 +42,8 @@ class _RecordsState extends State<Records> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.allergies);
+                  Get.to(Allergies());
+                  // Navigator.pushNamed(context, Routes.allergies);
                 },
               ),
             ),
@@ -53,7 +63,8 @@ class _RecordsState extends State<Records> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.conditions);
+                  Get.to(Conditions());
+                  // Navigator.pushNamed(context, Routes.conditions);
                 },
               ),
             ),
@@ -73,7 +84,8 @@ class _RecordsState extends State<Records> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.immunizations);
+                  Get.to(Immunizations());
+                  // Navigator.pushNamed(context, Routes.immunizations);
                 },
               ),
             ),
@@ -93,7 +105,8 @@ class _RecordsState extends State<Records> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.labResults);
+                  Get.to(LabResults());
+                  // Navigator.pushNamed(context, Routes.labResults);
                 },
               ),
             ),
@@ -113,7 +126,8 @@ class _RecordsState extends State<Records> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.medications);
+                  Get.to(Medications());
+                  // Navigator.pushNamed(context, Routes.medications);
                 },
               ),
             ),
@@ -133,7 +147,8 @@ class _RecordsState extends State<Records> {
                   ),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.procedures);
+                  Get.to(Procedures());
+                  // Navigator.pushNamed(context, Routes.procedures);
                 },
               ),
             ),

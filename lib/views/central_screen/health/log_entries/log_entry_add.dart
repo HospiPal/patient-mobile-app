@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/navigation.dart';
+// import 'package:patientapp/navigation.dart';
+import 'package:get/get.dart';
 import 'package:patientapp/views/central_screen/health/journal_tile.dart';
+import 'package:patientapp/views/central_screen/health/log_entries/selection_screen/selection_screen.dart';
 import 'package:patientapp/views/central_screen/health/log_entries/selection_screen/selections.dart';
 import 'package:patientapp/views/central_screen/health/log_entry.dart';
 
@@ -142,15 +144,11 @@ class _SelectionEntryState extends State<SelectionEntry> {
   }
 
   void makeSelections() async {
-    final result = await Navigator.pushNamed(context, Routes.journalSelections,
-        arguments: SelectionArg(
-            widget.selections, widget.title, widget.selectedItems));
-
-    if (result != null) {
-      setState(() {
-        widget.selectedItems = result;
-      });
-    }
+    setState(() async {
+      widget.selectedItems = await Get.to(SelectionScreen(),
+          arguments: SelectionArg(
+              widget.selections, widget.title, widget.selectedItems));
+    });
   }
 
   List<InputChip> selectionButtons() {

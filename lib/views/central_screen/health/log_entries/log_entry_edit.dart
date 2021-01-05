@@ -14,7 +14,6 @@ class LogEntryEdit extends StatefulWidget {
 }
 
 class _LogEntryEditState extends State<LogEntryEdit> {
-  @override
   final _formKey = GlobalKey<FormState>();
 
   @override

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/navigation.dart';
+// import 'package:patientapp/navigation.dart';
+import 'package:get/get.dart';
+import 'package:patientapp/views/central_screen/central_screen.dart';
 
 import 'auth.dart';
 
@@ -37,8 +39,9 @@ class Login extends StatelessWidget {
                       child: AuthButton(
                         title: 'Login',
                         onPressed: () {
-                          Navigator.pushReplacementNamed(
-                              context, Routes.centralScreen);
+                          Get.off(CentralScreen());
+                          // Navigator.pushReplacementNamed(
+                          //     context, Routes.centralScreen);
                         },
                       )),
                 ])));

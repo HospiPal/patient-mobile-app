@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/navigation.dart';
+// import 'package:patientapp/navigation.dart';
+import 'package:get/get.dart';
 import 'package:patientapp/views/central_screen/health/date_organizer.dart';
 import 'package:patientapp/views/central_screen/health/log_entry.dart';
 
 import '../journal_tile.dart';
+import 'log_entry_edit.dart';
 
 class LogEntryView extends StatefulWidget {
   LogEntry entry;
@@ -90,8 +92,8 @@ class _LogEntryViewState extends State<LogEntryView> {
   }
 
   void buttonPress(BuildContext context) async {
-    final result = await Navigator.pushNamed(context, Routes.logEntryEdit,
-        arguments: EntryArg(widget.entry));
+    final result =
+        await Get.to(LogEntryEdit(), arguments: EntryArg(widget.entry));
     if (result != null) {
       setState(() {
         widget.entry = result;

@@ -95,9 +95,7 @@ class _MedicationsState extends State<Medications> {
     for (int i = 0; i < rowOfBoxes.length; i++) {
       //blank if medication should not be taken that day
       rowOfBoxes[i] = new Container(
-        child: Text(
-            ''
-        ),
+        child: Text(''),
         width: 50,
         //height: 50,
       );
@@ -121,14 +119,10 @@ class _MedicationsState extends State<Medications> {
       if (columnBordered < 0) {
         //will be -1 by default so the default selected is the given day
 
-        if (DateTime
-            .now()
-            .weekday == 7) {
+        if (DateTime.now().weekday == 7) {
           columnBordered = 0;
         } else {
-          columnBordered = DateTime
-              .now()
-              .weekday;
+          columnBordered = DateTime.now().weekday;
         }
       }
     }
@@ -141,21 +135,15 @@ class _MedicationsState extends State<Medications> {
             decoration: BoxDecoration(
               border: Border(
                 left: BorderSide(
-                  color: Theme
-                      .of(context)
-                      .backgroundColor,
+                  color: Theme.of(context).backgroundColor,
                   width: 5.0,
                 ),
                 right: BorderSide(
-                  color: Theme
-                      .of(context)
-                      .backgroundColor,
+                  color: Theme.of(context).backgroundColor,
                   width: 5.0,
                 ),
                 bottom: BorderSide(
-                  color: Theme
-                      .of(context)
-                      .backgroundColor,
+                  color: Theme.of(context).backgroundColor,
                   width: 5.0,
                 ),
               ),
@@ -168,15 +156,11 @@ class _MedicationsState extends State<Medications> {
             decoration: BoxDecoration(
               border: Border(
                 left: BorderSide(
-                  color: Theme
-                      .of(context)
-                      .backgroundColor,
+                  color: Theme.of(context).backgroundColor,
                   width: 5.0,
                 ),
                 right: BorderSide(
-                  color: Theme
-                      .of(context)
-                      .backgroundColor,
+                  color: Theme.of(context).backgroundColor,
                   width: 5.0,
                 ),
               ),
@@ -196,14 +180,10 @@ class _MedicationsState extends State<Medications> {
     if (columnBordered < 0) {
       //will be -1 by default so the default selected is the given day
 
-      if (DateTime
-          .now()
-          .weekday == 7) {
+      if (DateTime.now().weekday == 7) {
         columnBordered = 0;
       } else {
-        columnBordered = DateTime
-            .now()
-            .weekday;
+        columnBordered = DateTime.now().weekday;
       }
     }
 
@@ -227,21 +207,15 @@ class _MedicationsState extends State<Medications> {
           decoration: BoxDecoration(
             border: Border(
               left: BorderSide(
-                color: Theme
-                    .of(context)
-                    .backgroundColor,
+                color: Theme.of(context).backgroundColor,
                 width: 5.0,
               ),
               right: BorderSide(
-                color: Theme
-                    .of(context)
-                    .backgroundColor,
+                color: Theme.of(context).backgroundColor,
                 width: 5.0,
               ),
               top: BorderSide(
-                color: Theme
-                    .of(context)
-                    .backgroundColor,
+                color: Theme.of(context).backgroundColor,
                 width: 5.0,
               ),
             ),

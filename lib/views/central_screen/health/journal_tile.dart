@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/navigation.dart';
+// import 'package:patientapp/navigation.dart';
+import 'package:get/get.dart';
+import 'package:patientapp/views/central_screen/health/log_entries/log_entry_add.dart';
 import 'package:patientapp/views/central_screen/health/log_entries/selection_screen/selections.dart';
 import 'package:patientapp/views/central_screen/health/log_entry.dart';
 
@@ -18,13 +20,12 @@ class _JournalTileState extends State<JournalTile> {
   DateOrganizer date = new DateOrganizer();
 
   void buttonPress(BuildContext context) async {
-    final result = await Navigator.pushNamed(context, Routes.logEntryAdd,
-        arguments: EntryArg(widget.entry));
-    if (result != null) {
-      setState(() {
-        widget.entry = result;
-      });
-    }
+    setState(() async {
+      widget.entry =
+          await Get.to(LogEntryAdd(), arguments: EntryArg(widget.entry));
+      ;
+    });
+
     print(widget.entry.severity.toString());
   }
 

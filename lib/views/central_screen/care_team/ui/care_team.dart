@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/navigation.dart';
+import 'package:get/get.dart';
+
+import '../profile.dart';
+// import 'package:patientapp/navigation.dart';
 
 class CareTeam extends StatefulWidget {
   @override
@@ -47,15 +50,17 @@ class _CareTeamState extends State<CareTeam> {
                           icon: Icon(Icons.account_box),
                           color: Theme.of(context).accentColor,
                           onPressed: () {
-                            Navigator.pushNamed(context, Routes.profile);
+                            Get.to(Profile());
+                            // Navigator.pushNamed(context, Routes.profile);
                           },
                         ),
                         IconButton(
                             icon: Icon(Icons.message),
                             color: Theme.of(context).accentColor,
                             onPressed: () {
-                              Navigator.pushNamed(
-                                  context, Routes.messageWithDoctors);
+                              // Get.to(MessageWithDoctors()); TODO: implement MessageWithDoctors()
+                              // Navigator.pushNamed(
+                              //     context, Routes.messageWithDoctors);
                             }),
                         IconButton(
                           icon: Icon(Icons.phone),
