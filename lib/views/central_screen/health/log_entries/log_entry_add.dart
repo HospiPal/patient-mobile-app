@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:patientapp/navigation.dart';
 import 'package:get/get.dart';
 import 'package:patientapp/views/central_screen/health/journal_tile.dart';
 import 'package:patientapp/views/central_screen/health/log_entries/selection_screen/selection_screen.dart';
@@ -144,10 +143,13 @@ class _SelectionEntryState extends State<SelectionEntry> {
   }
 
   void makeSelections() async {
-    setState(() async {
-      widget.selectedItems = await Get.to(SelectionScreen(),
-          arguments: SelectionArg(
-              widget.selections, widget.title, widget.selectedItems));
+    final selectedItems = await Get.to(SelectionScreen(
+      selections: widget.selections,
+      title: widget.title,
+      selectedItems: widget.selectedItems,
+    ));
+    setState(() {
+      widget.selectedItems = selectedItems;
     });
   }
 
