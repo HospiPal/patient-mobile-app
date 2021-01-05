@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../profile.dart';
-// import 'package:patientapp/navigation.dart';
 
 class CareTeam extends StatefulWidget {
   @override

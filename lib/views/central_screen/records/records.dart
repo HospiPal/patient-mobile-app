@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:patientapp/views/central_screen/records/lab_results/lab_results.dart';
 import 'package:patientapp/views/central_screen/records/procedures/procedures.dart';
 
-// import 'package:patientapp/navigation.dart';
 
 import 'allergies/allergies.dart';
 import 'conditions/conditions.dart';

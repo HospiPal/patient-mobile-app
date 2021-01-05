@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:patientapp/navigation.dart';
 import 'package:patientapp/views/central_screen/home/medications_for_today/medications_for_today.dart';
 import 'package:patientapp/views/central_screen/home/patient_messaging/message.dart';
 import 'package:patientapp/views/central_screen/home/patient_profile/patient_profile.dart';

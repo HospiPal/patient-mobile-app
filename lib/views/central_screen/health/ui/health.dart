@@ -1,7 +1,6 @@
 //import 'dart:html';
 
 import 'package:flutter/material.dart';
-// import 'package:patientapp/navigation.dart';
 import 'package:get/get.dart';
 import 'package:patientapp/views/central_screen/health/log_entries/log_entry_add.dart';
 import 'package:patientapp/views/central_screen/health/log_entries/selection_screen/selections.dart';
