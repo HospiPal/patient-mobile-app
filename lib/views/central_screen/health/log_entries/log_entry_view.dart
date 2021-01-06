@@ -90,8 +90,7 @@ class _LogEntryViewState extends State<LogEntryView> {
   }
 
   void buttonPress(BuildContext context) async {
-    final result =
-        await Get.to(LogEntryEdit(entry: widget.entry));
+    final result = await Get.to(LogEntryEdit(entry: widget.entry));
     if (result != null) {
       setState(() {
         widget.entry = result;

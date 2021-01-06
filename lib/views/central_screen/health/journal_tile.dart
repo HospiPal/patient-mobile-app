@@ -19,12 +19,10 @@ class _JournalTileState extends State<JournalTile> {
   DateOrganizer date = new DateOrganizer();
 
   void buttonPress(BuildContext context) async {
-    setState(() async {
-      widget.entry =
-          await Get.to(LogEntryAdd(), arguments: EntryArg(widget.entry));
+    final entry = await Get.to(LogEntryAdd(), arguments: EntryArg(widget.entry));
+    setState(() {
+      widget.entry = entry;
     });
-
-    print(widget.entry.severity.toString());
   }
 
   @override
