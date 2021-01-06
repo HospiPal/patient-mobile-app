@@ -159,14 +159,10 @@ class _MedicationsState extends State<Medications> {
       if (columnBordered < 0) {
         //will be -1 by default so the default selected is the given day
 
-        if (DateTime
-            .now()
-            .weekday == 7) {
+        if (DateTime.now().weekday == 7) {
           columnBordered = 0;
         } else {
-          columnBordered = DateTime
-              .now()
-              .weekday;
+          columnBordered = DateTime.now().weekday;
         }
       }
     }
@@ -180,21 +176,15 @@ class _MedicationsState extends State<Medications> {
             decoration: BoxDecoration(
               border: Border(
                 left: BorderSide(
-                  color: Theme
-                      .of(context)
-                      .backgroundColor,
+                  color: Theme.of(context).backgroundColor,
                   width: 5.0,
                 ),
                 right: BorderSide(
-                  color: Theme
-                      .of(context)
-                      .backgroundColor,
+                  color: Theme.of(context).backgroundColor,
                   width: 5.0,
                 ),
                 bottom: BorderSide(
-                  color: Theme
-                      .of(context)
-                      .backgroundColor,
+                  color: Theme.of(context).backgroundColor,
                   width: 5.0,
                 ),
               ),
@@ -208,15 +198,11 @@ class _MedicationsState extends State<Medications> {
             decoration: BoxDecoration(
               border: Border(
                 left: BorderSide(
-                  color: Theme
-                      .of(context)
-                      .backgroundColor,
+                  color: Theme.of(context).backgroundColor,
                   width: 5.0,
                 ),
                 right: BorderSide(
-                  color: Theme
-                      .of(context)
-                      .backgroundColor,
+                  color: Theme.of(context).backgroundColor,
                   width: 5.0,
                 ),
               ),
@@ -256,21 +242,15 @@ class _MedicationsState extends State<Medications> {
           decoration: BoxDecoration(
             border: Border(
               left: BorderSide(
-                color: Theme
-                    .of(context)
-                    .backgroundColor,
+                color: Theme.of(context).backgroundColor,
                 width: 5.0,
               ),
               right: BorderSide(
-                color: Theme
-                    .of(context)
-                    .backgroundColor,
+                color: Theme.of(context).backgroundColor,
                 width: 5.0,
               ),
               top: BorderSide(
-                color: Theme
-                    .of(context)
-                    .backgroundColor,
+                color: Theme.of(context).backgroundColor,
                 width: 5.0,
               ),
             ),
@@ -300,17 +280,12 @@ class _MedicationsState extends State<Medications> {
   //makes sure selectedDay != -1
   int selectedDayChecker(int selectedDay) {
     if (selectedDay < 0) {
-      if (DateTime
-          .now()
-          .weekday == 7) {
+      if (DateTime.now().weekday == 7) {
         return 0;
       } else {
-        return DateTime
-            .now()
-            .weekday;
+        return DateTime.now().weekday;
       }
-    }
-    else
+    } else
       return selectedDay;
   }
 
@@ -324,17 +299,14 @@ class _MedicationsState extends State<Medications> {
       for (int j = 0; j < medications[i].daysToTake.length; j++) {
         if (medications[i].daysToTake[j] == daySelected) {
           medicationsForToday.add(medications[i]);
-          String dose = medications[i].amount.toString() + ' ' +
-              medications[i].form;
+          String dose =
+              medications[i].amount.toString() + ' ' + medications[i].form;
           medicationCards.add(medicationCard(medications[i].name, dose));
         }
       }
     }
 
-
-    return Column(
-        children: medicationCards
-    );
+    return Column(children: medicationCards);
   }
 }
 
@@ -361,4 +333,3 @@ Card medicationCard(String medication, String dose) {
     ),
   );
 }
-
