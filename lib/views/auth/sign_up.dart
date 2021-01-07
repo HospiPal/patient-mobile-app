@@ -17,30 +17,35 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32.0),
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Center(
-                    child: Text(
-                      'Sign Up',
-                      style: TextStyle(
-                          fontSize: 20, color: Theme.of(context).accentColor),
-                    ),
-                  ),
-                  AuthField('Username', usernameController, false),
-                  AuthField('Password', passwordController, true),
-                  Padding(
-                      padding: EdgeInsets.only(top: 30),
-                      child: AuthButton(
-                          title: 'Sign Up',
-                          onPressed: () {
-                            Get.off(CentralScreen());
-                            // Navigator.pushReplacementNamed(
-                            //     context, Routes.centralScreen);
-                          })),
-                ])));
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Center(
+              child: Text(
+                'Sign Up',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Theme.of(context).accentColor,
+                ),
+              ),
+            ),
+            AuthField('Username', usernameController, false),
+            AuthField('Password', passwordController, true),
+            Padding(
+              padding: EdgeInsets.only(top: 30),
+              child: AuthButton(
+                title: 'Sign Up',
+                onPressed: () {
+                  Get.off(CentralScreen());
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

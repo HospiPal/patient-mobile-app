@@ -50,9 +50,9 @@ class _LogEntryAddState extends State<LogEntryAdd> {
             );
             JournalTile tile = JournalTile(entry);
             if (tile.entry.subject != '') {
-              Navigator.pop(context, tile);
+              Get.back(result: tile);
             } else {
-              Navigator.pop(context, null);
+              Get.back();
             }
           },
           child: Text('Submit'),

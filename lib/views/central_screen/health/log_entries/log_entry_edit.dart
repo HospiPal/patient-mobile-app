@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:patientapp/views/central_screen/health/log_entry.dart';
 
 class LogEntryEdit extends StatefulWidget {
@@ -33,14 +34,12 @@ class _LogEntryEditState extends State<LogEntryEdit> {
               Padding(
                 padding: EdgeInsets.only(top: 30),
                 child: RaisedButton(
-                  // todo: scale the button without hardcoded values
                   color: Theme.of(context).primaryColor,
                   textColor: Colors.white,
                   onPressed: () {
-                    LogEntry entry =
-                        new LogEntry(dateStamp: widget.entry.dateStamp);
-
-                    Navigator.pop(context, entry);
+                    Get.back(
+                      result: new LogEntry(dateStamp: widget.entry.dateStamp),
+                    );
                   },
                   child: Text('Submit'),
                 ),

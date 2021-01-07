@@ -39,8 +39,6 @@ class Login extends StatelessWidget {
                         title: 'Login',
                         onPressed: () {
                           Get.off(CentralScreen());
-                          // Navigator.pushReplacementNamed(
-                          //     context, Routes.centralScreen);
                         },
                       )),
                 ])));

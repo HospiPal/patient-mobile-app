@@ -93,7 +93,7 @@ class _LogEntryViewState extends State<LogEntryView> {
     if (result != null) {
       setState(() {
         widget.entry = result;
-        Navigator.pop(context, widget.entry);
+        Get.back(result: widget.entry);
       });
     }
   }

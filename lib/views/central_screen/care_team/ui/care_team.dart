@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:patientapp/views/central_screen/health/log_entries/log_entry_add.dart';
 
 import '../profile.dart';
 
@@ -44,22 +45,21 @@ class _CareTeamState extends State<CareTeam> {
                           color: Theme.of(context).accentColor,
                           onPressed: () {
                             Get.to(Profile());
-                            // Navigator.pushNamed(context, Routes.profile);
                           },
                         ),
                         IconButton(
-                            icon: Icon(Icons.message),
-                            color: Theme.of(context).accentColor,
-                            onPressed: () {
-                              // Get.to(MessageWithDoctors()); TODO: implement MessageWithDoctors()
-                              // Navigator.pushNamed(
-                              //     context, Routes.messageWithDoctors);
-                            }),
+                          icon: Icon(Icons.message),
+                          color: Theme.of(context).accentColor,
+                          onPressed: () {
+                            // TODO: implement MessageWithDoctors()
+                            // Get.to(MessageWithDoctors());
+                          },
+                        ),
                         IconButton(
                           icon: Icon(Icons.phone),
                           color: Theme.of(context).accentColor,
                           onPressed: () {
-                            //Navigator.pushNamed(context, Routes.logEntryAdd);
+                            Get.to(LogEntryAdd());
                           },
                         )
                       ],

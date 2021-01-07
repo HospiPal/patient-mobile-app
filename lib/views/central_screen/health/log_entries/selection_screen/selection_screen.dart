@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:patientapp/views/central_screen/health/log_entries/selection_screen/selections.dart';
 
 class SelectionScreen extends StatefulWidget {
@@ -30,7 +31,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
           textColor: Colors.white,
           child: Text('Select'),
           onPressed: () {
-            Navigator.pop(context, widget.selectedItems);
+            Get.back(result: widget.selectedItems);
           },
         )
       ]),

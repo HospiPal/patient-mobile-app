@@ -24,23 +24,20 @@ class _HomeState extends State<Home> {
       ),
       body: SafeArea(
         child: Center(
-          child: Expanded(
-            flex: 10, // 60% of space => (6/(6 + 4))
-            child: Container(
-              child: ListView.builder(
-                padding: const EdgeInsets.all(8),
-                itemCount: notifications.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 1.0, horizontal: 4.0),
-                    child: Container(
-                      child: notifications[index],
-                      padding: EdgeInsets.all(2),
-                    ),
-                  );
-                },
-              ),
+          child: Container(
+            child: ListView.builder(
+              padding: const EdgeInsets.all(8),
+              itemCount: notifications.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 1.0, horizontal: 4.0),
+                  child: Container(
+                    child: notifications[index],
+                    padding: EdgeInsets.all(2),
+                  ),
+                );
+              },
             ),
           ),
         ),

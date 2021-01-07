@@ -41,7 +41,6 @@ class _RecordsState extends State<Records> {
                 ),
                 onTap: () {
                   Get.to(Allergies());
-                  // Navigator.pushNamed(context, Routes.allergies);
                 },
               ),
             ),
@@ -62,7 +61,6 @@ class _RecordsState extends State<Records> {
                 ),
                 onTap: () {
                   Get.to(Conditions());
-                  // Navigator.pushNamed(context, Routes.conditions);
                 },
               ),
             ),
@@ -83,7 +81,6 @@ class _RecordsState extends State<Records> {
                 ),
                 onTap: () {
                   Get.to(Immunizations());
-                  // Navigator.pushNamed(context, Routes.immunizations);
                 },
               ),
             ),
@@ -104,7 +101,6 @@ class _RecordsState extends State<Records> {
                 ),
                 onTap: () {
                   Get.to(LabResults());
-                  // Navigator.pushNamed(context, Routes.labResults);
                 },
               ),
             ),
@@ -125,7 +121,6 @@ class _RecordsState extends State<Records> {
                 ),
                 onTap: () {
                   Get.to(Medications());
-                  // Navigator.pushNamed(context, Routes.medications);
                 },
               ),
             ),
@@ -146,7 +141,6 @@ class _RecordsState extends State<Records> {
                 ),
                 onTap: () {
                   Get.to(Procedures());
-                  // Navigator.pushNamed(context, Routes.procedures);
                 },
               ),
             ),
