@@ -38,7 +38,6 @@ class _LogEntryAddState extends State<LogEntryAdd> {
       Padding(
         padding: EdgeInsets.only(top: 30),
         child: RaisedButton(
-          // todo: scale the button without hardcoded values
           color: Theme.of(context).primaryColor,
           textColor: Colors.white,
           onPressed: () {

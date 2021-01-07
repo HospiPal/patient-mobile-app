@@ -19,7 +19,6 @@ class LogEntryView extends StatefulWidget {
 
 class _LogEntryViewState extends State<LogEntryView> {
   @override
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:patientapp/views/central_screen/care_team/ui/care_team.dart';
 import 'package:patientapp/views/central_screen/health/ui/health.dart';
-import 'package:patientapp/views/central_screen/home/patient_home.dart';
+import 'package:patientapp/views/central_screen/home/home.dart';
 import 'package:patientapp/views/central_screen/records/records.dart';
 
 class CentralScreen extends StatefulWidget {
@@ -10,28 +10,20 @@ class CentralScreen extends StatefulWidget {
 }
 
 class _CentralScreenState extends State<CentralScreen> {
-  int _selectedIndex = 0;
+  int _selectedScreen = 0;
 
-//  static const TextStyle optionStyle =
-//      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static List<Widget> _widgetOptions = <Widget>[
-    PatientHome(),
+  final List<Widget> _screens = <Widget>[
+    Home(),
     CareTeam(),
     Health(),
     Records()
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: _screens.elementAt(_selectedScreen),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -52,9 +44,13 @@ class _CentralScreenState extends State<CentralScreen> {
             label: 'Records',
           ),
         ],
-        currentIndex: _selectedIndex,
+        currentIndex: _selectedScreen,
         //selectedItemColor: Theme.of(context).accentColor,
-        onTap: _onItemTapped,
+        onTap: (int index) {
+          setState(() {
+            _selectedScreen = index;
+          });
+        },
         type: BottomNavigationBarType.fixed,
       ),
     );
