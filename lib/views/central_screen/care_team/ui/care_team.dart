@@ -20,13 +20,7 @@ class _CareTeamState extends State<CareTeam> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(actions: <Widget>[
-        FlatButton(
-          textColor: Colors.white,
-          child: Text('Logout'),
-          onPressed: () {},
-        )
-      ]),
+      appBar: AppBar(),
       body: SafeArea(
         child: Center(
           child: ListView.builder(
