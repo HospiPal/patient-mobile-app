@@ -1,3 +1,0 @@
-class Patient {
-  String name;
-}

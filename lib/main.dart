@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:patientapp/views/auth/auth.dart';
+import 'package:patientapp/ui/auth/auth.dart';
 
 void main() => runApp(MyApp());
 
