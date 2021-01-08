@@ -1,8 +1,18 @@
+import 'package:fhir/primitive_types/id.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:patientapp/models/user.dart';
 import 'package:patientapp/ui/central_screen/central_screen.dart';
+import 'package:provider/provider.dart';
 
-class Auth extends StatelessWidget {
+class Auth extends StatefulWidget {
+  @override
+  _AuthState createState() => _AuthState();
+}
+
+class _AuthState extends State<Auth> {
+  final fhirIdController = TextEditingController(text: '1174683');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,12 +29,13 @@ class Auth extends StatelessWidget {
                     fontSize: 20, color: Theme.of(context).accentColor),
               ),
             ),
-            AuthField('FHIR ID', TextEditingController(text: '1174683'), false),
+            AuthField('FHIR ID', fhirIdController, false),
             Padding(
               padding: const EdgeInsets.only(top: 30),
               child: AuthButton(
                 title: 'Login',
-                onPressed: () {
+                onPressed: () async {
+                  await context.read<UserModel>().initPatient(Id(fhirIdController.text));
                   Get.off(CentralScreen());
                 },
               ),

@@ -21,10 +21,12 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  get: ^3.24.0
+  provider: ^4.3.2+3
 
   fhir_at_rest: ^0.0.9
   fhir: ^0.0.12
+
+  get: ^3.24.0
 
   flutter:
     sdk: flutter

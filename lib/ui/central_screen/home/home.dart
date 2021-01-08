@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:patientapp/models/user.dart';
 import 'package:patientapp/ui/central_screen/home/medications_for_today/medications_for_today.dart';
 import 'package:patientapp/ui/central_screen/home/patient_profile/patient_profile.dart';
 import 'package:patientapp/ui/central_screen/home/recent_labs/recent_labs.dart';
 import 'package:patientapp/ui/central_screen/home/upcoming_appointments/upcoming_appointments.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -16,11 +18,22 @@ class _HomeState extends State<Home> {
     MedicationsForToday(),
   ];
 
+  Widget appBarTitle(BuildContext context) {
+    var patientName = context.watch<UserModel>().name;
+    patientName = null;
+
+    if (patientName == null) {
+      return Text("Hi :)");
+    } else {
+      return Text("Hi $patientName!");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hi [Patient]!"),
+        title: appBarTitle(context),
       ),
       body: SafeArea(
         child: Center(
