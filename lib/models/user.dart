@@ -1,10 +1,10 @@
 import 'package:fhir/r4.dart';
-import 'package:fhir_at_rest/requests/read_request.dart';
-import 'package:fhir_at_rest/resource_types/r4.dart';
 import 'package:flutter/foundation.dart';
+import 'package:patientapp/services/fhir.dart';
 
 class UserModel extends ChangeNotifier {
   Patient patient;
+  List<MedicationRequest> medicationRequests;
 
   get name {
     if (patient == null ||
@@ -18,13 +18,16 @@ class UserModel extends ChangeNotifier {
     return name;
   }
 
-  Future<void> initPatient(Id id) async {
-    final patientRequest = await ReadRequest.r4(
-      base: Uri.parse('https://hapi.fhir.org/baseR4'),
-      type: R4Types.patient,
-      id: id,
-    ).request();
-    patient = patientRequest.fold((l) => null, (r) => r as Patient);
+  Future<void> retrievePatient(Id id) async {
+    patient = await Fhir().patient(id);
+    notifyListeners();
+  }
+
+  Future<void> retrieveMedicationRequests() async {
+    if (patient == null) {
+      return;
+    }
+    medicationRequests = await Fhir().medicationRequests(patient.id);
     notifyListeners();
   }
 }
