@@ -35,7 +35,9 @@ class _AuthState extends State<Auth> {
               child: AuthButton(
                 title: 'Login',
                 onPressed: () async {
-                  await context.read<UserModel>().initPatient(Id(fhirIdController.text));
+                  await context.read<UserModel>().retrievePatient(
+                        Id(fhirIdController.text),
+                      );
                   Get.off(CentralScreen());
                 },
               ),
