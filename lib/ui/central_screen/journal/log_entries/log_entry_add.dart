@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:patientapp/ui/central_screen/health/journal_tile.dart';
-import 'package:patientapp/ui/central_screen/health/log_entries/selection_screen/selection_screen.dart';
-import 'package:patientapp/ui/central_screen/health/log_entries/selection_screen/selections.dart';
-import 'package:patientapp/ui/central_screen/health/log_entry.dart';
+import 'package:patientapp/ui/central_screen/journal/journal_tile.dart';
+import 'package:patientapp/ui/central_screen/journal/log_entries/selection_screen/selection_screen.dart';
+import 'package:patientapp/ui/central_screen/journal/log_entries/selection_screen/selections.dart';
+import 'package:patientapp/ui/central_screen/journal/log_entry.dart';
 
 class LogEntryAdd extends StatefulWidget {
   @override

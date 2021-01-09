@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:patientapp/ui/central_screen/health/date_organizer.dart';
-import 'package:patientapp/ui/central_screen/health/log_entry.dart';
+import 'package:patientapp/ui/central_screen/journal/date_organizer.dart';
+import 'package:patientapp/ui/central_screen/journal/log_entry.dart';
 
 import 'log_entry_edit.dart';
 

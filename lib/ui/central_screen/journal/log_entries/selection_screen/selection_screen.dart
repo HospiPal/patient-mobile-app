@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:patientapp/ui/central_screen/health/log_entries/selection_screen/selections.dart';
+import 'package:patientapp/ui/central_screen/journal/log_entries/selection_screen/selections.dart';
 
 class SelectionScreen extends StatefulWidget {
   final List<SelectionInList> selections; //total selections

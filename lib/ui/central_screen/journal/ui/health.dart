@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:patientapp/ui/central_screen/health/log_entries/log_entry_add.dart';
-import 'package:patientapp/ui/central_screen/health/log_entries/selection_screen/selections.dart';
-import 'package:patientapp/ui/central_screen/health/log_entry.dart';
+import 'package:patientapp/ui/central_screen/journal/log_entries/log_entry_add.dart';
+import 'package:patientapp/ui/central_screen/journal/log_entries/selection_screen/selections.dart';
+import 'package:patientapp/ui/central_screen/journal/log_entry.dart';
 
 import '../date_organizer.dart';
 import '../journal_tile.dart';

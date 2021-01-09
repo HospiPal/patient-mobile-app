@@ -1,4 +1,4 @@
-import 'package:patientapp/ui/central_screen/health/log_entries/selection_screen/selections.dart';
+import 'package:patientapp/ui/central_screen/journal/log_entries/selection_screen/selections.dart';
 
 class LogEntry {
   String subject;
