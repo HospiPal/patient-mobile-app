@@ -9,9 +9,9 @@ Future<UserModel> user(Id id) async {
 }
 
 void main() {
-  test('patientName', () async {
+  test('empty MedicationRequest List', () async {
     var userModel = await user(Id('1174683'));
     await userModel.retrieveMedicationRequests();
-    print(userModel.medicationRequests);
+    expect(userModel.medicationRequests, []);
   });
 }
