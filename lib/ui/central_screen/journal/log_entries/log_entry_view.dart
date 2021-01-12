@@ -113,12 +113,12 @@ class _EntryContainerState extends State<EntryContainer> {
   Widget build(BuildContext context) {
     return Container(
       child: Text(widget.text,
-          style: new TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold)),
+          style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold)),
       //width: 150,
       padding: EdgeInsets.all(5),
-      decoration: new BoxDecoration(
+      decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
-        borderRadius: new BorderRadius.only(
+        borderRadius: BorderRadius.only(
           topLeft: const Radius.circular(10.0),
           topRight: const Radius.circular(10.0),
           bottomLeft: const Radius.circular(10.0),

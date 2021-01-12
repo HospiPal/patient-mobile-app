@@ -34,11 +34,11 @@ class _RecentLabsState extends State<RecentLabs> {
 
   Widget getRecentLabResultCards() {
     if (recentLabs.length > 0) {
-      return new Column(children: recentLabs);
+      return Column(children: recentLabs);
     } else {
       return Container(
         child: Text("No Recent Labs"),
-        margin: new EdgeInsets.symmetric(vertical: 10.0),
+        margin: EdgeInsets.symmetric(vertical: 10.0),
       );
     }
   }

@@ -16,7 +16,7 @@ class JournalTile extends StatefulWidget {
 }
 
 class _JournalTileState extends State<JournalTile> {
-  DateOrganizer date = new DateOrganizer();
+  DateOrganizer date = DateOrganizer();
 
   void buttonPress(BuildContext context) async {
     final entry =
@@ -111,7 +111,7 @@ class _JournalTileState extends State<JournalTile> {
   }
 
   List<Chip> chipList(List<SelectionInList> itemList) {
-    List<Chip> listOfChips = new List();
+    List<Chip> listOfChips = List();
     for (int i = 0; i < itemList.length; i++) {
       listOfChips.add(Chip(
         label: Text(itemList[i].data),

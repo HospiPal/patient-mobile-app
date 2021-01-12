@@ -20,7 +20,7 @@ class _LogEntryEditState extends State<LogEntryEdit> {
   @override
   Widget build(BuildContext context) {
     TextEditingController ailmentController =
-        new TextEditingController(text: widget.entry.subject);
+        TextEditingController(text: widget.entry.subject);
     return Scaffold(
         body: SafeArea(
       child: Padding(
@@ -38,7 +38,7 @@ class _LogEntryEditState extends State<LogEntryEdit> {
                   textColor: Colors.white,
                   onPressed: () {
                     Get.back(
-                      result: new LogEntry(dateStamp: widget.entry.dateStamp),
+                      result: LogEntry(dateStamp: widget.entry.dateStamp),
                     );
                   },
                   child: Text('Submit'),

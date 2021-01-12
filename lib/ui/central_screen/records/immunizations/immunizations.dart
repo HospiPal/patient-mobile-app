@@ -32,9 +32,9 @@ class _ImmunizationsState extends State<Immunizations> {
                 child: Container(
                   child: immunizations[index],
                   padding: EdgeInsets.all(2),
-                  decoration: new BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
-                    borderRadius: new BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       topLeft: const Radius.circular(4.0),
                       topRight: const Radius.circular(4.0),
                       bottomLeft: const Radius.circular(4.0),

@@ -9,7 +9,6 @@ import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_ref
 import 'fhir.dart';
 
 class MedicationsService extends FhirService {
-
   Future<List<MedicationRequest>> _medicationRequests(Id id) async {
     final medicationRequestRequest = await SearchRequest.r4(
       base: baseUri,
@@ -29,7 +28,8 @@ class MedicationsService extends FhirService {
       return bundle.total.value.fold((l) => null, (total) {
         if (total <= 0) {
           return [];
-        } else { // 'total > 0' implies that 'bundle.entry != null'
+        } else {
+          // 'total > 0' implies that 'bundle.entry != null'
           return bundle.entry
               .map((bundleEntry) => bundleEntry.resource as MedicationRequest)
               .toList();

@@ -35,11 +35,11 @@ class _MedicationsForTodayState extends State<MedicationsForToday> {
 
   Widget getAppointmentCards() {
     if (appointments.length > 0) {
-      return new Column(children: appointments);
+      return Column(children: appointments);
     } else {
       return Container(
         child: Text("No Upcoming Appointments"),
-        margin: new EdgeInsets.symmetric(vertical: 10.0),
+        margin: EdgeInsets.symmetric(vertical: 10.0),
       );
     }
   }

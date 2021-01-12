@@ -63,9 +63,9 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.transparent,
       builder: (context) => Container(
         height: MediaQuery.of(context).size.height,
-        decoration: new BoxDecoration(
+        decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: new BorderRadius.only(
+          borderRadius: BorderRadius.only(
             topLeft: const Radius.circular(25.0),
             topRight: const Radius.circular(25.0),
           ),

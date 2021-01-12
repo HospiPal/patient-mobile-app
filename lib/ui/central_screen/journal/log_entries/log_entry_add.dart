@@ -11,7 +11,7 @@ class LogEntryAdd extends StatefulWidget {
 }
 
 class _LogEntryAddState extends State<LogEntryAdd> {
-  TextEditingController subjectController = new TextEditingController();
+  TextEditingController subjectController = TextEditingController();
   List<SelectionInList> symptoms = List<SelectionInList>();
   List<SelectionInList> physicians = List<SelectionInList>();
   List<SelectionInList> severity = List<SelectionInList>();
@@ -41,7 +41,7 @@ class _LogEntryAddState extends State<LogEntryAdd> {
           color: Theme.of(context).primaryColor,
           textColor: Colors.white,
           onPressed: () {
-            LogEntry entry = new LogEntry(
+            LogEntry entry = LogEntry(
               subject: subjectController.text,
               symptoms: symptoms,
               physicians: physicians,

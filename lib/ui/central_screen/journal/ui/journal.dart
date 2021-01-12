@@ -32,7 +32,7 @@ class _JournalState extends State<Journal> {
         physicians: [SelectionInList('Heartburn'), SelectionInList('Headache')],
         dateStamp: DateTime.now()))
   ];
-  DateOrganizer date = new DateOrganizer();
+  DateOrganizer date = DateOrganizer();
   List<String> dropDownMonths = <String>[
     'All Entries',
     'January',
@@ -83,9 +83,9 @@ class _JournalState extends State<Journal> {
       backgroundColor: Colors.transparent,
       builder: (context) => Container(
         height: MediaQuery.of(context).size.height,
-        decoration: new BoxDecoration(
+        decoration:  BoxDecoration(
           color: Colors.white,
-          borderRadius: new BorderRadius.only(
+          borderRadius:  BorderRadius.only(
             topLeft: const Radius.circular(25.0),
             topRight: const Radius.circular(25.0),
           ),
@@ -111,12 +111,12 @@ class _JournalState extends State<Journal> {
               value: dropDownValue,
               //iconSize: 24,
               //elevation: 16,
-              onChanged: (String newValue) {
+              onChanged: (String Value) {
                 setState(() {
-                  currentMonthDisplayed = dropDownMonths.indexOf(newValue);
+                  currentMonthDisplayed = dropDownMonths.indexOf(Value);
                   monthsDisplayed =
                       getTileList(currentMonthDisplayed, currentYearDisplayed);
-                  dropDownValue = newValue;
+                  dropDownValue = Value;
                 });
               },
               items:
@@ -134,12 +134,12 @@ class _JournalState extends State<Journal> {
                 value: dropDownYearValue,
                 //iconSize: 24,
                 //elevation: 16,
-                onChanged: (int newValue) {
+                onChanged: (int Value) {
                   setState(() {
-                    currentYearDisplayed = newValue;
+                    currentYearDisplayed = Value;
                     monthsDisplayed = getTileList(
                         currentMonthDisplayed, currentYearDisplayed);
-                    dropDownYearValue = newValue;
+                    dropDownYearValue = Value;
                   });
                 },
                 items: dropDownYears.map<DropdownMenuItem<int>>((int value) {

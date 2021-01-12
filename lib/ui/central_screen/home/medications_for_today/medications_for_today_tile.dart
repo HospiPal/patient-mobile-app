@@ -29,7 +29,7 @@ class _MedicationsForTodayTileState extends State<MedicationsForTodayTile> {
               Text(widget.dose),
             ],
           ),
-          margin: new EdgeInsets.symmetric(vertical: 25.0),
+          margin: EdgeInsets.symmetric(vertical: 25.0),
           width: 500,
         ),
         onTap: () {

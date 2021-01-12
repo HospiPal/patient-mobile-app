@@ -28,7 +28,7 @@ class _RecentLabsTileState extends State<RecentLabsTile> {
               Text(widget.date),
             ],
           ),
-          margin: new EdgeInsets.symmetric(vertical: 25.0),
+          margin: EdgeInsets.symmetric(vertical: 25.0),
           width: 500,
         ),
         onTap: () {

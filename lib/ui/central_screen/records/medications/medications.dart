@@ -89,7 +89,7 @@ class _MedicationsState extends State<Medications> {
   }
 
   Table medTable() {
-    List<TableRow> rowsOfTable = new List<TableRow>(medications.length + 1);
+    List<TableRow> rowsOfTable = List<TableRow>(medications.length + 1);
     for (int i = 0; i < medications.length + 1; i++) {
       if (i == 0) {
         rowsOfTable[i] = TableRow(
@@ -118,11 +118,11 @@ class _MedicationsState extends State<Medications> {
     double boxHeight = 30;
     Color col =
         Theme.of(context).accentColor; //colors[random.nextInt(colors.length)];
-    List<Container> rowOfBoxes = new List<Container>(7);
+    List<Container> rowOfBoxes = List<Container>(7);
 
     for (int i = 0; i < rowOfBoxes.length; i++) {
       //blank if medication should not be taken that day
-      rowOfBoxes[i] = new Container(
+      rowOfBoxes[i] = Container(
         child: Text(''),
         width: 50,
         padding: EdgeInsets.all(2.0),
@@ -133,7 +133,7 @@ class _MedicationsState extends State<Medications> {
     for (int i = 0; i < medication.daysToTake.length; i++) {
       //colored if medication should be taken
       if (medication.daysToTake[i] != 7) {
-        rowOfBoxes[medication.daysToTake[i]] = new Container(
+        rowOfBoxes[medication.daysToTake[i]] = Container(
           height: boxHeight,
           //padding: EdgeInsets.fromLTRB(0, 0.5, 0, 0.5),
           decoration: BoxDecoration(
@@ -146,7 +146,7 @@ class _MedicationsState extends State<Medications> {
         );
       } else {
         //for sunday since it DateTime stores it as 7 instead of 0
-        rowOfBoxes[medication.daysToTake[0]] = new Container(
+        rowOfBoxes[medication.daysToTake[0]] = Container(
           color: col,
           height: boxHeight,
           child: Padding(
@@ -170,7 +170,7 @@ class _MedicationsState extends State<Medications> {
       if (i == columnBordered) {
         if (isBottom) {
           Container temp = rowOfBoxes[i];
-          rowOfBoxes[i] = new Container(
+          rowOfBoxes[i] = Container(
             child: temp,
             height: boxHeight,
             decoration: BoxDecoration(
@@ -192,7 +192,7 @@ class _MedicationsState extends State<Medications> {
           );
         } else {
           Container temp = rowOfBoxes[i];
-          rowOfBoxes[i] = new Container(
+          rowOfBoxes[i] = Container(
             child: temp,
             height: boxHeight,
             decoration: BoxDecoration(
@@ -217,7 +217,7 @@ class _MedicationsState extends State<Medications> {
 
   List<Container> dateBoxes(int columnBordered) {
     List<String> days = ['S', 'M', 'T', 'W', 'Th', 'F', 'Sa'];
-    List<Container> rowOfBoxes = new List<Container>(7);
+    List<Container> rowOfBoxes = List<Container>(7);
 
     //selects what day should be bordered
     columnBordered = selectedDayChecker(columnBordered);
@@ -225,7 +225,7 @@ class _MedicationsState extends State<Medications> {
     for (int i = 0; i < rowOfBoxes.length; i++) {
       if (i == columnBordered) {
         //if this is the day selected
-        rowOfBoxes[i] = new Container(
+        rowOfBoxes[i] = Container(
           child: InkWell(
             child: Center(
               child: Text(
@@ -257,7 +257,7 @@ class _MedicationsState extends State<Medications> {
           ),
         );
       } else {
-        rowOfBoxes[i] = new Container(
+        rowOfBoxes[i] = Container(
           child: InkWell(
             child: Center(
               child: Text(
@@ -290,8 +290,8 @@ class _MedicationsState extends State<Medications> {
   }
 
   Column medInfoList() {
-    List<MedicationInfo> medicationsForToday = new List<MedicationInfo>();
-    List<Card> medicationCards = new List<Card>();
+    List<MedicationInfo> medicationsForToday = List<MedicationInfo>();
+    List<Card> medicationCards = List<Card>();
     //checks to make sure selectedDay != -1
     int daySelected = selectedDayChecker(selectedDay);
 
@@ -324,7 +324,7 @@ Card medicationCard(String medication, String dose) {
             Text(dose),
           ],
         ),
-        margin: new EdgeInsets.symmetric(vertical: 15.0),
+        margin: EdgeInsets.symmetric(vertical: 15.0),
         width: 500,
       ),
       onTap: () {
