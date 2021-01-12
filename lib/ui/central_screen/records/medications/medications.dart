@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:patientapp/ui/central_screen/records/medications/medication_info.dart';
+import 'package:patientapp/models/medications.dart';
 import 'package:patientapp/ui/central_screen/records/medications/medication_tile.dart';
 
 class Medications extends StatefulWidget {
