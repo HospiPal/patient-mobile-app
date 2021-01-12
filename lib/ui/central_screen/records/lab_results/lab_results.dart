@@ -9,19 +9,6 @@ class LabResults extends StatefulWidget {
   _LabResultsState createState() => _LabResultsState();
 }
 
-/*
-
-
-
-IF U WANT TO MAKE ETHAN REALLY HAPPEN INSTEAD OF A NEW SCREEN WHEN YOU
-CLICK THE TILE A MODAL BOTTOM SHEET POPS UP. SEE THE Health.dart FILE
-AND THE CODE BELOW:
-
-I GUESS I MADE ETHAN HAPPY :)
-
-
-*/
-
 class _LabResultsState extends State<LabResults> {
   final List<LabResultsTile> results = <LabResultsTile>[
     LabResultsTile(),

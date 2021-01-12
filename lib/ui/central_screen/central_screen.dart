@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:patientapp/ui/central_screen/care_team/ui/care_team.dart';
-import 'package:patientapp/ui/central_screen/journal/ui/health.dart';
+import 'package:patientapp/ui/central_screen/journal/ui/journal.dart';
 import 'package:patientapp/ui/central_screen/home/home.dart';
 import 'package:patientapp/ui/central_screen/records/records.dart';
 
@@ -15,7 +15,7 @@ class _CentralScreenState extends State<CentralScreen> {
   final List<Widget> _screens = <Widget>[
     Home(),
     CareTeam(),
-    Health(),
+    Journal(),
     Records()
   ];
 

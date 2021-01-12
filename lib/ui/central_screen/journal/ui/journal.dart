@@ -9,12 +9,12 @@ import 'package:patientapp/ui/central_screen/journal/log_entry.dart';
 import '../date_organizer.dart';
 import '../journal_tile.dart';
 
-class Health extends StatefulWidget {
+class Journal extends StatefulWidget {
   @override
-  _HealthState createState() => _HealthState();
+  _JournalState createState() => _JournalState();
 }
 
-class _HealthState extends State<Health> {
+class _JournalState extends State<Journal> {
   //TODO: this List needs to be relocated
 
   final List<JournalTile> entries = <JournalTile>[
