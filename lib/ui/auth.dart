@@ -38,7 +38,7 @@ class _AuthState extends State<Auth> {
                   await context.read<UserModel>().retrievePatient(
                         Id(fhirIdController.text),
                       );
-                  Get.off(CentralScreen());
+                  Get.offAll(CentralScreen());
                 },
               ),
             ),
