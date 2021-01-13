@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:patientapp/models/journal.dart';
 import 'package:patientapp/ui/central_screen/journal/log_entries/log_entry_add.dart';
-import 'package:patientapp/ui/central_screen/journal/log_entries/selection_screen/selections.dart';
-import 'package:patientapp/ui/central_screen/journal/log_entry.dart';
 
 import 'date_organizer.dart';
 
 class JournalTile extends StatefulWidget {
-  LogEntry entry;
+  LogEntryModel entry;
 
   JournalTile(this.entry);
 
@@ -85,7 +84,7 @@ class _JournalTileState extends State<JournalTile> {
                               ),
                             if (widget.entry.severity != null &&
                                 widget.entry.severity.length > 0)
-                              Text("Severity: " + widget.entry.severity[0].data,
+                              Text("Severity: " + widget.entry.severity[0].option,
                                   style:
                                       TextStyle(fontWeight: FontWeight.bold)),
                             if (widget.entry.physicians != null)
@@ -110,11 +109,11 @@ class _JournalTileState extends State<JournalTile> {
     );
   }
 
-  List<Chip> chipList(List<SelectionInList> itemList) {
+  List<Chip> chipList(List<SelectionModel> itemList) {
     List<Chip> listOfChips = List();
     for (int i = 0; i < itemList.length; i++) {
       listOfChips.add(Chip(
-        label: Text(itemList[i].data),
+        label: Text(itemList[i].option),
       ));
     }
     return listOfChips;
@@ -135,7 +134,7 @@ class SelectedChip extends StatelessWidget {
 }
 
 class EntryArg {
-  final LogEntry entry;
+  final LogEntryModel entry;
 
   EntryArg(this.entry);
 }

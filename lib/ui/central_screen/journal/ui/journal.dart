@@ -1,10 +1,7 @@
-//import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:patientapp/models/journal.dart';
 import 'package:patientapp/ui/central_screen/journal/log_entries/log_entry_add.dart';
-import 'package:patientapp/ui/central_screen/journal/log_entries/selection_screen/selections.dart';
-import 'package:patientapp/ui/central_screen/journal/log_entry.dart';
 
 import '../date_organizer.dart';
 import '../journal_tile.dart';
@@ -18,18 +15,18 @@ class _JournalState extends State<Journal> {
   //TODO: this List needs to be relocated
 
   final List<JournalTile> entries = <JournalTile>[
-    JournalTile(LogEntry(symptoms: [
-      SelectionInList('Dr. Rana'),
-      SelectionInList('Dr. Mulligan')
+    JournalTile(LogEntryModel(symptoms: [
+      SelectionModel(option: 'Dr. Rana'),
+      SelectionModel(option: 'Dr. Mulligan')
     ], physicians: [
-      SelectionInList('Heartburn'),
-      SelectionInList('Headache')
+      SelectionModel(option: 'Heartburn'),
+      SelectionModel(option: 'Headache')
     ], dateStamp: DateTime.now()))
   ];
   List<JournalTile> monthsDisplayed = <JournalTile>[
-    JournalTile(LogEntry(
-        symptoms: [SelectionInList('Heartburn'), SelectionInList('Headache')],
-        physicians: [SelectionInList('Heartburn'), SelectionInList('Headache')],
+    JournalTile(LogEntryModel(
+        symptoms: [SelectionModel(option: 'Heartburn'), SelectionModel(option: 'Headache')],
+        physicians: [SelectionModel(option: 'Heartburn'), SelectionModel(option: 'Headache')],
         dateStamp: DateTime.now()))
   ];
   DateOrganizer date = DateOrganizer();
@@ -111,12 +108,12 @@ class _JournalState extends State<Journal> {
               value: dropDownValue,
               //iconSize: 24,
               //elevation: 16,
-              onChanged: (String Value) {
+              onChanged: (String value) {
                 setState(() {
-                  currentMonthDisplayed = dropDownMonths.indexOf(Value);
+                  currentMonthDisplayed = dropDownMonths.indexOf(value);
                   monthsDisplayed =
                       getTileList(currentMonthDisplayed, currentYearDisplayed);
-                  dropDownValue = Value;
+                  dropDownValue = value;
                 });
               },
               items:
@@ -134,12 +131,12 @@ class _JournalState extends State<Journal> {
                 value: dropDownYearValue,
                 //iconSize: 24,
                 //elevation: 16,
-                onChanged: (int Value) {
+                onChanged: (int value) {
                   setState(() {
-                    currentYearDisplayed = Value;
+                    currentYearDisplayed = value;
                     monthsDisplayed = getTileList(
                         currentMonthDisplayed, currentYearDisplayed);
-                    dropDownYearValue = Value;
+                    dropDownYearValue = value;
                   });
                 },
                 items: dropDownYears.map<DropdownMenuItem<int>>((int value) {

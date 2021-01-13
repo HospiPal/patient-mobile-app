@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:patientapp/models/journal.dart';
 import 'package:patientapp/ui/central_screen/journal/journal_tile.dart';
 import 'package:patientapp/ui/central_screen/journal/log_entries/selection_screen/selection_screen.dart';
 import 'package:patientapp/ui/central_screen/journal/log_entries/selection_screen/selections.dart';
-import 'package:patientapp/ui/central_screen/journal/log_entry.dart';
 
 class LogEntryAdd extends StatefulWidget {
   @override
@@ -12,10 +12,10 @@ class LogEntryAdd extends StatefulWidget {
 
 class _LogEntryAddState extends State<LogEntryAdd> {
   TextEditingController subjectController = TextEditingController();
-  List<SelectionInList> symptoms = List<SelectionInList>();
-  List<SelectionInList> physicians = List<SelectionInList>();
-  List<SelectionInList> severity = List<SelectionInList>();
-  List<SelectionInList> dateAffected = List<SelectionInList>();
+  List<SelectionModel> symptoms = List<SelectionModel>();
+  List<SelectionModel> physicians = List<SelectionModel>();
+  List<SelectionModel> severity = List<SelectionModel>();
+  List<SelectionModel> dateAffected = List<SelectionModel>();
 
   List<Widget> journalFieldWidgets() {
     return [
@@ -41,7 +41,7 @@ class _LogEntryAddState extends State<LogEntryAdd> {
           color: Theme.of(context).primaryColor,
           textColor: Colors.white,
           onPressed: () {
-            LogEntry entry = LogEntry(
+            LogEntryModel entry = LogEntryModel(
               subject: subjectController.text,
               symptoms: symptoms,
               physicians: physicians,
@@ -105,8 +105,8 @@ class SelectionEntry extends StatefulWidget {
   _SelectionEntryState createState() => _SelectionEntryState();
 
   final String title;
-  final List<SelectionInList> selections;
-  List<SelectionInList> selectedItems;
+  final List<SelectionModel> selections;
+  List<SelectionModel> selectedItems;
 
   SelectionEntry(this.title, this.selections, this.selectedItems);
 }
@@ -163,7 +163,7 @@ class _SelectionEntryState extends State<SelectionEntry> {
             color: Theme.of(context).accentColor,
           ),
         ),
-        label: Text(widget.selectedItems[i].data),
+        label: Text(widget.selectedItems[i].option),
         onPressed: () {
           print('Pressed!');
         },
@@ -195,9 +195,9 @@ class _SelectionEntryState extends State<SelectionEntry> {
 }
 
 class SelectionArg {
-  final List<SelectionInList> selection; //all possibilities
+  final List<SelectionModel> selection; //all possibilities
   final String title;
-  final List<SelectionInList>
+  final List<SelectionModel>
       previouslySelectedItems; //previously slected, if any
 
   SelectionArg(this.selection, this.title, this.previouslySelectedItems);

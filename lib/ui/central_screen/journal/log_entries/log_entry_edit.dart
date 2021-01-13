@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:patientapp/ui/central_screen/journal/log_entry.dart';
+import 'package:patientapp/models/journal.dart';
 
 class LogEntryEdit extends StatefulWidget {
-  final LogEntry entry;
+  final LogEntryModel entry;
 
   @override
   _LogEntryEditState createState() => _LogEntryEditState();
@@ -38,7 +38,7 @@ class _LogEntryEditState extends State<LogEntryEdit> {
                   textColor: Colors.white,
                   onPressed: () {
                     Get.back(
-                      result: LogEntry(dateStamp: widget.entry.dateStamp),
+                      result: LogEntryModel(dateStamp: widget.entry.dateStamp),
                     );
                   },
                   child: Text('Submit'),

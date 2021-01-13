@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:patientapp/ui/central_screen/journal/log_entries/selection_screen/selections.dart';
+import 'package:patientapp/models/journal.dart';
 
 class SelectionScreen extends StatefulWidget {
-  final List<SelectionInList> selections; //total selections
-  final List<SelectionInList> selectedItems; //previous selections, if any
+  final List<SelectionModel> selections; //total selections
+  final List<SelectionModel> selectedItems; //previous selections, if any
   final String title;
 
   @override
@@ -69,7 +69,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
                     Row(
                       children: <Widget>[
                         Center(
-                          child: Text(widget.selections[index].data),
+                          child: Text(widget.selections[index].option),
                         ),
                         if (widget.selections[index].isSelected == true)
                           Icon(

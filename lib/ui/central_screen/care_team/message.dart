@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:patientapp/models/message.dart';
 import 'package:patientapp/ui/central_screen/care_team/message_bubble.dart';
-import 'package:patientapp/ui/central_screen/care_team/message_text.dart';
 
 class Message extends StatefulWidget {
   @override
@@ -11,16 +11,11 @@ class Message extends StatefulWidget {
 // TODO: watch this video - https://www.youtube.com/watch?v=h-igXZCCrrc
 // TODO: use list tiles for popups
 
-enum MessageType {
-  Sender,
-  Receiver,
-}
-
 class _MessageState extends State<Message> {
-  List<MessageText> messages = [
-    MessageText(message: 'Hey Dr. Mulligan', messageType: MessageType.Sender),
-    MessageText(
-        message: 'Hi Ethan! How ya doing?', messageType: MessageType.Receiver),
+  List<MessageModel> messages = [
+    MessageModel(text: 'Hey Dr. Mulligan', messageType: MessageType.Sender),
+    MessageModel(
+        text: 'Hi Ethan! How ya doing?', messageType: MessageType.Receiver),
   ];
 
   @override
@@ -66,8 +61,8 @@ class _MessageState extends State<Message> {
                         color: Theme.of(context).primaryColor,
                         onPressed: () {
                           setState(() {
-                            messages.add(MessageText(
-                                message: 'I\'m not feeling too great today',
+                            messages.add(MessageModel(
+                                text: 'I\'m not feeling too great today',
                                 messageType: MessageType.Sender));
                           });
                         },

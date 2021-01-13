@@ -1,29 +1,22 @@
+import 'package:patientapp/models/journal.dart';
+
 class Selections {
-  final List<SelectionInList> symptoms = <SelectionInList>[
-    SelectionInList('Heartburn'),
-    SelectionInList('Headache'),
-    SelectionInList('Fever'),
-    SelectionInList('Nausea')
+  final List<SelectionModel> symptoms = <SelectionModel>[
+    SelectionModel(option: 'Heartburn'),
+    SelectionModel(option: 'Headache'),
+    SelectionModel(option: 'Fever'),
+    SelectionModel(option: 'Nausea')
   ];
-  final List<SelectionInList> physicians = <SelectionInList>[
-    SelectionInList('Dr. Mulligan'),
-    SelectionInList('Dr. Rana'),
-    SelectionInList('Dr. Fargnoli')
+  final List<SelectionModel> physicians = <SelectionModel>[
+    SelectionModel(option: 'Dr. Mulligan'),
+    SelectionModel(option: 'Dr. Rana'),
+    SelectionModel(option: 'Dr. Fargnoli')
   ];
-  final List<SelectionInList> severity = <SelectionInList>[
-    SelectionInList('1'),
-    SelectionInList('2'),
-    SelectionInList('3'),
-    SelectionInList('4'),
-    SelectionInList('5'),
+  final List<SelectionModel> severity = <SelectionModel>[
+    SelectionModel(option: '1'),
+    SelectionModel(option: '2'),
+    SelectionModel(option: '3'),
+    SelectionModel(option: '4'),
+    SelectionModel(option: '5'),
   ];
-}
-
-class SelectionInList {
-  String data;
-  bool isSelected = false;
-
-  SelectionInList(
-    this.data,
-  );
 }

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:patientapp/models/journal.dart';
 import 'package:patientapp/ui/central_screen/journal/date_organizer.dart';
-import 'package:patientapp/ui/central_screen/journal/log_entry.dart';
 
 import 'log_entry_edit.dart';
 
 class LogEntryView extends StatefulWidget {
-  LogEntry entry;
+  LogEntryModel entry;
 
   @override
   _LogEntryViewState createState() => _LogEntryViewState();

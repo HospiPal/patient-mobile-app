@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:patientapp/ui/central_screen/care_team/message.dart';
-import 'package:patientapp/ui/central_screen/care_team/message_text.dart';
+import 'package:patientapp/models/message.dart';
 
 class MessageBubble extends StatefulWidget {
-  final MessageText messageText;
+  final MessageModel messageText;
 
   MessageBubble({@required this.messageText});
 
@@ -31,7 +30,7 @@ class _MessageBubbleState extends State<MessageBubble> {
                 : Theme.of(context).primaryColor),
           ),
           padding: EdgeInsets.all(16),
-          child: Text(widget.messageText.message),
+          child: Text(widget.messageText.text),
         ),
       ),
     );
