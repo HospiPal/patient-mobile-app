@@ -19,7 +19,8 @@ class _HomeState extends State<Home> {
   ];
 
   Widget appBarTitle(BuildContext context) {
-    var patientName = context.watch<UserModel>().name;
+    var patientName =
+        context.select<UserModel, String>((userModel) => userModel.name);
     if (patientName == null) {
       return Text("Hi :)");
     } else {
