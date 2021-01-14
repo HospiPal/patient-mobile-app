@@ -84,7 +84,9 @@ class _JournalTileState extends State<JournalTile> {
                               ),
                             if (widget.entry.severity != null &&
                                 widget.entry.severity.length > 0)
-                              Text("Severity: " + widget.entry.severity[0].option,
+                              Text(
+                                  "Severity: " +
+                                      widget.entry.severity[0].option,
                                   style:
                                       TextStyle(fontWeight: FontWeight.bold)),
                             if (widget.entry.physicians != null)

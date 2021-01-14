@@ -24,10 +24,13 @@ class _JournalState extends State<Journal> {
     ], dateStamp: DateTime.now()))
   ];
   List<JournalTile> monthsDisplayed = <JournalTile>[
-    JournalTile(LogEntryModel(
-        symptoms: [SelectionModel(option: 'Heartburn'), SelectionModel(option: 'Headache')],
-        physicians: [SelectionModel(option: 'Heartburn'), SelectionModel(option: 'Headache')],
-        dateStamp: DateTime.now()))
+    JournalTile(LogEntryModel(symptoms: [
+      SelectionModel(option: 'Heartburn'),
+      SelectionModel(option: 'Headache')
+    ], physicians: [
+      SelectionModel(option: 'Heartburn'),
+      SelectionModel(option: 'Headache')
+    ], dateStamp: DateTime.now()))
   ];
   DateOrganizer date = DateOrganizer();
   List<String> dropDownMonths = <String>[
