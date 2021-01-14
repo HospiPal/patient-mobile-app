@@ -298,9 +298,7 @@ class _MedicationsState extends State<Medications> {
     medications.forEach((medicationModel) {
       medicationModel.daysToTake.forEach((day) {
         if (day == daySelected) {
-          String dose =
-              medicationModel.amount.toString() + ' ' + medicationModel.form;
-          medicationCards.add(medicationCard(medicationModel.name, dose));
+          medicationCards.add(medicationCard(medicationModel.name, medicationModel.dose));
         }
       });
     });
