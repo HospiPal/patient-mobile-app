@@ -1,14 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'medications_for_today_tile.dart';
 
-class MedicationsForToday extends StatefulWidget {
-  @override
-  _MedicationsForTodayState createState() => _MedicationsForTodayState();
-}
-
-class _MedicationsForTodayState extends State<MedicationsForToday> {
+class MedicationsForToday extends StatelessWidget {
   final List<MedicationsForTodayTile> appointments = <MedicationsForTodayTile>[
     MedicationsForTodayTile("Dupixent", "50 Mg"),
     MedicationsForTodayTile("Norethindrone", "20 Mg, Twice a day"),

@@ -1,18 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MedicationsForTodayTile extends StatefulWidget {
-  @override
-  _MedicationsForTodayTileState createState() =>
-      _MedicationsForTodayTileState();
-
+class MedicationsForTodayTile extends StatelessWidget {
   final String medication;
   final String dose;
 
   MedicationsForTodayTile(this.medication, this.dose);
-}
 
-class _MedicationsForTodayTileState extends State<MedicationsForTodayTile> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -25,8 +18,8 @@ class _MedicationsForTodayTileState extends State<MedicationsForTodayTile> {
                 Icons.add_circle,
                 color: Theme.of(context).accentColor,
               ),
-              Text(widget.medication),
-              Text(widget.dose),
+              Text(medication),
+              Text(dose),
             ],
           ),
           margin: EdgeInsets.symmetric(vertical: 25.0),
