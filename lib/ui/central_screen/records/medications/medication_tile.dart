@@ -1,13 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MedicationTile extends StatefulWidget {
-  @override
-  _MedicationTileState createState() => _MedicationTileState();
-}
-
-class _MedicationTileState extends State<MedicationTile> {
-  @override
+class MedicationTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: InkWell(
@@ -90,21 +84,17 @@ class _MedicationTileState extends State<MedicationTile> {
   }
 }
 
-class EntryContainer extends StatefulWidget {
-  @override
-  _EntryContainerState createState() => _EntryContainerState();
-
+class EntryContainer extends StatelessWidget {
   final String text;
 
   EntryContainer(this.text);
-}
 
-class _EntryContainerState extends State<EntryContainer> {
-  @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(widget.text,
-          style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold)),
+      child: Text(
+        text,
+        style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+      ),
       //width: 150,
       padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
