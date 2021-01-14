@@ -13,26 +13,26 @@ class _MedicationsState extends State<Medications> {
     MedicationTile(),
     MedicationTile(),
   ];
-  final List<MedicationInfo> medications = <MedicationInfo>[
-    MedicationInfo(
+  final List<MedicationModel> medications = <MedicationModel>[
+    MedicationModel(
       name: 'Tylenol',
       daysToTake: <int>[1, 3, 4, 5],
       amount: 2,
       form: 'pills',
     ),
-    MedicationInfo(
+    MedicationModel(
       name: 'heroin',
       daysToTake: <int>[0, 2, 3, 4, 5],
       amount: 2,
       form: 'Mg',
     ),
-    MedicationInfo(
+    MedicationModel(
       name: 'Beta Blocker',
       daysToTake: <int>[1, 3, 5],
       amount: 2,
       form: 'pills',
     ),
-    MedicationInfo(
+    MedicationModel(
       name: 'Insulin',
       daysToTake: <int>[0, 6],
       amount: 2,
@@ -81,7 +81,7 @@ class _MedicationsState extends State<Medications> {
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   )),
             ),
-            medInfoList(),
+            medicationInfoColumn(),
           ],
         ),
       ),
@@ -114,7 +114,7 @@ class _MedicationsState extends State<Medications> {
   }
 
   List<Container> medicationBoxes(
-      MedicationInfo medication, int columnBordered, bool isBottom) {
+      MedicationModel medication, int columnBordered, bool isBottom) {
     double boxHeight = 30;
     Color col =
         Theme.of(context).accentColor; //colors[random.nextInt(colors.length)];
@@ -285,26 +285,25 @@ class _MedicationsState extends State<Medications> {
       } else {
         return DateTime.now().weekday;
       }
-    } else
+    } else {
       return selectedDay;
+    }
   }
 
-  Column medInfoList() {
-    List<MedicationInfo> medicationsForToday = List<MedicationInfo>();
+  Column medicationInfoColumn() {
     List<Card> medicationCards = List<Card>();
-    //checks to make sure selectedDay != -1
+    // checks to make sure selectedDay != -1
     int daySelected = selectedDayChecker(selectedDay);
 
-    for (int i = 0; i < medications.length; i++) {
-      for (int j = 0; j < medications[i].daysToTake.length; j++) {
-        if (medications[i].daysToTake[j] == daySelected) {
-          medicationsForToday.add(medications[i]);
+    medications.forEach((medicationModel) {
+      medicationModel.daysToTake.forEach((day) {
+        if (day == daySelected) {
           String dose =
-              medications[i].amount.toString() + ' ' + medications[i].form;
-          medicationCards.add(medicationCard(medications[i].name, dose));
+              medicationModel.amount.toString() + ' ' + medicationModel.form;
+          medicationCards.add(medicationCard(medicationModel.name, dose));
         }
-      }
-    }
+      });
+    });
 
     return Column(children: medicationCards);
   }

@@ -1,6 +1,13 @@
 import 'dart:core';
 
-class MedicationInfo {
+import 'package:flutter/material.dart';
+
+class MedicationsModel extends ChangeNotifier {
+  List<MedicationModel> medications;
+}
+
+@immutable
+class MedicationModel {
   String name;
   String code; //code that represents the specific drug
   String form; //tablet, pill, powder
@@ -11,7 +18,7 @@ class MedicationInfo {
   List<int>
       daysToTake; //what days of the week to take the medication: 1 = monday
 
-  MedicationInfo(
+  MedicationModel(
       {this.name,
       this.code,
       this.form,
