@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:patientapp/models/medications.dart';
 import 'package:patientapp/ui/central_screen/records/medications/medication_tile.dart';
+import 'package:provider/provider.dart';
 
 class Medications extends StatefulWidget {
   @override
@@ -12,32 +13,6 @@ class _MedicationsState extends State<Medications> {
   final List<MedicationTile> medicationTiles = <MedicationTile>[
     MedicationTile(),
     MedicationTile(),
-  ];
-  final List<MedicationModel> medications = <MedicationModel>[
-    MedicationModel(
-      name: 'Tylenol',
-      daysToTake: <int>[1, 3, 4, 5],
-      amount: 2,
-      form: 'pills',
-    ),
-    MedicationModel(
-      name: 'heroin',
-      daysToTake: <int>[0, 2, 3, 4, 5],
-      amount: 2,
-      form: 'Mg',
-    ),
-    MedicationModel(
-      name: 'Beta Blocker',
-      daysToTake: <int>[1, 3, 5],
-      amount: 2,
-      form: 'pills',
-    ),
-    MedicationModel(
-      name: 'Insulin',
-      daysToTake: <int>[0, 6],
-      amount: 2,
-      form: 'pills',
-    ),
   ];
   final List<String> daysOfTheWeek = <String>[
     'Sunday',
@@ -52,6 +27,9 @@ class _MedicationsState extends State<Medications> {
 
   @override
   Widget build(BuildContext context) {
+    final medications = context.select<MedicationsModel, List<MedicationModel>>(
+        (medicationsModel) => medicationsModel.medications);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Medications'),
@@ -65,7 +43,7 @@ class _MedicationsState extends State<Medications> {
               //color: Colors.amber[500],
               //child: const Center(child: Text('Entry B')),
             ),
-            medTable(),
+            medicationTable(medications),
             Container(
               height: 50,
               //color: Colors.amber[500],
@@ -81,14 +59,14 @@ class _MedicationsState extends State<Medications> {
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   )),
             ),
-            medicationInfoColumn(),
+            medicationInfoColumn(medications),
           ],
         ),
       ),
     );
   }
 
-  Table medTable() {
+  Table medicationTable(List<MedicationModel> medications) {
     List<TableRow> rowsOfTable = List<TableRow>(medications.length + 1);
     for (int i = 0; i < medications.length + 1; i++) {
       if (i == 0) {
@@ -290,7 +268,7 @@ class _MedicationsState extends State<Medications> {
     }
   }
 
-  Column medicationInfoColumn() {
+  Column medicationInfoColumn(List<MedicationModel> medications) {
     List<Card> medicationCards = List<Card>();
     // checks to make sure selectedDay != -1
     int daySelected = selectedDayChecker(selectedDay);
@@ -298,7 +276,8 @@ class _MedicationsState extends State<Medications> {
     medications.forEach((medicationModel) {
       medicationModel.daysToTake.forEach((day) {
         if (day == daySelected) {
-          medicationCards.add(medicationCard(medicationModel.name, medicationModel.dose));
+          medicationCards
+              .add(medicationCard(medicationModel.name, medicationModel.dose));
         }
       });
     });

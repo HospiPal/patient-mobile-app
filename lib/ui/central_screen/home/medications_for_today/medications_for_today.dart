@@ -33,8 +33,9 @@ class MedicationsForToday extends StatelessWidget {
     final appointments = context
         .select<MedicationsModel, List<MedicationModel>>(
             (medicationsModel) => medicationsModel.medications)
-        .map((medicationModel) => MedicationsForTodayTile(
-            medicationModel.name, medicationModel.dose)).toList();
+        .map((medicationModel) =>
+            MedicationsForTodayTile(medicationModel.name, medicationModel.dose))
+        .toList();
 
     if (appointments.length > 0) {
       return Column(children: appointments);

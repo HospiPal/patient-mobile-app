@@ -3,7 +3,32 @@ import 'dart:core';
 import 'package:flutter/material.dart';
 
 class MedicationsModel extends ChangeNotifier {
-  List<MedicationModel> medications = [];
+  List<MedicationModel> medications = [
+    MedicationModel(
+      name: 'Tylenol',
+      daysToTake: <int>[1, 3, 4, 5],
+      amount: 2,
+      form: 'pills',
+    ),
+    MedicationModel(
+      name: 'heroin',
+      daysToTake: <int>[0, 2, 3, 4, 5],
+      amount: 2,
+      form: 'Mg',
+    ),
+    MedicationModel(
+      name: 'Beta Blocker',
+      daysToTake: <int>[1, 3, 5],
+      amount: 2,
+      form: 'pills',
+    ),
+    MedicationModel(
+      name: 'Insulin',
+      daysToTake: <int>[0, 6],
+      amount: 2,
+      form: 'pills',
+    ),
+  ];
 }
 
 @immutable
