@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:patientapp/models/journal.dart';
 import 'package:patientapp/ui/central_screen/journal/log_entries/log_entry_add.dart';
 
-import '../date_organizer.dart';
-import '../journal_tile.dart';
+import 'date_organizer.dart';
+import 'journal_tile.dart';
 
 class Journal extends StatefulWidget {
   @override

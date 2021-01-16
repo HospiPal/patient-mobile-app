@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:patientapp/ui/central_screen/care_team/ui/care_team.dart';
-import 'package:patientapp/ui/central_screen/journal/ui/journal.dart';
+import 'package:patientapp/ui/central_screen/journal/journal.dart';
 import 'package:patientapp/ui/central_screen/home/home.dart';
 import 'package:patientapp/ui/central_screen/records/records.dart';
 

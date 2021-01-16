@@ -7,8 +7,7 @@ class UserModel extends ChangeNotifier {
   Patient _patient;
 
   Id get id {
-    if (_patient == null) return null;
-    return _patient.id;
+    return _patient?.id;
   }
 
   /// The name of the user.
