@@ -1,6 +1,8 @@
 import 'dart:core';
 
 import 'package:flutter/material.dart';
+import 'package:json_annotation/json_annotation.dart';
+part 'medications.g.dart';
 
 class MedicationsModel extends ChangeNotifier {
   List<MedicationModel> medications = [
@@ -31,6 +33,8 @@ class MedicationsModel extends ChangeNotifier {
   ];
 }
 
+
+@JsonSerializable()
 @immutable
 class MedicationModel {
   final String name;
@@ -54,4 +58,8 @@ class MedicationModel {
       this.daysToTake});
 
   String get dose => amount.toString() + ' ' + form;
+
+  factory MedicationModel.fromJson(Map<String, dynamic> json) => _$MedicationModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MedicationModelToJson(this);
 }

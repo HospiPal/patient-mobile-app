@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:patientapp/ui/auth.dart';
 import 'package:provider/provider.dart';
 
-import 'models/medications.dart';
 import 'models/user.dart';
 
 void main() => runApp(MyApp());
@@ -12,11 +11,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => UserModel()),
-        ChangeNotifierProvider(create: (_) => MedicationsModel()),
-      ],
+
+
+    return ChangeNotifierProvider(
+      create: (_) => UserModel(),
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'HospiPal',
