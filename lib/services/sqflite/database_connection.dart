@@ -26,7 +26,7 @@ class DataBaseConnection {
 
     // create user table
     await db.execute(
-        "CREATE TABLE user(patient TEXT, medicationRequests TEXT");
+        "CREATE TABLE user(patient TEXT");
   }
 
 }

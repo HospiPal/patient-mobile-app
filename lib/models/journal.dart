@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:patientapp/models/selection.dart';
+// import 'package:patientapp/models/selection.dart';
 
 part 'journal.g.dart';
 
@@ -30,6 +30,25 @@ class LogEntryModel {
 
 
 }
+
+@JsonSerializable(genericArgumentFactories: true)
+class SelectionModel<T> {
+  // @_Converter()
+  T option;
+  bool isSelected;
+
+  SelectionModel({@required this.option, this.isSelected = false});
+
+  factory SelectionModel.fromJson(
+      Map<String, dynamic> json,
+      T Function (Object json) fromJsonT,
+      ) =>
+      _$SelectionModelFromJson(json, fromJsonT);
+  Map<String, dynamic> toJson(Object Function(T value) toJsonT) =>
+      _$SelectionModelToJson(this, toJsonT);
+
+}
+
 
 
 

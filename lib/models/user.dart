@@ -9,19 +9,16 @@ part 'user.g.dart';
 
 @JsonSerializable()
 class UserModel extends ChangeNotifier {
+  UserModel(){}
 
   Patient _patient;
-
-  UserModel(){
-
-  }
 
   Id get id {
     return _patient?.id;
   }
 
   /// The name of the user.
-  get name {
+  String get name {
     if (_patient == null ||
         _patient.name.isEmpty ||
         _patient.name[0].given == null ||
@@ -33,7 +30,7 @@ class UserModel extends ChangeNotifier {
     return name;
   }
 
-  /// Retrieves the [r4.Patient] resour  // List<MedicationRequest> medicationRequests;ces whose [Id] is [id].
+  /// Retrieves the [r4.Patient] resource  // List<MedicationRequest> medicationRequests;ces whose [Id] is [id].
   Future<void> retrievePatient(Id id) async {
     _patient = await PatientService().getById(id);
     notifyListeners();
